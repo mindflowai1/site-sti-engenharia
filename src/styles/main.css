@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --color-primary: #2c3e50;
+  --color-lightBg: #f8f9fa;
+  --color-accent: #f59e0b; /* Yellow/Orange to match reference */
+  --color-lightText: #eeeeee;
+  --color-darkText: #333333;
+  --color-offset: #e2e8f0;
+  
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background-color: var(--color-lightBg);
+  color: var(--color-darkText);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Base button styles to keep HTML clean */
+.btn-accent {
+  @apply bg-accent text-white transition-all duration-300;
+}
+.btn-accent:hover {
+  @apply bg-[#27ae60] -translate-y-0.5 shadow-lg shadow-accent/30;
+}
+
+.btn-primary {
+  @apply bg-primary text-white transition-all duration-300;
+}
+.btn-primary:hover {
+  @apply bg-[#1a252f] -translate-y-0.5 shadow-lg shadow-primary/30;
+}
+
+/* Polyfill for accordion markers */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
