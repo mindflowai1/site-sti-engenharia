@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treinamentos de Máquinas Pesadas | STI Engenharia</title>
-    <meta name="description" content="Capacitação para operação de máquinas pesadas, movimentação de carga e terraplanagem. Foco em segurança operacional, ISO 9001 e normas técnicas.">
-    
+    <meta name="description"
+        content="Capacitação para operação de máquinas pesadas, movimentação de carga e terraplanagem. Foco em segurança operacional, ISO 9001 e normas técnicas.">
+
     <!-- CSS AOS (Animações) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- CSS Principal -->
     <link href="/src/styles/main.css" rel="stylesheet">
-    
+
     <!-- Ícones Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         /* Accordion CSS Transition (Grid Hack for perfect height animation) */
         .accordion-content {
@@ -22,52 +24,67 @@
             grid-template-rows: 0fr;
             transition: grid-template-rows 350ms cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .accordion-content > div {
+
+        .accordion-content>div {
             overflow: hidden;
         }
+
         .accordion-item.is-open .accordion-content {
             grid-template-rows: 1fr;
         }
+
         .accordion-item.is-open .icon-plus {
             transform: rotate(45deg);
             color: var(--color-accent);
         }
+
         .accordion-item.is-open {
-            border-color: rgba(234, 179, 8, 0.4); /* border-accent/40 */
+            border-color: rgba(234, 179, 8, 0.4);
+            /* border-accent/40 */
         }
     </style>
 </head>
-<body class="bg-white text-slate-800 antialiased selection:bg-accent selection:text-brand-blue relative overflow-x-hidden">
+
+<body
+    class="bg-white text-slate-800 antialiased selection:bg-accent selection:text-brand-blue relative overflow-x-hidden">
 
     <!-- Navbar -->
-    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 py-3 md:py-4 border-b border-gray-100 bg-white shadow-sm">
+    <header id="navbar"
+        class="fixed w-full z-50 transition-all duration-300 py-3 md:py-4 border-b border-gray-100 bg-white shadow-sm">
         <div class="container mx-auto px-5 lg:px-6 max-w-7xl flex items-center justify-between">
             <a href="#" class="flex items-center z-50 shrink-0 mt-1 -ml-2 md:ml-0">
-                <img src="/logo-sti.png" alt="STI Engenharia" class="w-40 md:w-52 lg:w-64 max-h-12 md:max-h-16 lg:max-h-20 h-auto object-contain object-left transform origin-left scale-[1.5] md:scale-125 transition-transform group-hover:scale-[1.55] md:group-hover:scale-150" id="nav-logo">
+                <img src="/logo-sti.png" alt="STI Engenharia"
+                    class="w-40 md:w-52 lg:w-64 max-h-12 md:max-h-16 lg:max-h-20 h-auto object-contain object-left transform origin-left scale-[1.5] md:scale-125 transition-transform group-hover:scale-[1.55] md:group-hover:scale-150"
+                    id="nav-logo">
             </a>
-            
-            <nav class="hidden md:flex items-center gap-8 font-heading font-medium text-sm text-slate-700 tracking-wide">
+
+            <nav
+                class="hidden md:flex items-center gap-8 font-heading font-medium text-sm text-slate-700 tracking-wide">
                 <a href="#diferenciais" class="hover:text-accent font-semibold transition-colors">Diferenciais</a>
                 <a href="#treinamentos" class="hover:text-accent font-semibold transition-colors">Treinamentos</a>
                 <a href="#faq" class="hover:text-accent font-semibold transition-colors">FAQ</a>
             </nav>
-            
+
             <div class="hidden md:block">
-                <a href="#contato" class="bg-accent hover:bg-accent-hover text-brand-blue font-bold px-6 py-2.5 rounded text-sm transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2">
+                <a href="#contato"
+                    class="bg-accent hover:bg-accent-hover text-brand-blue font-bold px-6 py-2.5 rounded text-sm transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2">
                     Solicitar Orçamento
                 </a>
             </div>
-            
+
             <!-- Mobile Menu Btn -->
             <button id="mobile-menu-btn" class="md:hidden text-slate-800 z-50 focus:outline-none p-2 shrink-0">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
-        
+
         <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center gap-8 pt-20 hidden opacity-0 transition-opacity duration-300">
-            <a href="#diferenciais" class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">Diferenciais</a>
-            <a href="#treinamentos" class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">Treinamentos</a>
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center gap-8 pt-20 hidden opacity-0 transition-opacity duration-300">
+            <a href="#diferenciais"
+                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">Diferenciais</a>
+            <a href="#treinamentos"
+                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">Treinamentos</a>
             <a href="#faq" class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">FAQ</a>
             <a href="#contato" class="bg-accent text-brand-blue font-bold px-8 py-4 rounded text-lg mobile-link">
                 Solicitar Orçamento
@@ -89,47 +106,57 @@
 
         <div class="container mx-auto px-6 max-w-7xl relative z-10 flex flex-col items-start pt-12">
             <div class="max-w-3xl" data-aos="fade-up" data-aos-duration="1000">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-white/90 text-xs font-bold uppercase tracking-[0.15em] mb-8 shadow-sm backdrop-blur-sm">
-                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(234,179,8,0.8)]"></span>
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-white/90 text-xs font-bold uppercase tracking-[0.15em] mb-8 shadow-sm backdrop-blur-sm">
+                    <span
+                        class="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(234,179,8,0.8)]"></span>
                     Turmas Corporativas
                 </div>
-                
+
                 <h1 class="text-5xl md:text-6xl lg:text-[5rem] font-extrabold leading-[1.05] tracking-tight mb-6">
-                    MÁQUINAS PESADAS. <br/>
+                    MÁQUINAS PESADAS. <br />
                     <span class="text-accent">OPERAÇÃO SEGURA.</span>
                 </h1>
-                
+
                 <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl font-light leading-relaxed">
-                    Treinamentos de máquinas pesadas, movimentação de carga e terraplanagem ministrados por engenheiros. Conformidade à risca com NRs para que sua obra ou indústria opere sem interrupções.
+                    Treinamentos de máquinas pesadas, movimentação de carga e terraplanagem ministrados por engenheiros.
+                    Conformidade à risca com NRs para que sua obra ou indústria opere sem interrupções.
                 </p>
-                
+
                 <div class="flex flex-col sm:flex-row gap-5">
-                    <a href="#contato" class="bg-accent hover:bg-accent-hover text-brand-blue font-bold px-8 py-4 rounded-md text-center transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-[0_4px_20px_rgba(234,179,8,0.3)]">
+                    <a href="#contato"
+                        class="bg-accent hover:bg-accent-hover text-brand-blue font-bold px-8 py-4 rounded-md text-center transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-[0_4px_20px_rgba(234,179,8,0.3)]">
                         Solicitar Cotação <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://wa.me/5531900000000" target="_blank" class="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-md text-center transition-all flex items-center justify-center gap-3 backdrop-blur-sm">
+                    <a href="https://wa.me/5531900000000" target="_blank"
+                        class="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-md text-center transition-all flex items-center justify-center gap-3 backdrop-blur-sm">
                         <i data-lucide="phone" class="w-5 h-5 text-accent"></i> Falar com Especialista
                     </a>
                 </div>
             </div>
 
             <!-- Trust Badges (Cards sobrepostos na parte inferior) -->
-            <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <div class="glass-dark p-6 border-l-2 border-l-accent flex items-start gap-4 transform transition hover:-translate-y-1 hover:border-white/20">
+            <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-delay="200">
+                <div
+                    class="glass-dark p-6 border-l-2 border-l-accent flex items-start gap-4 transform transition hover:-translate-y-1 hover:border-white/20">
                     <i data-lucide="shield-check" class="w-8 h-8 text-accent shrink-0"></i>
                     <div>
                         <h3 class="font-bold text-lg leading-tight mb-1 text-white">Fundada em 2010</h3>
                         <p class="text-xs text-slate-400 font-light leading-relaxed">Década de solidez certificada.</p>
                     </div>
                 </div>
-                <div class="glass-dark p-6 border-l-2 border-l-accent flex items-start gap-4 transform transition hover:-translate-y-1 hover:border-white/20">
+                <div
+                    class="glass-dark p-6 border-l-2 border-l-accent flex items-start gap-4 transform transition hover:-translate-y-1 hover:border-white/20">
                     <i data-lucide="badge-check" class="w-8 h-8 text-accent shrink-0"></i>
                     <div>
                         <h3 class="font-bold text-lg leading-tight mb-1 text-white">ISO 9001:2015</h3>
-                        <p class="text-xs text-slate-400 font-light leading-relaxed">Padrão internacional de qualidade.</p>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">Padrão internacional de qualidade.
+                        </p>
                     </div>
                 </div>
-                <div class="glass-dark p-6 border-l-2 border-l-accent flex items-start gap-4 transform transition hover:-translate-y-1 hover:border-white/20">
+                <div
+                    class="glass-dark p-6 border-l-2 border-l-accent flex items-start gap-4 transform transition hover:-translate-y-1 hover:border-white/20">
                     <i data-lucide="check-square" class="w-8 h-8 text-accent shrink-0"></i>
                     <div>
                         <h3 class="font-bold text-lg leading-tight mb-1 text-white">PMQP-H Nível A</h3>
@@ -149,39 +176,52 @@
                         NÃO É APENAS REQUISITO. <br>É <span class="text-accent">DESEMPENHO.</span>
                     </h2>
                     <p class="text-slate-600 text-lg font-light leading-relaxed">
-                        Nossa metodologia converte as Normas Regulamentadoras em práticas que previnem atrasos e danos. Feito diretamente para o piso da fábrica e o canteiro de obras.
+                        Nossa metodologia converte as Normas Regulamentadoras em práticas que previnem atrasos e danos.
+                        Feito diretamente para o piso da fábrica e o canteiro de obras.
                     </p>
                 </div>
             </div>
-            
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="bg-white p-8 border border-gray-200 rounded-lg group hover:border-accent/40 shadow-sm transition-colors" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 rounded bg-gray-100 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                <div class="bg-white p-8 border border-gray-200 rounded-lg group hover:border-accent/40 shadow-sm transition-colors"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-12 h-12 rounded bg-gray-100 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="building-2" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-slate-800">Construtoras</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Nivelamento de solo intenso e guindastes em grandes alturas com zero intercorrências.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Nivelamento de solo intenso e guindastes em
+                        grandes alturas com zero intercorrências.</p>
                 </div>
-                <div class="bg-white p-8 border border-gray-200 rounded-lg group hover:border-accent/40 shadow-sm transition-colors" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 rounded bg-gray-100 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                <div class="bg-white p-8 border border-gray-200 rounded-lg group hover:border-accent/40 shadow-sm transition-colors"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-12 h-12 rounded bg-gray-100 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="pickaxe" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-slate-800">Mineradoras</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Extração robusta que demanda operadores de extrema precisão e controle de carga.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Extração robusta que demanda operadores de extrema
+                        precisão e controle de carga.</p>
                 </div>
-                <div class="bg-white p-8 border border-gray-200 rounded-lg group hover:border-accent/40 shadow-sm transition-colors" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 rounded bg-gray-100 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                <div class="bg-white p-8 border border-gray-200 rounded-lg group hover:border-accent/40 shadow-sm transition-colors"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-12 h-12 rounded bg-gray-100 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="boxes" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-slate-800">Logística In-plant</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Movimentação em espaços confinados. Tolerância zero a acidentes com patrimônio.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Movimentação em espaços confinados. Tolerância
+                        zero a acidentes com patrimônio.</p>
                 </div>
-                <div class="bg-white p-8 border border-gray-200 rounded-lg group hover:border-accent/40 shadow-sm transition-colors" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-12 h-12 rounded bg-gray-100 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                <div class="bg-white p-8 border border-gray-200 rounded-lg group hover:border-accent/40 shadow-sm transition-colors"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-12 h-12 rounded bg-gray-100 flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="user-cog" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-slate-800">Operadores</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Trilha profissional para quem busca certificação validada pelas exigentes indústrias.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Trilha profissional para quem busca certificação
+                        validada pelas exigentes indústrias.</p>
                 </div>
             </div>
         </div>
@@ -190,11 +230,14 @@
     <!-- Section: Treinamentos e Cursos -->
     <section class="py-24 bg-brand-blue relative overflow-hidden" id="treinamentos">
         <!-- Glow Decorator -->
-        <div class="absolute top-1/4 -right-64 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div
+            class="absolute top-1/4 -right-64 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
 
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="mb-16 text-center" data-aos="fade-up">
-                <span class="text-accent uppercase font-bold tracking-[0.2em] text-xs mb-3 block">Catálogo Completo</span>
+                <span class="text-accent uppercase font-bold tracking-[0.2em] text-xs mb-3 block">Catálogo
+                    Completo</span>
                 <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">Treinamentos Técnicos</h2>
             </div>
 
@@ -202,27 +245,40 @@
                 <!-- Coluna 1: Movimentação de Carga -->
                 <div data-aos="fade-right" data-aos-delay="100">
                     <div class="flex items-center gap-4 mb-8">
-                        <h3 class="text-2xl font-heading font-black pb-2 border-b-2 border-accent inline-block text-white uppercase tracking-wider">
+                        <h3
+                            class="text-2xl font-heading font-black pb-2 border-b-2 border-accent inline-block text-white uppercase tracking-wider">
                             Movimentação de Carga
                         </h3>
                     </div>
-                    
+
                     <div class="space-y-4" id="accordion-group-1">
                         <!-- Accordion 1.1 -->
-                        <div class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
-                            <button class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
+                        <div
+                            class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
                                 <span class="text-left w-[90%]">Caminhão Munck</span>
-                                <i data-lucide="plus" class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
+                                <i data-lucide="plus"
+                                    class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
                             </button>
                             <div class="accordion-content">
                                 <div>
-                                    <div class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
-                                            <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=400" alt="Caminhão Munck" class="w-full h-full object-cover">
+                                    <div
+                                        class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div
+                                            class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
+                                            <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=400"
+                                                alt="Caminhão Munck" class="w-full h-full object-cover">
                                         </div>
-                                        <div class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
-                                            <p class="mb-4">Formação em operação segura do guindauto (Munck). Patolamento, leitura exigente de diagramas de capacidade de carga, manutenção preventiva e comunicação visual em operações de alto risco.</p>
-                                            <a href="#contato" class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
+                                        <div
+                                            class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
+                                            <p class="mb-4">Formação em operação segura do guindauto (Munck).
+                                                Patolamento, leitura exigente de diagramas de capacidade de carga,
+                                                manutenção preventiva e comunicação visual em operações de alto risco.
+                                            </p>
+                                            <a href="#contato"
+                                                class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar
+                                                Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -230,20 +286,32 @@
                         </div>
 
                         <!-- Accordion 1.2 -->
-                        <div class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
-                            <button class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
+                        <div
+                            class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
                                 <span class="text-left w-[90%]">Ponte Rolante (NR-11)</span>
-                                <i data-lucide="plus" class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
+                                <i data-lucide="plus"
+                                    class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
                             </button>
                             <div class="accordion-content">
                                 <div>
-                                    <div class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
-                                            <img src="https://images.unsplash.com/photo-1587293852726-692ab042e617?q=80&w=400" alt="Ponte Rolante" class="w-full h-full object-cover">
+                                    <div
+                                        class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div
+                                            class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
+                                            <img src="https://images.unsplash.com/photo-1587293852726-692ab042e617?q=80&w=400"
+                                                alt="Ponte Rolante" class="w-full h-full object-cover">
                                         </div>
-                                        <div class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
-                                            <p class="mb-4">Certificação voltada a movimentações industriais aéreas. Abordagem sobre controle de pêndulo da carga, uso de laços sintéticos/cabos de aço e inspeção pré-uso criteriosa dos equipamentos.</p>
-                                            <a href="#contato" class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
+                                        <div
+                                            class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
+                                            <p class="mb-4">Certificação voltada a movimentações industriais aéreas.
+                                                Abordagem sobre controle de pêndulo da carga, uso de laços
+                                                sintéticos/cabos de aço e inspeção pré-uso criteriosa dos equipamentos.
+                                            </p>
+                                            <a href="#contato"
+                                                class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar
+                                                Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -251,20 +319,31 @@
                         </div>
 
                         <!-- Accordion 1.3 -->
-                        <div class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
-                            <button class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
+                        <div
+                            class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
                                 <span class="text-left w-[90%]">Empilhadeira</span>
-                                <i data-lucide="plus" class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
+                                <i data-lucide="plus"
+                                    class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
                             </button>
                             <div class="accordion-content">
                                 <div>
-                                    <div class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
-                                            <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7e50def?q=80&w=400" alt="Empilhadeira" class="w-full h-full object-cover">
+                                    <div
+                                        class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div
+                                            class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
+                                            <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7e50def?q=80&w=400"
+                                                alt="Empilhadeira" class="w-full h-full object-cover">
                                         </div>
-                                        <div class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
-                                            <p class="mb-4">Compreensão profunda sobre ponto de gravidade e triangulação da força. Técnicas avançadas para logística in-plant, armazéns apertados e prevenção de tombamentos que podem ser letais.</p>
-                                            <a href="#contato" class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
+                                        <div
+                                            class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
+                                            <p class="mb-4">Compreensão profunda sobre ponto de gravidade e triangulação
+                                                da força. Técnicas avançadas para logística in-plant, armazéns apertados
+                                                e prevenção de tombamentos que podem ser letais.</p>
+                                            <a href="#contato"
+                                                class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar
+                                                Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -272,20 +351,31 @@
                         </div>
 
                         <!-- Accordion 1.4 -->
-                        <div class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
-                            <button class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
+                        <div
+                            class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
                                 <span class="text-left w-[90%]">Plataforma Elevatória (PEMT)</span>
-                                <i data-lucide="plus" class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
+                                <i data-lucide="plus"
+                                    class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
                             </button>
                             <div class="accordion-content">
                                 <div>
-                                    <div class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
-                                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=400" alt="PEMT / Plataforma" class="w-full h-full object-cover">
+                                    <div
+                                        class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div
+                                            class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
+                                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=400"
+                                                alt="PEMT / Plataforma" class="w-full h-full object-cover">
                                         </div>
-                                        <div class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
-                                            <p class="mb-4">Instrução para modelos tesoura e lança articulada. Foco na ancoragem (cinto paraquedas vs ponto de ancoragem), análise do solo (tombamento) e limitações hidromecânicas.</p>
-                                            <a href="#contato" class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
+                                        <div
+                                            class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
+                                            <p class="mb-4">Instrução para modelos tesoura e lança articulada. Foco na
+                                                ancoragem (cinto paraquedas vs ponto de ancoragem), análise do solo
+                                                (tombamento) e limitações hidromecânicas.</p>
+                                            <a href="#contato"
+                                                class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar
+                                                Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -297,27 +387,39 @@
                 <!-- Coluna 2: Terraplanagem -->
                 <div data-aos="fade-left" data-aos-delay="200">
                     <div class="flex items-center gap-4 mb-8">
-                        <h3 class="text-2xl font-heading font-black pb-2 border-b-2 border-accent inline-block text-white uppercase tracking-wider">
+                        <h3
+                            class="text-2xl font-heading font-black pb-2 border-b-2 border-accent inline-block text-white uppercase tracking-wider">
                             Terraplanagem & Movimentação
                         </h3>
                     </div>
-                    
+
                     <div class="space-y-4" id="accordion-group-2">
                         <!-- Accordion 2.1 -->
-                        <div class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
-                            <button class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
+                        <div
+                            class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
                                 <span class="text-left w-[90%]">Escavadeira Hidráulica</span>
-                                <i data-lucide="plus" class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
+                                <i data-lucide="plus"
+                                    class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
                             </button>
                             <div class="accordion-content">
                                 <div>
-                                    <div class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
-                                            <img src="https://images.unsplash.com/photo-1579245591942-7a7114b35858?q=80&w=400" alt="Escavadeira Hidráulica" class="w-full h-full object-cover">
+                                    <div
+                                        class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div
+                                            class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
+                                            <img src="https://images.unsplash.com/photo-1579245591942-7a7114b35858?q=80&w=400"
+                                                alt="Escavadeira Hidráulica" class="w-full h-full object-cover">
                                         </div>
-                                        <div class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
-                                            <p class="mb-4">Treinamento exaustivo em extração, conformação de taludes e nivelamento. Análise de rampa, posicionamento de esteiras e limites de estabilidade para evitar soterramento.</p>
-                                            <a href="#contato" class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
+                                        <div
+                                            class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
+                                            <p class="mb-4">Treinamento exaustivo em extração, conformação de taludes e
+                                                nivelamento. Análise de rampa, posicionamento de esteiras e limites de
+                                                estabilidade para evitar soterramento.</p>
+                                            <a href="#contato"
+                                                class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar
+                                                Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -325,20 +427,31 @@
                         </div>
 
                         <!-- Accordion 2.2 -->
-                        <div class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
-                            <button class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
+                        <div
+                            class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
                                 <span class="text-left w-[90%]">Retroescavadeira</span>
-                                <i data-lucide="plus" class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
+                                <i data-lucide="plus"
+                                    class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
                             </button>
                             <div class="accordion-content">
                                 <div>
-                                    <div class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
-                                            <img src="https://plus.unsplash.com/premium_photo-1682144703554-15c0a3250b71?q=80&w=400" alt="Retroescavadeira" class="w-full h-full object-cover">
+                                    <div
+                                        class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div
+                                            class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
+                                            <img src="https://plus.unsplash.com/premium_photo-1682144703554-15c0a3250b71?q=80&w=400"
+                                                alt="Retroescavadeira" class="w-full h-full object-cover">
                                         </div>
-                                        <div class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
-                                            <p class="mb-4">Eficácia em múltiplas frentes. Uso do carregador frontal em ciclos rápidos e módulo retro para valetamento seguro. Foco extremo na fixação correta e pressão das sapatas estabilizadoras.</p>
-                                            <a href="#contato" class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
+                                        <div
+                                            class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
+                                            <p class="mb-4">Eficácia em múltiplas frentes. Uso do carregador frontal em
+                                                ciclos rápidos e módulo retro para valetamento seguro. Foco extremo na
+                                                fixação correta e pressão das sapatas estabilizadoras.</p>
+                                            <a href="#contato"
+                                                class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar
+                                                Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -346,20 +459,31 @@
                         </div>
 
                         <!-- Accordion 2.3 -->
-                        <div class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
-                            <button class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
+                        <div
+                            class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
                                 <span class="text-left w-[90%]">Motoniveladora</span>
-                                <i data-lucide="plus" class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
+                                <i data-lucide="plus"
+                                    class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
                             </button>
                             <div class="accordion-content">
                                 <div>
-                                    <div class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
-                                            <img src="https://images.unsplash.com/photo-1605389658253-ab0dce02fe8e?q=80&w=400" alt="Motoniveladora" class="w-full h-full object-cover">
+                                    <div
+                                        class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div
+                                            class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
+                                            <img src="https://images.unsplash.com/photo-1605389658253-ab0dce02fe8e?q=80&w=400"
+                                                alt="Motoniveladora" class="w-full h-full object-cover">
                                         </div>
-                                        <div class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
-                                            <p class="mb-4">Destinado à excelência de acabamento em pistas e platôs. Geometria de lâmina, inclinação lateral (tilt), corte profundo e manipulação segura de chassi articulado.</p>
-                                            <a href="#contato" class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
+                                        <div
+                                            class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
+                                            <p class="mb-4">Destinado à excelência de acabamento em pistas e platôs.
+                                                Geometria de lâmina, inclinação lateral (tilt), corte profundo e
+                                                manipulação segura de chassi articulado.</p>
+                                            <a href="#contato"
+                                                class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar
+                                                Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -367,20 +491,31 @@
                         </div>
 
                         <!-- Accordion 2.4 -->
-                        <div class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
-                            <button class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
+                        <div
+                            class="accordion-item bg-brand-blue-light rounded border border-white/5 shadow-lg overflow-hidden transition-all duration-300">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center p-5 font-semibold text-lg text-white hover:text-accent select-none transition-colors">
                                 <span class="text-left w-[90%]">Mini Carregadeira (Bobcat)</span>
-                                <i data-lucide="plus" class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
+                                <i data-lucide="plus"
+                                    class="w-5 h-5 transition-transform text-text-muted icon-plus shrink-0"></i>
                             </button>
                             <div class="accordion-content">
                                 <div>
-                                    <div class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
-                                        <div class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
-                                            <img src="https://images.unsplash.com/photo-1621252636540-3ebd26ca61c3?q=80&w=400" alt="Mini Carregadeira Bobcat" class="w-full h-full object-cover">
+                                    <div
+                                        class="p-5 pt-0 border-t border-white/5 mt-2 flex flex-col sm:flex-row gap-5 items-start">
+                                        <div
+                                            class="w-full sm:w-2/5 aspect-[4/3] rounded bg-brand-blue relative overflow-hidden shrink-0 mt-2 border border-white/5">
+                                            <img src="https://images.unsplash.com/photo-1621252636540-3ebd26ca61c3?q=80&w=400"
+                                                alt="Mini Carregadeira Bobcat" class="w-full h-full object-cover">
                                         </div>
-                                        <div class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
-                                            <p class="mb-4">Evolução do conceito skid-steer. O treinamento abrange giro sobre próprio eixo em canteiros pequenos, acoplamento ultrarrápido hidráulico e manobras sem colisão cega traseira.</p>
-                                            <a href="#contato" class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
+                                        <div
+                                            class="w-full sm:w-3/5 text-text-muted text-sm leading-relaxed font-light py-2">
+                                            <p class="mb-4">Evolução do conceito skid-steer. O treinamento abrange giro
+                                                sobre próprio eixo em canteiros pequenos, acoplamento ultrarrápido
+                                                hidráulico e manobras sem colisão cega traseira.</p>
+                                            <a href="#contato"
+                                                class="text-accent font-bold uppercase text-xs tracking-widest hover:text-white transition-colors border-b border-accent/0 hover:border-accent">Solicitar
+                                                Cotação <i data-lucide="arrow-right" class="w-3 h-3 inline"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -389,10 +524,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="mt-16 text-center" data-aos="zoom-in">
-                <a href="#contato" class="inline-flex items-center gap-2 text-accent/80 hover:text-accent font-medium text-lg uppercase tracking-wide transition border-b border-accent/0 hover:border-accent pb-1">
-                    Trabalhamos também com Rolos, Tratores e Outros Opcionais. Entre em contato <i data-lucide="external-link" class="w-4 h-4"></i>
+                <a href="#contato"
+                    class="inline-flex items-center gap-2 text-accent/80 hover:text-accent font-medium text-lg uppercase tracking-wide transition border-b border-accent/0 hover:border-accent pb-1">
+                    Trabalhamos também com Rolos, Tratores e Outros Opcionais. Entre em contato <i
+                        data-lucide="external-link" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
@@ -403,55 +540,74 @@
         <div class="container mx-auto px-6 max-w-7xl">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div data-aos="fade-right">
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight text-slate-900">Experiência não se teoriza. <span class="text-accent">Se transmite.</span></h2>
-                    
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight text-slate-900">Experiência não
+                        se teoriza. <span class="text-accent">Se transmite.</span></h2>
+
                     <div class="space-y-8">
                         <div class="flex items-start gap-5 group">
-                            <div class="bg-gray-50 w-14 h-14 rounded flex items-center justify-center shrink-0 border border-gray-200 group-hover:border-accent/50 transition-colors">
+                            <div
+                                class="bg-gray-50 w-14 h-14 rounded flex items-center justify-center shrink-0 border border-gray-200 group-hover:border-accent/50 transition-colors">
                                 <i data-lucide="hard-hat" class="w-6 h-6 text-accent"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-1 text-slate-800">Visão Engenharia de Campo</h4>
-                                <p class="text-slate-600 font-light leading-relaxed text-sm">Não preenchemos papéis. Moldamos comportamentos pautados em mecânica pesada e prevenção estrita de danos ao operador e à frota.</p>
+                                <p class="text-slate-600 font-light leading-relaxed text-sm">Não preenchemos papéis.
+                                    Moldamos comportamentos pautados em mecânica pesada e prevenção estrita de danos ao
+                                    operador e à frota.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-5 group">
-                            <div class="bg-gray-50 w-14 h-14 rounded flex items-center justify-center shrink-0 border border-gray-200 group-hover:border-accent/50 transition-colors">
+                            <div
+                                class="bg-gray-50 w-14 h-14 rounded flex items-center justify-center shrink-0 border border-gray-200 group-hover:border-accent/50 transition-colors">
                                 <i data-lucide="book-check" class="w-6 h-6 text-accent"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-1 text-slate-800">Conformidade Blindada</h4>
-                                <p class="text-slate-600 font-light leading-relaxed text-sm">Certificamos operadores dentro das NRs, blindando sua empresa jurídica e tecnicamente contra auditorias e órgãos reguladores em qualquer estado do país.</p>
+                                <p class="text-slate-600 font-light leading-relaxed text-sm">Certificamos operadores
+                                    dentro das NRs, blindando sua empresa jurídica e tecnicamente contra auditorias e
+                                    órgãos reguladores em qualquer estado do país.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-5 group">
-                            <div class="bg-gray-50 w-14 h-14 rounded flex items-center justify-center shrink-0 border border-gray-200 group-hover:border-accent/50 transition-colors">
+                            <div
+                                class="bg-gray-50 w-14 h-14 rounded flex items-center justify-center shrink-0 border border-gray-200 group-hover:border-accent/50 transition-colors">
                                 <i data-lucide="clock" class="w-6 h-6 text-accent"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-1 text-slate-800">Agilidade Sem Gargalos</h4>
-                                <p class="text-slate-600 font-light leading-relaxed text-sm">Formato in-company flexível, entendendo a urgência do cliente para que as frentes de serviço não fiquem dias paradas, tudo com qualidade atestada pelas ISO 9001 e PMQP-H.</p>
+                                <p class="text-slate-600 font-light leading-relaxed text-sm">Formato in-company
+                                    flexível, entendendo a urgência do cliente para que as frentes de serviço não fiquem
+                                    dias paradas, tudo com qualidade atestada pelas ISO 9001 e PMQP-H.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="relative w-full h-[500px] border border-gray-200 rounded overflow-hidden shadow-lg" data-aos="fade-left">
+                <div class="relative w-full h-[500px] border border-gray-200 rounded overflow-hidden shadow-lg"
+                    data-aos="fade-left">
                     <div class="absolute inset-0 bg-brand-blue/10 z-10 mix-blend-multiply"></div>
                     <img src="/image copy.png" alt="Máquina Escavadeira em Obra" class="w-full h-full object-cover">
                     <!-- Overlays de Prova Social -->
-                    <div class="absolute top-6 left-6 z-20 bg-white/95 px-6 py-4 rounded flex items-center gap-4 border-l-4 border-l-accent shadow-2xl">
+                    <div
+                        class="absolute top-6 left-6 z-20 bg-white/95 px-6 py-4 rounded flex items-center gap-4 border-l-4 border-l-accent shadow-2xl">
                         <i data-lucide="check-circle" class="w-8 h-8 text-accent"></i>
                         <div>
-                            <p class="text-slate-900 font-bold text-lg leading-tight uppercase relative">Metodologia Aprovada<span class="absolute top-0 -right-4 w-2 h-2 rounded-full bg-accent animate-ping"></span></p>
+                            <p class="text-slate-900 font-bold text-lg leading-tight uppercase relative">Metodologia
+                                Aprovada<span
+                                    class="absolute top-0 -right-4 w-2 h-2 rounded-full bg-accent animate-ping"></span>
+                            </p>
                             <p class="text-slate-500 text-xs uppercase tracking-widest mt-0.5">Testada no canteiro</p>
                         </div>
                     </div>
-                    
-                    <div class="absolute bottom-6 right-6 z-20 bg-white/95 backdrop-blur-md px-4 py-4 rounded border border-gray-100 max-w-[220px] shadow-xl">
+
+                    <div
+                        class="absolute bottom-6 right-6 z-20 bg-white/95 backdrop-blur-md px-4 py-4 rounded border border-gray-100 max-w-[220px] shadow-xl">
                         <i data-lucide="quote" class="w-5 h-5 text-accent mb-1 opacity-80"></i>
-                        <p class="text-slate-800 italic text-xs leading-snug font-light relative z-10">"Excelente atendimento, sanou todas minhas dúvidas e entregou conteúdo espetacular."</p>
-                        <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-3 font-bold border-t border-gray-200 pt-3">— Gestor de Frota</p>
+                        <p class="text-slate-800 italic text-xs leading-snug font-light relative z-10">"Excelente
+                            atendimento, sanou todas minhas dúvidas e entregou conteúdo espetacular."</p>
+                        <p
+                            class="text-[10px] text-slate-500 uppercase tracking-widest mt-3 font-bold border-t border-gray-200 pt-3">
+                            — Gestor de Frota</p>
                     </div>
                 </div>
             </div>
@@ -468,57 +624,82 @@
 
             <!-- Custom Accordions FAQ -->
             <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="accordion-item bg-white rounded-sm overflow-hidden box-shadow transition-all duration-300 border border-gray-200">
-                    <button class="accordion-header w-full flex justify-between items-center p-6 font-semibold text-lg text-slate-800 hover:text-accent font-heading transition-colors">
+                <div
+                    class="accordion-item bg-white rounded-sm overflow-hidden box-shadow transition-all duration-300 border border-gray-200">
+                    <button
+                        class="accordion-header w-full flex justify-between items-center p-6 font-semibold text-lg text-slate-800 hover:text-accent font-heading transition-colors">
                         <span class="text-left w-[90%]">Qual é o formato para empresas (turmas in-company)?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform text-accent icon-plus shrink-0"></i>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 transition-transform text-accent icon-plus shrink-0"></i>
                     </button>
                     <div class="accordion-content">
                         <div>
-                            <div class="p-6 pt-0 text-slate-600 text-sm border-t border-gray-100 mt-2 pt-4 font-light leading-relaxed">
-                                Enviamos a equipe técnica e instrutores até o seu pátio ou obra. Assim, o operador executa o treinamento precisamente nas condições e equipamentos (máquinas) reais que já fazem parte da rotina, gerando aprovação total na hora do serviço diário.
+                            <div
+                                class="p-6 pt-0 text-slate-600 text-sm border-t border-gray-100 mt-2 pt-4 font-light leading-relaxed">
+                                Enviamos a equipe técnica e instrutores até o seu pátio ou obra. Assim, o operador
+                                executa o treinamento precisamente nas condições e equipamentos (máquinas) reais que já
+                                fazem parte da rotina, gerando aprovação total na hora do serviço diário.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion-item bg-white rounded-sm overflow-hidden box-shadow transition-all duration-300 border border-gray-200">
-                    <button class="accordion-header w-full flex justify-between items-center p-6 font-semibold text-lg text-slate-800 hover:text-accent font-heading transition-colors">
+                <div
+                    class="accordion-item bg-white rounded-sm overflow-hidden box-shadow transition-all duration-300 border border-gray-200">
+                    <button
+                        class="accordion-header w-full flex justify-between items-center p-6 font-semibold text-lg text-slate-800 hover:text-accent font-heading transition-colors">
                         <span class="text-left w-[90%]">Vocês integram certificatórios em combos unificados?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform text-accent icon-plus shrink-0"></i>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 transition-transform text-accent icon-plus shrink-0"></i>
                     </button>
                     <div class="accordion-content">
                         <div>
-                            <div class="p-6 pt-0 text-slate-600 text-sm border-t border-gray-100 mt-2 pt-4 font-light leading-relaxed">
-                                É perfeitamente possível e comum compor combos unindo Movimentação de Carga, NR-11, Trabalho em Altura (NR-35) e até terraplanagem paralelamente. Nós estruturamos a carga horária em matriz ótima para que o colaborador pare de produzir o mínimo de dias possíveis.
+                            <div
+                                class="p-6 pt-0 text-slate-600 text-sm border-t border-gray-100 mt-2 pt-4 font-light leading-relaxed">
+                                É perfeitamente possível e comum compor combos unindo Movimentação de Carga, NR-11,
+                                Trabalho em Altura (NR-35) e até terraplanagem paralelamente. Nós estruturamos a carga
+                                horária em matriz ótima para que o colaborador pare de produzir o mínimo de dias
+                                possíveis.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion-item bg-white rounded-sm overflow-hidden box-shadow transition-all duration-300 border border-gray-200">
-                    <button class="accordion-header w-full flex justify-between items-center p-6 font-semibold text-lg text-slate-800 hover:text-accent font-heading transition-colors">
+                <div
+                    class="accordion-item bg-white rounded-sm overflow-hidden box-shadow transition-all duration-300 border border-gray-200">
+                    <button
+                        class="accordion-header w-full flex justify-between items-center p-6 font-semibold text-lg text-slate-800 hover:text-accent font-heading transition-colors">
                         <span class="text-left w-[90%]">Os laudos e certificados têm respaldo jurídico?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform text-accent icon-plus shrink-0"></i>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 transition-transform text-accent icon-plus shrink-0"></i>
                     </button>
                     <div class="accordion-content">
                         <div>
-                            <div class="p-6 pt-0 text-slate-600 text-sm border-t border-gray-100 mt-2 pt-4 font-light leading-relaxed">
-                                Absolutamente. Todas as avaliações, pautas operacionais e a emissão dos certificados cumprem religiosamente a cartilha do Ministério do Trabalho/Emprego e os pormenores normativos em vigor. Tudo atestado pela engenharia corporativa STI.
+                            <div
+                                class="p-6 pt-0 text-slate-600 text-sm border-t border-gray-100 mt-2 pt-4 font-light leading-relaxed">
+                                Absolutamente. Todas as avaliações, pautas operacionais e a emissão dos certificados
+                                cumprem religiosamente a cartilha do Ministério do Trabalho/Emprego e os pormenores
+                                normativos em vigor. Tudo atestado pela engenharia corporativa STI.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion-item bg-white rounded-sm overflow-hidden box-shadow transition-all duration-300 border border-gray-200">
-                    <button class="accordion-header w-full flex justify-between items-center p-6 font-semibold text-lg text-slate-800 hover:text-accent font-heading transition-colors">
+                <div
+                    class="accordion-item bg-white rounded-sm overflow-hidden box-shadow transition-all duration-300 border border-gray-200">
+                    <button
+                        class="accordion-header w-full flex justify-between items-center p-6 font-semibold text-lg text-slate-800 hover:text-accent font-heading transition-colors">
                         <span class="text-left w-[90%]">Como recebo um descritivo financeiro?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform text-accent icon-plus shrink-0"></i>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 transition-transform text-accent icon-plus shrink-0"></i>
                     </button>
                     <div class="accordion-content">
                         <div>
-                            <div class="p-6 pt-0 text-slate-600 text-sm border-t border-gray-100 mt-2 pt-4 font-light leading-relaxed">
-                                Preenchendo a ficha curta de contato abaixo (ou chamando no botão fixo do WhatsApp), nossa cúpula de vendas analisa seu quantitativo e os cursos requeridos, provendo proposta formal completa na velocidade do mercado da engenharia.
+                            <div
+                                class="p-6 pt-0 text-slate-600 text-sm border-t border-gray-100 mt-2 pt-4 font-light leading-relaxed">
+                                Preenchendo a ficha curta de contato abaixo (ou chamando no botão fixo do WhatsApp),
+                                nossa cúpula de vendas analisa seu quantitativo e os cursos requeridos, provendo
+                                proposta formal completa na velocidade do mercado da engenharia.
                             </div>
                         </div>
                     </div>
@@ -530,31 +711,42 @@
     <!-- Section: Contato Form -->
     <section class="py-24 bg-brand-blue border-y border-white/5 relative text-white" id="contato">
         <!-- Decoration -->
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:30px_30px] opacity-20 Mix-blend-overlay pointer-events-none"></div>
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:30px_30px] opacity-20 Mix-blend-overlay pointer-events-none">
+        </div>
 
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="grid lg:grid-cols-5 gap-0 rounded-xl overflow-hidden shadow-2xl border border-white/10">
                 <!-- Esquerda -->
-                <div class="p-10 lg:p-16 lg:col-span-2 bg-gradient-to-b from-[#111827] to-[#1F2937] flex flex-col justify-between" data-aos="fade-right">
+                <div class="p-10 lg:p-16 lg:col-span-2 bg-gradient-to-b from-[#111827] to-[#1F2937] flex flex-col justify-between"
+                    data-aos="fade-right">
                     <div>
                         <div class="h-1 w-full bg-accent mb-8 max-w-[60px]"></div>
-                        <h2 class="text-4xl font-extrabold mb-4 font-heading text-white tracking-tight">Adequação técnica agora.</h2>
-                        <p class="text-text-muted text-lg font-light mb-12">Nossa equipe estrutura sua proposta corporativa ou avulsa com exatidão normativa e envio em tempo recorde.</p>
+                        <h2 class="text-4xl font-extrabold mb-4 font-heading text-white tracking-tight">Adequação
+                            técnica agora.</h2>
+                        <p class="text-text-muted text-lg font-light mb-12">Nossa equipe estrutura sua proposta
+                            corporativa ou avulsa com exatidão normativa e envio em tempo recorde.</p>
                     </div>
-                    
+
                     <div class="space-y-6">
-                        <div class="flex items-center gap-4 group cursor-pointer pl-4 border-l-2 border-transparent hover:border-accent transition-all">
+                        <div
+                            class="flex items-center gap-4 group cursor-pointer pl-4 border-l-2 border-transparent hover:border-accent transition-all">
                             <i data-lucide="phone" class="w-6 h-6 text-accent"></i>
                             <div>
-                                <p class="text-xs uppercase text-text-muted tracking-widest font-semibold mb-1">Contato Direto</p>
-                                <p class="text-xl font-bold text-white group-hover:text-accent transition">+55 31 90000-0000</p>
+                                <p class="text-xs uppercase text-text-muted tracking-widest font-semibold mb-1">Contato
+                                    Direto</p>
+                                <p class="text-xl font-bold text-white group-hover:text-accent transition">+55 31
+                                    90000-0000</p>
                             </div>
                         </div>
-                        <div class="flex items-center gap-4 group cursor-pointer pl-4 border-l-2 border-transparent hover:border-accent transition-all">
+                        <div
+                            class="flex items-center gap-4 group cursor-pointer pl-4 border-l-2 border-transparent hover:border-accent transition-all">
                             <i data-lucide="mail" class="w-6 h-6 text-accent"></i>
                             <div>
-                                <p class="text-xs uppercase text-text-muted tracking-widest font-semibold mb-1">Email Comercial</p>
-                                <p class="text-md font-bold text-white group-hover:text-accent transition">comercial@stiengenharia.com</p>
+                                <p class="text-xs uppercase text-text-muted tracking-widest font-semibold mb-1">Email
+                                    Comercial</p>
+                                <p class="text-md font-bold text-white group-hover:text-accent transition">
+                                    comercial@stiengenharia.com</p>
                             </div>
                         </div>
                     </div>
@@ -565,30 +757,48 @@
                     <form class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Responsável</label>
-                                <input type="text" class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none" placeholder="Ex: Engenheiro Silva" required>
+                                <label
+                                    class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Responsável</label>
+                                <input type="text"
+                                    class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none"
+                                    placeholder="Ex: Engenheiro Silva" required>
                             </div>
                             <div>
-                                <label class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Empresa (Opcional)</label>
-                                <input type="text" class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none" placeholder="Nome / CNPJ">
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Telefone / WhatsApp</label>
-                                <input type="tel" class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none" placeholder="(00) 00000-0000" required>
-                            </div>
-                            <div>
-                                <label class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">E-mail Corporativo</label>
-                                <input type="email" class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none" placeholder="contato@empresa.com" required>
+                                <label
+                                    class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Empresa
+                                    (Opcional)</label>
+                                <input type="text"
+                                    class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none"
+                                    placeholder="Nome / CNPJ">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Treinamento Base</label>
-                                <select class="w-full bg-brand-blue border-b border-white/20 px-0 py-2 text-white focus:outline-none focus:border-accent transition-colors font-medium rounded-none cursor-pointer">
+                                <label
+                                    class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Telefone
+                                    / WhatsApp</label>
+                                <input type="tel"
+                                    class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none"
+                                    placeholder="(00) 00000-0000" required>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">E-mail
+                                    Corporativo</label>
+                                <input type="email"
+                                    class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none"
+                                    placeholder="contato@empresa.com" required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label
+                                    class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Treinamento
+                                    Base</label>
+                                <select
+                                    class="w-full bg-brand-blue border-b border-white/20 px-0 py-2 text-white focus:outline-none focus:border-accent transition-colors font-medium rounded-none cursor-pointer">
                                     <option value="">Selecionar área principal</option>
                                     <option value="movimentacao">Movimentação Acoplada (Guindaste, Munck, etc)</option>
                                     <option value="terraplanagem">Terraplanagem (Escavadeiras, Tratores)</option>
@@ -596,17 +806,25 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Qtd de Colaboradores</label>
-                                <input type="number" class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none" placeholder="0">
+                                <label class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Qtd
+                                    de Colaboradores</label>
+                                <input type="number"
+                                    class="w-full bg-brand-blue/50 border-b border-white/20 px-0 py-2 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium rounded-none"
+                                    placeholder="0">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Necessidade/Contexto Operacional</label>
-                            <textarea rows="2" class="w-full bg-brand-blue-light/50 border border-white/10 rounded px-4 py-3 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium mt-1 resize-none text-sm" placeholder="Ex: Precisamos certificar 5 colaboradores em ponte rolante para a central sul no mês de julho."></textarea>
+                            <label
+                                class="block text-xs uppercase text-text-muted mb-2 font-bold tracking-wider">Necessidade/Contexto
+                                Operacional</label>
+                            <textarea rows="2"
+                                class="w-full bg-brand-blue-light/50 border border-white/10 rounded px-4 py-3 text-white placeholder-text-muted/50 focus:outline-none focus:border-accent transition-colors font-medium mt-1 resize-none text-sm"
+                                placeholder="Ex: Precisamos certificar 5 colaboradores em ponte rolante para a central sul no mês de julho."></textarea>
                         </div>
 
-                        <button type="button" class="bg-accent hover:bg-accent-hover text-brand-blue font-bold px-8 py-5 rounded text-center w-full uppercase tracking-widest text-sm transition-all transform hover:-translate-y-0.5 pt-4 mt-6 shadow-[0_5px_15px_rgba(234,179,8,0.2)]">
+                        <button type="button"
+                            class="bg-accent hover:bg-accent-hover text-brand-blue font-bold px-8 py-5 rounded text-center w-full uppercase tracking-widest text-sm transition-all transform hover:-translate-y-0.5 pt-4 mt-6 shadow-[0_5px_15px_rgba(234,179,8,0.2)]">
                             Solicitar Elaboração de Proposta
                         </button>
                     </form>
@@ -618,36 +836,47 @@
     <!-- Footer -->
     <footer class="bg-brand-blue py-12 border-t border-white/5">
         <div class="container mx-auto px-6 max-w-7xl">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 mb-10 border-b border-white/5 pb-10">
+            <div
+                class="flex flex-col lg:flex-row items-center justify-between gap-8 mb-10 border-b border-white/5 pb-10">
                 <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                     <!-- Invertendo a cor da logo escuro no rodapé para ficar branca -->
-                    <img src="/logo-sti.png" alt="STI Engenharia" class="h-14 lg:h-16 w-auto object-contain mb-6 filter brightness-0 invert opacity-90">
-                    <p class="text-text-muted text-sm font-light uppercase tracking-wider">Engenharia e Capacitação Corporativa</p>
+                    <img src="/logo-sti.png" alt="STI Engenharia"
+                        class="h-14 lg:h-16 w-auto object-contain mb-6 filter brightness-0 invert opacity-90">
+                    <p class="text-text-muted text-sm font-light uppercase tracking-wider">Engenharia e Capacitação
+                        Corporativa</p>
                 </div>
-                
+
                 <div class="flex gap-4">
                     <!-- Email -->
-                    <a href="mailto:contato@stiengenharia.com.br" class="glass-dark w-12 h-12 rounded flex items-center justify-center hover:bg-accent hover:text-brand-blue transition-colors text-white border border-white/10 group">
+                    <a href="mailto:contato@stiengenharia.com.br"
+                        class="glass-dark w-12 h-12 rounded flex items-center justify-center hover:bg-accent hover:text-brand-blue transition-colors text-white border border-white/10 group">
                         <i data-lucide="mail" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
                     </a>
                     <!-- Instagram -->
-                    <a href="#" class="glass-dark w-12 h-12 rounded flex items-center justify-center hover:bg-accent hover:text-brand-blue transition-colors text-white border border-white/10 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 group-hover:scale-110 transition-transform">
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                    <a href="#"
+                        class="glass-dark w-12 h-12 rounded flex items-center justify-center hover:bg-accent hover:text-brand-blue transition-colors text-white border border-white/10 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-5 h-5 group-hover:scale-110 transition-transform">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                         </svg>
                     </a>
                     <!-- WhatsApp (Custom SVG Official Logo) -->
-                    <a href="https://wa.me/5531900000000" class="glass-dark w-12 h-12 rounded flex items-center justify-center hover:bg-accent hover:text-brand-blue transition-colors text-white border border-white/10 group">
-                        <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                    <a href="https://wa.me/5531900000000"
+                        class="glass-dark w-12 h-12 rounded flex items-center justify-center hover:bg-accent hover:text-brand-blue transition-colors text-white border border-white/10 group">
+                        <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
                         </svg>
                     </a>
                 </div>
             </div>
-            
-            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-text-muted font-light uppercase tracking-widest">
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-xs text-text-muted font-light uppercase tracking-widest">
                 <p>&copy; 2026 STI Engenharia. <span class="hidden md:inline">Todos os direitos reservados.</span></p>
                 <div class="flex gap-6 mt-4 md:mt-0">
                     <a href="#" class="hover:text-accent transition-colors">Termos</a>
@@ -659,7 +888,8 @@
     </footer>
 
     <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/5531900000000" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:scale-110 transition-transform duration-300 z-[90] group">
+    <a href="https://wa.me/5531900000000" target="_blank"
+        class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:scale-110 transition-transform duration-300 z-[90] group">
         <i data-lucide="message-circle" class="w-7 h-7"></i>
         <!-- Ping Effect -->
         <span class="absolute inset-0 rounded-full border border-[#25D366] animate-ping opacity-75"></span>
@@ -674,9 +904,9 @@
         lucide.createIcons();
 
         // Inicializar AOS
-        AOS.init({ 
-            once: true, 
-            offset: 80, 
+        AOS.init({
+            once: true,
+            offset: 80,
             duration: 800,
             easing: 'custom-ease-out-back'
         });
@@ -684,7 +914,7 @@
         // Navbar Scroll Handler
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if(window.scrollY > 50) {
+            if (window.scrollY > 50) {
                 navbar.classList.add('py-2', 'md:py-2');
                 navbar.classList.remove('py-3', 'md:py-4');
             } else {
@@ -701,7 +931,7 @@
 
         const toggleMenu = () => {
             menuOpen = !menuOpen;
-            if(menuOpen) {
+            if (menuOpen) {
                 mobileMenu.classList.remove('hidden');
                 setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
                 document.body.style.overflow = 'hidden';
@@ -743,4 +973,5 @@
         });
     </script>
 </body>
+
 </html>

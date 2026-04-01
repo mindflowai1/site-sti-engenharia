@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia de Incêndio | STI Engenharia</title>
+    <meta name="description"
+        content="Projetos, laudos, obtenção de AVCB e instalação de sistemas de combate a incêndio. Soluções completas com excelência técnica.">
+
+    <!-- CSS AOS (Animações) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS Principal -->
+    <link href="/src/styles/main.css" rel="stylesheet">
+
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            /* Dark blue/black for main text & headings */
+            --light-bg: #f8f9fa;
+            /* Light neutral bg */
+            --accent-brand: #eab308;
+            /* Brand Yellow accent */
+            --accent-brand-hover: #ca8a04;
+            --dark-text: #333333;
+            /* Body text */
+            --light-text: #eeeeee;
+            /* Text on dark bg */
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--dark-text);
+            font-family: var(--font-body);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: inherit;
+            font-family: var(--font-heading);
+        }
+
+        /* Glassmorphism clean/light variant */
+        .glass-clean {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Accordion CSS Transition - Minimalist Version */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-content>div {
+            overflow: hidden;
+            padding-left: 1.5rem;
+            /* Space to breathe from the indicator bar */
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            padding-right: 0.5rem;
+        }
+
+        .accordion-header {
+            padding-left: 1.5rem;
+            /* Space to breathe from the indicator bar for the TITLE too */
+        }
+
+        /* The active indicator line */
+        .accordion-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            bottom: 1rem;
+            width: 2px;
+            /* Thinner for elegance */
+            background-color: var(--accent-brand);
+            transform: scaleY(0);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+            border-radius: 99px;
+        }
+
+        .accordion-item.is-open::before {
+            transform: scaleY(1);
+        }
+
+        .accordion-item.is-open {
+            background-color: rgba(234, 179, 8, 0.02);
+            /* Very subtle tint when open */
+        }
+
+        .accordion-item.is-open .accordion-content {
+            grid-template-rows: 1fr;
+        }
+
+        .accordion-item.is-open .icon-plus {
+            transform: rotate(45deg);
+            color: var(--accent-brand) !important;
+        }
+
+        .accordion-item.is-open .accordion-header-text {
+            color: var(--primary-color) !important;
+            font-weight: 800;
+        }
+
+        /* Button standard */
+        .btn-primary {
+            background-color: var(--accent-brand);
+            color: #1a202c;
+            /* Text dark enough for contrast against yellow */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(234, 179, 8, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-brand-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(234, 179, 8, 0.4);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        /* Input form style adjustments */
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            color: #2c3e50;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-brand);
+            box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.15);
+        }
+
+        /* Premium Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.05),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(234, 179, 8, 0.4);
+            box-shadow:
+                0 25px 50px rgba(0, 0, 0, 0.08),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Hero Badge Premium Glass */
+        .hero-badge-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Dark-section Glassmorphism Cards — high contrast on #415161 */
+        .glass-card-dark {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px) saturate(140%);
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card-dark:hover {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(234, 179, 8, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Dark-section inner feature cards */
+        .dark-feature-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .dark-feature-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(234, 179, 8, 0.3);
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-[#eab308] selection:text-[#1a202c] relative overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 glass-clean">
+        <div class="container mx-auto px-5 lg:px-8 max-w-7xl flex items-center justify-between">
+            <a href="/" class="flex items-center z-50 shrink-0">
+                <img src="/logo-sti.png" alt="STI Engenharia" class="w-40 md:w-52 h-auto object-contain transition-all"
+                    id="nav-logo">
+            </a>
+
+            <nav
+                class="hidden md:flex items-center gap-10 font-heading font-medium text-[15px] text-[#2c3e50] tracking-wide">
+                <a href="#setores" class="hover:text-[#eab308] transition-colors relative group">
+                    Especialidades
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#eab308] transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#solucoes" class="hover:text-[#eab308] transition-colors relative group">
+                    Portfólio de Soluções
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#eab308] transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#diferenciais" class="hover:text-[#eab308] transition-colors relative group">
+                    O Padrão STI
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#eab308] transition-all group-hover:w-full"></span>
+                </a>
+            </nav>
+
+            <div class="hidden md:block">
+                <a href="#formulario-contato"
+                    class="btn-primary font-bold px-7 py-2.5 rounded-full text-sm inline-flex items-center gap-2 tracking-wide uppercase">
+                    Diagnóstico Gratuito
+                </a>
+            </div>
+
+            <!-- Mobile Menu Btn -->
+            <button id="mobile-menu-btn" class="md:hidden text-[#2c3e50] z-50 focus:outline-none p-2 shrink-0">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-[#f8f9fa] z-40 flex flex-col justify-center items-center gap-10 pt-20 hidden opacity-0 transition-opacity duration-300">
+        <a href="#setores"
+            class="text-2xl font-heading font-bold text-[#2c3e50] hover:text-[#eab308] mobile-link transition-colors">Especialidades</a>
+        <a href="#solucoes"
+            class="text-2xl font-heading font-bold text-[#2c3e50] hover:text-[#eab308] mobile-link transition-colors">Portfólio
+            de Soluções</a>
+        <a href="#diferenciais"
+            class="text-2xl font-heading font-bold text-[#2c3e50] hover:text-[#eab308] mobile-link transition-colors">O
+            Padrão STI</a>
+        <a href="#formulario-contato"
+            class="btn-primary font-bold px-8 py-5 mt-4 rounded-full text-lg mobile-link shadow-lg w-3/4 text-center">
+            Solicitar Diagnóstico
+        </a>
+    </div>
+
+    <!-- Hero Section: Full Screen, Refined Proportions -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#f8f9fa] pt-32 pb-20">
+
+        <!-- Geometric minimal background details -->
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-40">
+            </div>
+            <div
+                class="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#eab308] opacity-[0.03] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-[#2c3e50] opacity-[0.02] rounded-full blur-[150px] translate-y-1/3 -translate-x-1/4">
+            </div>
+        </div>
+
+        <div
+            class="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+
+            <div class="flex flex-col justify-center py-12" data-aos="fade-up" data-aos-duration="1000">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 bg-white/80 backdrop-blur-sm shadow-sm text-[#2c3e50] font-bold text-[10px] tracking-[0.2em] uppercase mb-10 w-fit">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#eab308]"></span>
+                    Engenharia de Incêndio Avançada
+                </div>
+
+                <h1
+                    class="text-5xl md:text-6xl lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-8 text-[#2c3e50]">
+                    Segurança <br class="hidden md:block" /> Técnica. <br />
+                    <span class="text-[#eab308] relative">
+                        Legislação
+                        <svg class="absolute -bottom-2 left-0 w-full h-3 text-[#eab308] opacity-20" viewBox="0 0 100 20"
+                            preserveAspectRatio="none">
+                            <path d="M0 10 Q 50 20 100 10" stroke="currentColor" stroke-width="6" fill="transparent" />
+                        </svg>
+                    </span> <br class="hidden md:block" />
+                    Garantida.
+                </h1>
+
+                <p class="text-lg text-gray-500 mb-12 font-light leading-relaxed max-w-lg">
+                    Expertise em laudos, projetos e aprovações de AVCB para infraestruturas complexas. Redução drástica
+                    de riscos operacionais com rigor técnico STI.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-5 mb-16">
+                    <a href="#formulario-contato"
+                        class="btn-primary px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs">
+                        Regularizar Agora <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://wa.me/5531900000000" target="_blank"
+                        class="btn-outline bg-white/50 backdrop-blur-sm px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs shadow-sm hover:shadow-md">
+                        <i data-lucide="phone" class="w-4 h-4"></i> Consultorias
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-8 pt-10 border-t border-gray-100">
+                    <div class="flex -space-x-3">
+                        <div class="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-11 h-11 rounded-full border-2 border-white bg-gray-300 overflow-hidden shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="w-11 h-11 rounded-full border-2 border-white bg-[#f8f9fa] flex items-center justify-center text-[#2c3e50] font-black text-[10px] shadow-sm">
+                            +500</div>
+                    </div>
+                    <div>
+                        <p class="font-black text-[#2c3e50] text-sm uppercase tracking-wider">AVCBs Emitidos</p>
+                        <p class="text-gray-400 text-xs font-light">Aprovação técnica sem embargos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side: Visual Harmony -->
+            <div class="relative hidden lg:flex items-center justify-center h-full py-20" data-aos="zoom-out"
+                data-aos-duration="1500">
+                <!-- Main Image Container -->
+                <div
+                    class="relative w-full max-w-[550px] aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-15px_rgba(44,62,80,0.15)] group z-10">
+                    <img src="/ultra-realistic_industrial_scene,_202604011733.png" alt="Sistemas de Segurança STI"
+                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#2c3e50]/40 via-transparent to-transparent">
+                    </div>
+                </div>
+
+                <!-- Floating Badges: Premium Glass - Now outside for proper layering -->
+                <div class="absolute -left-12 top-1/4 hero-badge-glass p-5 rounded-[2rem] flex items-center gap-4 z-20 transition-transform hover:-translate-y-2 duration-500"
+                    data-aos="fade-right" data-aos-delay="500">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-[#eab308]/10 text-[#eab308] flex items-center justify-center shrink-0 shadow-inner">
+                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                    </div>
+                    <div class="pr-4">
+                        <p class="text-[11px] font-black text-[#2c3e50] uppercase tracking-widest leading-none mb-1">
+                            Normas ABNT</p>
+                        <p class="text-[10px] text-gray-500 font-light mt-0.5">100% Conformidade</p>
+                    </div>
+                </div>
+
+                <div class="absolute -right-10 bottom-1/4 hero-badge-glass p-5 rounded-[2rem] flex items-center gap-4 z-20 transition-transform hover:translate-y-2 duration-500"
+                    data-aos="fade-left" data-aos-delay="700">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0 shadow-inner">
+                        <i data-lucide="shield" class="w-6 h-6"></i>
+                    </div>
+                    <div class="pr-4">
+                        <p class="text-[11px] font-black text-[#2c3e50] uppercase tracking-widest leading-none mb-1">
+                            Agilidade STI</p>
+                        <p class="text-[10px] text-gray-500 font-light mt-0.5">Processos Expressos</p>
+                    </div>
+                </div>
+
+                <!-- Bottom accent decoration -->
+                <div
+                    class="absolute -bottom-4 right-10 w-24 h-24 bg-[#eab308] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse z-0">
+                </div>
+            </div>
+
+            <!-- Bottom accent decoration -->
+            <div
+                class="absolute -bottom-4 right-10 w-24 h-24 bg-[#eab308] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <!-- Sectors Section: Dark Premium -->
+    <section class="py-28 bg-[#415161] relative overflow-hidden" id="setores">
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight"
+                    style="color: #ffffff;">
+                    Mitigação de Riscos Críticos <br> em <span style="color: #eab308;">Alto Desempenho</span>
+                </h2>
+                <div class="w-24 h-1 bg-[#eab308] mx-auto rounded-full mb-8"></div>
+                <p class="font-light text-lg leading-relaxed" style="color: rgba(255,255,255,0.75);">
+                    Soluções personalizadas adequadas às exigências do Corpo de Bombeiros,
+                    específicas para as complexidades da sua infraestrutura.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 glass-card-dark rounded-[2rem] group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500"
+                        style="background: rgba(234,179,8,0.15); color: #eab308;">
+                        <i data-lucide="factory" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Plantas Industriais</h3>
+                    <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.7);">Sistemas de supressão
+                        especial para
+                        salas elétricas, maquinário importado e centros logísticos de alta escala.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-8 glass-card-dark rounded-[2rem] group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500"
+                        style="background: rgba(234,179,8,0.15); color: #eab308;">
+                        <i data-lucide="building-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Condomínios</h3>
+                    <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.7);">Renovação de AVCB, revisões
+                        em
+                        bombas de hidrante, para-raios e laudos estruturais conclusivos.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-8 glass-card-dark rounded-[2rem] group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500"
+                        style="background: rgba(234,179,8,0.15); color: #eab308;">
+                        <i data-lucide="tent" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Grandes Eventos</h3>
+                    <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.7);">Projetos Temporários
+                        Especiais (PET).
+                        Liberação expressa junto às autoridades e brigada civil profissional.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="p-8 glass-card-dark rounded-[2rem] group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500"
+                        style="background: rgba(234,179,8,0.15); color: #eab308;">
+                        <i data-lucide="utensils-crossed" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Cozinhas</h3>
+                    <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.7);">Detecção e extinção
+                        Saponificante,
+                        mandatório em shoppings centers e polos comerciais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Catalog: Clean Light Minimalist Accordions -->
+    <section class="py-24 bg-[#f8f9fa] relative border-y border-gray-100" id="solucoes">
+        <div class="container mx-auto px-6 max-w-5xl relative z-10">
+            <div class="mb-16 md:flex justify-between items-end border-b border-gray-200 pb-8" data-aos="fade-up">
+                <div>
+                    <span class="text-[#eab308] uppercase font-bold tracking-widest text-xs mb-3 block">Diretrizes
+                        Práticas</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2c3e50] font-heading">Portfólio
+                        de Soluções</h2>
+                </div>
+                <p class="text-gray-500 font-light mt-4 md:mt-0 text-sm max-w-xs md:text-right">
+                    Selecione a categoria para descobrir nosso escopo completo de atuação técnica.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-x-16 gap-y-12">
+                <!-- Group 1: Engenharia e Laudos -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-bold pb-4 text-[#2c3e50] flex items-center gap-3">
+                        <i data-lucide="file-signature" class="w-5 h-5 text-[#eab308]"></i>
+                        Compliance & Certificações
+                    </h3>
+
+                    <div class="mt-2 accordion-group">
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Emissão
+                                    e Renovação de AVCB</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Gestão completa do Auto de Vistoria do Corpo de Bombeiros. Realizamos a inspeção
+                                        prévia, recolhimento de ARTs e acompanhamento até o deferimento.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Engenharia
+                                    de Incêndio (Projeto)</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Dimensionamento de medidas de segurança em AutoCAD/BIM. Cálculo populacional,
+                                        hidrantes, rotas de fuga e aprovação legal.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Laudos
+                                    Técnicos e Estruturais</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Vistorias rigorosas em para-raios (SPDA), testes de estanqueidade de gás,
+                                        estanqueidade em redes de hidrantes e laudos compressores.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Diagnóstico
+                                    e Vistoria Prévia</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Assegure-se de que a vistoria oficial seja um sucesso agendando um diagnóstico
+                                        pré-avaliação com nossos engenheiros peritos.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2: Supressão e Combate -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-lg font-bold pb-4 text-[#2c3e50] flex items-center gap-3">
+                        <i data-lucide="droplet" class="w-5 h-5 text-[#eab308]"></i>
+                        Sistemas de Extinção
+                    </h3>
+
+                    <div class="mt-2 accordion-group">
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Redes
+                                    de Hidrantes e Chuveiros (Sprinklers)</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Infraestrutura hidráulica de alta pressão para galpões e shoppings. Inclui
+                                        montagem de reservatórios e Testes de Funcionamento.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Gases
+                                    Limpos (FM-200, Novec 1230, CO2)</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Ideais para Data Centers, centrais de telefonia e museus. Abafam as chamas
+                                        através da neutralização química/física sem destruir os bens e sem conduzir
+                                        eletricidade.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Sistema
+                                    Saponificante de Cozinhas</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Detecção mecânica sob coifas que aciona um gás especial. O gás entra em contato
+                                        com óleo inflamado formando uma espuma saponificada inerte instantaneamente.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Rede
+                                    de LGE (Líquido Gerador de Espuma)</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Tecnologia essencial para indústrias químicas, refinarias e tanques de fluidos
+                                        inflamáveis. Cria um lençol que isola vapores inflamáveis do oxigênio
+                                        atmosférico.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Portfólio
+                                    de Extintores de Incêndio</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Venda, dimensionamento de área de cobertura, recarga e inspeção anual técnica em
+                                        linhas de extintores Pó ABC, AP, BC (CO2).
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Detecção e Alerta -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-lg font-bold pb-4 text-[#2c3e50] flex items-center gap-3">
+                        <i data-lucide="bell-ring" class="w-5 h-5 text-[#eab308]"></i>
+                        Detecção Inteligente & Rotas
+                    </h3>
+
+                    <div class="mt-2 accordion-group">
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Sistemas
+                                    de Alarme e SDAI Endereçado</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Integração de painéis centrais que identificam com precisão matemática em qual
+                                        andar ou sensor específico o foco de calor central ou fumaça se formou,
+                                        permitindo resposta ultrarrápida.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Iluminação
+                                    de Emergência Normativa</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Concepção luxométrica e montagem das luzes guiadas contra blecautes totais,
+                                        compostas mediante centrais autônomas de autonomia > 3 horas.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Sinalização
+                                    Fotoluminescente ABNT</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Mapas de abandono em braille e resinate pigmentar ativo, essenciais para
+                                        visibilidade sob cenários densamente bloqueados por colunas de monóxido nas
+                                        fugas de escadas protegidas.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 4: Brigada e Execução -->
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-lg font-bold pb-4 text-[#2c3e50] flex items-center gap-3">
+                        <i data-lucide="users" class="w-5 h-5 text-[#eab308]"></i>
+                        Prevenção Humana & Obras
+                    </h3>
+
+                    <div class="mt-2 accordion-group">
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Instalação
+                                    e Execução de Obras de Incêndio</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Fornecimento de pessoal caldeireiro, encanador de tubulações vermelhas e
+                                        engenheiros civis de apoio para tornar o papel do projeto em alvenaria
+                                        perfeitamente validável em auditorias.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Treinamentos
+                                    de Brigada de Incêndio (RT 14)</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Nossos instrutores habilitam periodicamente times internos com cenários
+                                        simulacros contínuos, abandono de área, suporte a RCP médica e uso do CO2.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent">
+                            <button
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                <span
+                                    class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Locação
+                                    e Outsorcing de Bombeiro Civil Profissional</span>
+                                <i data-lucide="plus"
+                                    class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div>
+                                    <div class="pb-5 pt-1 text-gray-500 text-[14px] leading-relaxed font-light">
+                                        Terceirização de especialistas para cobertura presencial 24/7 nos perímetros das
+                                        áreas de fábricas e festivais imensos de arena, suprindo com contingentes
+                                        técnicos capacitados.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto / Diferenciais Dark Premium -->
+    <section class="py-28 bg-[#415161] relative overflow-hidden" id="diferenciais">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid lg:grid-cols-12 gap-16 relative z-10 items-center">
+                <div class="lg:col-span-5" data-aos="fade-right">
+                    <span
+                        class="inline-block px-4 py-1.5 border rounded-full mb-8 text-[10px] font-bold uppercase tracking-[0.2em]"
+                        style="background: rgba(234,179,8,0.15); color: #eab308; border-color: rgba(234,179,8,0.3);">
+                        O Padrão STI
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight leading-tight"
+                        style="color: #ffffff;">
+                        Solidez. <br>
+                        Estratégia. <br>
+                        <span style="color: #eab308;">Resultados.</span>
+                    </h2>
+                    <p class="font-light leading-relaxed mb-10 text-lg" style="color: rgba(255,255,255,0.75);">
+                        Não vendemos apenas burocracia despachada. Na STI, o projeto é sinergizado com a melhor
+                        aplicabilidade material, gerando um custo-benefício implacável e certificação veloz por
+                        nossos agentes.
+                    </p>
+
+                    <a href="#formulario-contato"
+                        class="inline-flex items-center gap-2 font-bold transition-colors group"
+                        style="color: #eab308;">
+                        Solicite uma avaliação técnica
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6" data-aos="fade-left">
+                    <div class="dark-feature-card p-8 rounded-2xl">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-5"
+                            style="background: rgba(234,179,8,0.15); color: #eab308;">
+                            <i data-lucide="file-check" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3" style="color: #ffffff;">Zero Surpresas na Obra</h4>
+                        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.7);">Nossos métodos
+                            compatibilizam
+                            dutologia de tubos aos vigamentos existentes com BIM. Custo 100% previsto no projeto,
+                            sem perdas em modificações da construtora.</p>
+                    </div>
+                    <div class="dark-feature-card p-8 rounded-2xl">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-5"
+                            style="background: rgba(255,255,255,0.1); color: #ffffff;">
+                            <i data-lucide="timer" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3" style="color: #ffffff;">Rapidez Regulatória</h4>
+                        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.7);">Conexão irrestrita na
+                            comunicação fluida entre laudos e conselhos fiscalizadores assegura uma celeridade nos
+                            trâmites para não paralisar seus alvarás.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Contato Lead Capture -->
+    <!-- Formulário de Contato Lead Capture - Premium Split Design -->
+    <section class="py-32 bg-[#f8f9fa] relative border-t border-gray-200 overflow-hidden" id="formulario-contato">
+        <!-- Ambient Background Glows -->
+        <div
+            class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#eab308] rounded-full mix-blend-multiply filter blur-[100px] opacity-10 pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#415161] rounded-full mix-blend-multiply filter blur-[120px] opacity-5 pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 max-w-6xl relative z-10" data-aos="fade-up">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-[#2c3e50] border border-gray-200 text-xs font-bold uppercase tracking-widest rounded-full mb-6 shadow-sm">
+                    <i data-lucide="shield" class="w-3.5 h-3.5 text-[#eab308]"></i> Diagnóstico Exclusivo
+                </span>
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2c3e50] leading-tight mb-5">
+                    Eleve o Nível da Sua <br><span class="text-[#eab308]">Segurança Regulatória</span>
+                </h2>
+                <p class="text-gray-500 font-light text-lg max-w-2xl mx-auto">
+                    Converse com nossos engenheiros especialistas para desenharmos uma estratégia contra incêndio à
+                    prova de falhas para sua infraestrutura.
+                </p>
+            </div>
+
+            <!-- The Premium Split Card -->
+            <div
+                class="bg-white rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden flex flex-col lg:flex-row relative">
+
+                <!-- Left Side: Contact Info -->
+                <div
+                    class="lg:w-2/5 bg-[#415161] text-white p-12 relative overflow-hidden flex flex-col justify-between">
+                    <!-- Geometric Accents -->
+                    <div
+                        class="absolute -bottom-24 -right-24 w-64 h-64 border-[30px] border-white/5 rounded-full pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute top-12 -right-8 w-32 h-32 bg-[#eab308]/10 rounded-full blur-2xl pointer-events-none">
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-extrabold mb-4 leading-tight">Fale com a <br>STI Engenharia</h3>
+                        <p class="text-white/70 font-light text-sm mb-12 leading-relaxed">
+                            Preencha o formulário e um especialista fará a análise inicial do seu caso em até 24 horas
+                            úteis.
+                        </p>
+
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-5 group">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#eab308] group-hover:text-[#415161] transition-colors duration-300">
+                                    <i data-lucide="phone" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">Telefone /
+                                        WhatsApp</p>
+                                    <a href="#"
+                                        class="text-lg font-semibold hover:text-[#eab308] transition-colors">(31)
+                                        99999-9999</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-5 group">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#eab308] group-hover:text-[#415161] transition-colors duration-300">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">E-mail
+                                        Profissional</p>
+                                    <a href="mailto:contato@stiengenharia.com"
+                                        class="text-lg font-semibold hover:text-[#eab308] transition-colors">contato@stiengenharia.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-5 group">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#eab308] group-hover:text-[#415161] transition-colors duration-300">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">Localização
+                                    </p>
+                                    <p class="text-lg font-semibold leading-relaxed">Belo Horizonte, MG<br><span
+                                            class="text-white/60 text-sm font-normal">Atendimento Nacional</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: The Form -->
+                <div class="lg:w-3/5 p-12 bg-white relative">
+                    <form action="#" method="POST" class="space-y-6 relative z-10 h-full flex flex-col justify-center">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label for="nome"
+                                    class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">Nome
+                                    Completo</label>
+                                <input type="text" id="nome" name="nome" required placeholder="Ex: Carlos Albuquerque"
+                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="empresa"
+                                    class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">Empresa
+                                    / Condomínio</label>
+                                <input type="text" id="empresa" name="empresa" placeholder="Nome da organização"
+                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label for="email"
+                                    class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">E-mail
+                                    Profissional</label>
+                                <input type="email" id="email" name="email" required
+                                    placeholder="contato@empresa.com.br"
+                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="telefone"
+                                    class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">Telefone
+                                    (WhatsApp)</label>
+                                <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000"
+                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="mensagem"
+                                class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">Como
+                                podemos ajudar?</label>
+                            <textarea id="mensagem" name="mensagem" rows="3" required
+                                placeholder="Descreva brevemente sua necessidade..."
+                                class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] resize-none"></textarea>
+                        </div>
+
+                        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+                            <p
+                                class="text-xs text-gray-400 font-medium flex items-center gap-2 max-w-[200px] leading-relaxed">
+                                <i data-lucide="lock" class="w-4 h-4 shrink-0"></i> Seus dados estão todos 100% seguros.
+                            </p>
+                            <button type="submit"
+                                class="w-full sm:w-auto bg-[#eab308] hover:bg-[#ca8a04] text-[#1a202c] font-extrabold px-10 py-4 rounded-xl transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(234,179,8,0.5)] hover:shadow-[0_12px_25px_-6px_rgba(234,179,8,0.6)] hover:-translate-y-1 flex justify-center items-center gap-3 group">
+                                Enviar Solicitação
+                                <i data-lucide="arrow-right"
+                                    class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Premium Contrast Theme -->
+    <footer class="bg-[#2c3e50] pt-24 pb-12 border-t border-[#1a2530]" style="color: #ffffff;">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                <!-- Brand Info -->
+                <div class="md:col-span-5 flex flex-col items-start text-left">
+                    <img src="/logo-sti.png" alt="STI Engenharia"
+                        class="h-16 w-auto object-contain mb-8 filter brightness-0 invert opacity-95">
+                    <p class="text-sm font-light leading-relaxed mb-8 max-w-sm" style="color: rgba(255,255,255,0.7);">
+                        Excelência em Engenharia Contra Incêndio. Legalizamos patrimônios complexos com o aval rigoroso
+                        para blindar organizações de riscos invisíveis no Brasil.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="group w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300"
+                            style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #ffffff;"
+                            onmouseover="this.style.background='#eab308'; this.style.borderColor='#eab308'; this.style.color='#2c3e50';"
+                            onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.color='#ffffff';">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="group w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300"
+                            style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #ffffff;"
+                            onmouseover="this.style.background='#eab308'; this.style.borderColor='#eab308'; this.style.color='#2c3e50';"
+                            onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.color='#ffffff';">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="md:col-span-3">
+                    <h4 class="font-bold mb-8 tracking-wider text-sm uppercase" style="color: #ffffff;">Navegação Rápida
+                    </h4>
+                    <ul class="space-y-4 font-light text-sm">
+                        <li>
+                            <a href="#setores" class="transition-colors duration-300"
+                                style="color: rgba(255,255,255,0.7);" onmouseover="this.style.color='#eab308';"
+                                onmouseout="this.style.color='rgba(255,255,255,0.7)';">Especialidades Técnicas</a>
+                        </li>
+                        <li>
+                            <a href="#solucoes" class="transition-colors duration-300"
+                                style="color: rgba(255,255,255,0.7);" onmouseover="this.style.color='#eab308';"
+                                onmouseout="this.style.color='rgba(255,255,255,0.7)';">Portfólio de Sistemas</a>
+                        </li>
+                        <li>
+                            <a href="#diferenciais" class="transition-colors duration-300"
+                                style="color: rgba(255,255,255,0.7);" onmouseover="this.style.color='#eab308';"
+                                onmouseout="this.style.color='rgba(255,255,255,0.7)';">Abordagem STI</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="md:col-span-4">
+                    <h4 class="font-bold mb-8 tracking-wider text-sm uppercase" style="color: #ffffff;">Acione Nossas
+                        Centrais</h4>
+                    <ul class="space-y-5 font-light text-sm" style="color: rgba(255,255,255,0.7);">
+                        <li class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5" style="color: #eab308;"></i>
+                            <span class="leading-relaxed">Sede Executiva em Belo Horizonte, <br>Atendimento
+                                Nacional.</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="mail" class="w-5 h-5 shrink-0" style="color: #eab308;"></i>
+                            <a href="mailto:contato@stiengenharia.com" class="transition-colors duration-300"
+                                onmouseover="this.style.color='#ffffff';"
+                                onmouseout="this.style.color='rgba(255,255,255,0.7)';">
+                                contato@stiengenharia.com
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="phone" class="w-5 h-5 shrink-0" style="color: #eab308;"></i>
+                            <a href="tel:+5531900000000" class="transition-colors duration-300"
+                                onmouseover="this.style.color='#ffffff';"
+                                onmouseout="this.style.color='rgba(255,255,255,0.7)';">
+                                +55 (31) 90000-0000
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-light font-body"
+                style="border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5);">
+                <p>&copy; 2026 STI Engenharia | Incêndio. Todos os direitos reservados.</p>
+                <div class="mt-5 md:mt-0 flex gap-8">
+                    <a href="#" class="transition-colors duration-300" onmouseover="this.style.color='#ffffff';"
+                        onmouseout="this.style.color='rgba(255,255,255,0.5)';">Política de Privacidade</a>
+                    <a href="#" class="transition-colors duration-300" onmouseover="this.style.color='#ffffff';"
+                        onmouseout="this.style.color='rgba(255,255,255,0.5)';">Termos Corporativos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Solid Minimalist -->
+    <!-- Notice WhatsApp icon stays green #25D366 because it's a social standard, not a brand asset -->
+    <a href="https://wa.me/5531900000000" target="_blank"
+        class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:-translate-y-2 transition-transform duration-300 z-[90]">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+        AOS.init({ once: true, duration: 800, offset: 50 });
+
+        // Navbar Scrolled State
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-md');
+                navbar.classList.remove('py-4', 'border-b', 'border-gray-100');
+            } else {
+                navbar.classList.remove('py-2', 'shadow-md');
+                navbar.classList.add('py-4', 'border-b', 'border-gray-100');
+            }
+        });
+
+        // Minimalist Accordion Logic
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasOpen = item.classList.contains('is-open');
+
+                // Close others in the same grouping
+                const group = item.closest('.accordion-group');
+                if (group) {
+                    group.querySelectorAll('.accordion-item').forEach(acc => {
+                        acc.classList.remove('is-open');
+                    });
+                }
+
+                if (!wasOpen) item.classList.add('is-open');
+            });
+        });
+
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let menuOpen = false;
+
+        mobileBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
+                mobileBtn.innerHTML = '<i data-lucide="x" class="w-7 h-7 text-[#2c3e50]"></i>';
+            } else {
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                mobileBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7 text-[#2c3e50]"></i>';
+            }
+            lucide.createIcons();
+        });
+
+        mobileLinks.forEach(link => link.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+            menuOpen = false;
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7 text-[#2c3e50]"></i>';
+            lucide.createIcons();
+        }));
+    </script>
+</body>
+
+</html>

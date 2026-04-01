@@ -23,6 +23,26 @@
   ],
   "rewrites": [
     {
+      "has": [
+        {
+          "type": "host",
+          "value": "incendio.dominio.com.br"
+        }
+      ],
+      "source": "/(.*)",
+      "destination": "/incendio/index.html"
+    },
+    {
+      "has": [
+        {
+          "type": "host",
+          "value": "lp3.dominio.com.br"
+        }
+      ],
+      "source": "/(.*)",
+      "destination": "/lp3/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
