@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+�<!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
 
 <head>
@@ -19,11 +19,11 @@
 
     <style>
         :root {
-            --primary-color: #2c3e50;
+            --primary-color: #0a0a0a;
             /* Dark blue/black for main text & headings */
             --light-bg: #f8f9fa;
             /* Light neutral bg */
-            --accent-brand: #eab308;
+            --accent-brand: #dc2626;
             /* Brand Yellow accent */
             --accent-brand-hover: #ca8a04;
             --dark-text: #333333;
@@ -103,7 +103,7 @@
         }
 
         .accordion-item.is-open {
-            background-color: rgba(234, 179, 8, 0.02);
+            background-color: rgba(220,38,38, 0.02);
             /* Very subtle tint when open */
         }
 
@@ -124,16 +124,16 @@
         /* Button standard */
         .btn-primary {
             background-color: var(--accent-brand);
-            color: #1a202c;
+            color: #000000;
             /* Text dark enough for contrast against yellow */
             transition: all 0.3s ease;
-            box-shadow: 0 4px 14px 0 rgba(234, 179, 8, 0.3);
+            box-shadow: 0 4px 14px 0 rgba(220,38,38, 0.3);
         }
 
         .btn-primary:hover {
             background-color: var(--accent-brand-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(234, 179, 8, 0.4);
+            box-shadow: 0 6px 20px rgba(220,38,38, 0.4);
         }
 
         .btn-outline {
@@ -154,7 +154,7 @@
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 0.5rem;
-            color: #2c3e50;
+            color: #0a0a0a;
             font-size: 0.875rem;
             transition: all 0.2s;
         }
@@ -162,7 +162,7 @@
         .form-input:focus {
             outline: none;
             border-color: var(--accent-brand);
-            box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.15);
+            box-shadow: 0 0 0 3px rgba(220,38,38, 0.15);
         }
 
         /* Premium Glassmorphism Cards */
@@ -180,7 +180,7 @@
         .glass-card:hover {
             background: rgba(255, 255, 255, 0.6);
             transform: translateY(-10px) scale(1.02);
-            border-color: rgba(234, 179, 8, 0.4);
+            border-color: rgba(220,38,38, 0.4);
             box-shadow:
                 0 25px 50px rgba(0, 0, 0, 0.08),
                 inset 0 0 0 1px rgba(255, 255, 255, 0.5);
@@ -195,7 +195,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
         }
 
-        /* Dark-section Glassmorphism Cards — high contrast on #415161 */
+        /* Dark-section Glassmorphism Cards � high contrast on #415161 */
         .glass-card-dark {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px) saturate(140%);
@@ -207,7 +207,7 @@
 
         .glass-card-dark:hover {
             background: rgba(255, 255, 255, 0.14);
-            border-color: rgba(234, 179, 8, 0.5);
+            border-color: rgba(220,38,38, 0.5);
             transform: translateY(-8px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
         }
@@ -221,7 +221,7 @@
 
         .dark-feature-card:hover {
             background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(234, 179, 8, 0.3);
+            border-color: rgba(220,38,38, 0.3);
         }
 
         /* Infinite Scroll Animation */
@@ -246,37 +246,32 @@
     </style>
 </head>
 
-<body class="antialiased selection:bg-[#eab308] selection:text-[#1a202c] relative overflow-x-hidden">
+<body class="antialiased selection:bg-[#dc2626] selection:text-[#000000] relative overflow-x-hidden">
 
     <!-- Navbar -->
-    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 py-2.5 glass-clean">
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-1.5 bg-white shadow-sm border-b border-gray-100/50">
         <div class="container mx-auto px-5 lg:px-8 max-w-7xl flex items-center justify-between">
             <a href="/" class="flex items-center z-50 shrink-0">
-                <img src="/logo-sti.png" alt="STI Engenharia" class="w-36 md:w-44 h-auto object-contain transition-all"
+                <img src="/logo-sti.png" alt="STI Engenharia" class="w-32 md:w-36 h-auto object-contain transition-all"
                     id="nav-logo">
             </a>
 
-            <nav
-                class="hidden md:flex items-center gap-8 font-heading font-medium text-[14px] text-[#2c3e50] tracking-wide">
-                <a href="#setores" class="hover:text-[#eab308] transition-colors relative group">
+            <nav class="hidden md:flex items-center gap-10 font-heading font-black text-[12px] text-[#000000] tracking-[0.15em] uppercase">
+                <a href="#setores" class="hover:text-[#dc2626] transition-colors relative group py-1">
                     Especialidades
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#eab308] transition-all group-hover:w-full"></span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
                 </a>
-                <a href="#solucoes" class="hover:text-[#eab308] transition-colors relative group">
+                <a href="#solucoes" class="hover:text-[#dc2626] transition-colors relative group py-1">
                     Soluções
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#eab308] transition-all group-hover:w-full"></span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
                 </a>
-                <a href="#portfolio" class="hover:text-[#eab308] transition-colors relative group">
+                <a href="#portfolio" class="hover:text-[#dc2626] transition-colors relative group py-1">
                     Obras
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#eab308] transition-all group-hover:w-full"></span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
                 </a>
-                <a href="#diferenciais" class="hover:text-[#eab308] transition-colors relative group">
+                <a href="#diferenciais" class="hover:text-[#dc2626] transition-colors relative group py-1">
                     Padrão STI
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#eab308] transition-all group-hover:w-full"></span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
                 </a>
             </nav>
 
@@ -288,7 +283,7 @@
             </div>
 
             <!-- Mobile Menu Btn -->
-            <button id="mobile-menu-btn" class="md:hidden text-[#2c3e50] z-50 focus:outline-none p-2 shrink-0">
+            <button id="mobile-menu-btn" class="md:hidden text-[#0a0a0a] z-50 focus:outline-none p-2 shrink-0">
                 <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
         </div>
@@ -298,14 +293,14 @@
     <div id="mobile-menu"
         class="fixed inset-0 bg-[#f8f9fa] z-40 flex flex-col justify-center items-center gap-10 pt-20 hidden opacity-0 transition-opacity duration-300">
         <a href="#setores"
-            class="text-2xl font-heading font-bold text-[#2c3e50] hover:text-[#eab308] mobile-link transition-colors">Especialidades</a>
+            class="text-2xl font-heading font-bold text-[#0a0a0a] hover:text-[#dc2626] mobile-link transition-colors">Especialidades</a>
         <a href="#solucoes"
-            class="text-2xl font-heading font-bold text-[#2c3e50] hover:text-[#eab308] mobile-link transition-colors">Soluções</a>
+            class="text-2xl font-heading font-bold text-[#0a0a0a] hover:text-[#dc2626] mobile-link transition-colors">Soluções</a>
         <a href="#portfolio"
-            class="text-2xl font-heading font-bold text-[#2c3e50] hover:text-[#eab308] mobile-link transition-colors">Obras
+            class="text-2xl font-heading font-bold text-[#0a0a0a] hover:text-[#dc2626] mobile-link transition-colors">Obras
             Relaizadas</a>
         <a href="#diferenciais"
-            class="text-2xl font-heading font-bold text-[#2c3e50] hover:text-[#eab308] mobile-link transition-colors">Padrão
+            class="text-2xl font-heading font-bold text-[#0a0a0a] hover:text-[#dc2626] mobile-link transition-colors">Padrão
             STI</a>
         <a href="#formulario-contato"
             class="btn-primary font-bold px-8 py-5 mt-4 rounded-full text-lg mobile-link shadow-lg w-3/4 text-center">
@@ -313,132 +308,80 @@
         </a>
     </div>
 
-    <!-- Hero Section: Full Screen, Refined Proportions -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#f8f9fa] pt-32 pb-20">
-
-        <!-- Geometric minimal background details -->
-        <div class="absolute inset-0 z-0">
-            <div
-                class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-40">
-            </div>
-            <div
-                class="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#eab308] opacity-[0.03] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4">
-            </div>
-            <div
-                class="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-[#2c3e50] opacity-[0.02] rounded-full blur-[150px] translate-y-1/3 -translate-x-1/4">
-            </div>
+    <!-- Hero Section: Full Screen Banner -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        
+        <!-- Background Video with Dark Overlays -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover object-center">
+                <source src="/0402.mp4" type="video/mp4">
+            </video>
+            <!-- Gradient Overlay to ensure text readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#000000]/95 via-[#000000]/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/30 to-transparent opacity-90"></div>
         </div>
 
-        <div class="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10 grid lg:grid-cols-2 gap-16 items-center">
-
-            <div class="flex flex-col justify-center py-12" data-aos="fade-up" data-aos-duration="1000">
-                <div
-                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 bg-white/80 backdrop-blur-sm shadow-sm text-[#2c3e50] font-bold text-[10px] tracking-[0.2em] uppercase mb-10 w-fit">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#eab308]"></span>
+        <!-- Main Content -->
+        <div class="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
+                
+                <!-- Top Mini Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md shadow-sm text-white font-bold text-[10px] tracking-[0.2em] uppercase mb-6 w-fit">
+                    <span class="w-2 h-2 rounded-full bg-[#dc2626] animate-pulse shadow-[0_0_10px_rgba(220,38,38,0.8)]"></span>
                     Engenharia de Incêndio Avançada
                 </div>
 
-                <h1
-                    class="text-5xl md:text-6xl lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-8 text-[#2c3e50]">
+                <!-- Main Typography -->
+                <h1 class="text-4xl md:text-5xl lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-6 !text-white drop-shadow-xl">
                     Segurança <br class="hidden md:block" /> Técnica. <br />
-                    <span class="text-[#eab308] relative">
+                    <span class="text-[#dc2626] relative inline-block">
                         Legislação
-                        <svg class="absolute -bottom-2 left-0 w-full h-3 text-[#eab308] opacity-20" viewBox="0 0 100 20"
-                            preserveAspectRatio="none">
+                        <svg class="absolute -bottom-2 left-0 w-full h-3 text-[#dc2626] opacity-50" viewBox="0 0 100 20" preserveAspectRatio="none">
                             <path d="M0 10 Q 50 20 100 10" stroke="currentColor" stroke-width="6" fill="transparent" />
                         </svg>
                     </span> <br class="hidden md:block" />
                     Garantida.
                 </h1>
 
-                <p class="text-lg text-gray-500 mb-12 font-light leading-relaxed max-w-lg">
+                <!-- Subtitle -->
+                <p class="text-base md:text-lg text-gray-300 mb-8 font-light leading-relaxed max-w-xl drop-shadow-md">
                     Expertise em laudos, projetos e aprovações de AVCB para infraestruturas complexas. Redução drástica
                     de riscos operacionais com rigor técnico STI.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-5 mb-16">
-                    <a href="#formulario-contato"
-                        class="btn-primary px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs">
-                        Regularizar Agora <i data-lucide="shield-check" class="w-4 h-4"></i>
+                <!-- Call to Actions -->
+                <div class="flex flex-col sm:flex-row gap-5 mb-10">
+                    <a href="#formulario-contato" class="btn-primary px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs shadow-[0_10px_30px_rgba(220,38,38,0.3)] hover:scale-105 hover:shadow-[0_15px_40px_rgba(220,38,38,0.5)] transition-all duration-300">
+                        Regularizar Agora <i data-lucide="shield-check" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://wa.me/5531900000000" target="_blank"
-                        class="btn-outline bg-white/50 backdrop-blur-sm px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs shadow-sm hover:shadow-md">
-                        <i data-lucide="phone" class="w-4 h-4"></i> Consultorias
+                    <a href="https://wa.me/5531900000000" target="_blank" class="px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs text-white bg-white/5 border border-white/20 backdrop-blur-md shadow-lg hover:bg-white/15 transition-all duration-300 hover:scale-105">
+                        <i data-lucide="phone" class="w-4 h-4"></i> Consultoria
                     </a>
                 </div>
 
-                <div class="flex items-center gap-8 pt-10 border-t border-gray-100">
+                <!-- Footer Stats -->
+                <div class="flex items-center gap-8 pt-8 border-t border-white/20">
                     <div class="flex -space-x-3">
-                        <div class="w-11 h-11 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop"
-                                class="w-full h-full object-cover">
+                        <div class="w-11 h-11 rounded-full border-2 border-[#000000] overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" class="w-full h-full object-cover">
                         </div>
-                        <div class="w-11 h-11 rounded-full border-2 border-white bg-gray-300 overflow-hidden shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop"
-                                class="w-full h-full object-cover">
+                        <div class="w-11 h-11 rounded-full border-2 border-[#000000] overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" class="w-full h-full object-cover">
                         </div>
-                        <div
-                            class="w-11 h-11 rounded-full border-2 border-white bg-[#f8f9fa] flex items-center justify-center text-[#2c3e50] font-black text-[10px] shadow-sm">
-                            +500</div>
+                        <div class="w-11 h-11 rounded-full border-2 border-[#000000] bg-[#dc2626] flex items-center justify-center text-[#000000] font-black text-[10px] shadow-lg">
+                            +500
+                        </div>
                     </div>
                     <div>
-                        <p class="font-black text-[#2c3e50] text-sm uppercase tracking-wider">AVCBs Emitidos</p>
+                        <p class="font-black text-white text-sm uppercase tracking-wider drop-shadow-md">AVCBs Emitidos</p>
                         <p class="text-gray-400 text-xs font-light">Aprovação técnica sem embargos.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Right side: Visual Harmony -->
-            <div class="relative hidden lg:flex items-center justify-center h-full py-20" data-aos="zoom-out"
-                data-aos-duration="1500">
-                <!-- Main Image Container -->
-                <div
-                    class="relative w-full max-w-[550px] aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-15px_rgba(44,62,80,0.15)] group z-10">
-                    <img src="/ultra-realistic_industrial_scene,_202604011733.png" alt="Sistemas de Segurança STI"
-                        class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#2c3e50]/40 via-transparent to-transparent">
-                    </div>
-                </div>
-
-                <!-- Floating Badges: Premium Glass - Now outside for proper layering -->
-                <div class="absolute -left-12 top-1/4 hero-badge-glass p-5 rounded-[2rem] flex items-center gap-4 z-20 transition-transform hover:-translate-y-2 duration-500"
-                    data-aos="fade-right" data-aos-delay="500">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-[#eab308]/10 text-[#eab308] flex items-center justify-center shrink-0 shadow-inner">
-                        <i data-lucide="file-check" class="w-6 h-6"></i>
-                    </div>
-                    <div class="pr-4">
-                        <p class="text-[11px] font-black text-[#2c3e50] uppercase tracking-widest leading-none mb-1">
-                            Normas ABNT</p>
-                        <p class="text-[10px] text-gray-500 font-light mt-0.5">100% Conformidade</p>
-                    </div>
-                </div>
-
-                <div class="absolute -right-10 bottom-1/4 hero-badge-glass p-5 rounded-[2rem] flex items-center gap-4 z-20 transition-transform hover:translate-y-2 duration-500"
-                    data-aos="fade-left" data-aos-delay="700">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0 shadow-inner">
-                        <i data-lucide="shield" class="w-6 h-6"></i>
-                    </div>
-                    <div class="pr-4">
-                        <p class="text-[11px] font-black text-[#2c3e50] uppercase tracking-widest leading-none mb-1">
-                            Agilidade STI</p>
-                        <p class="text-[10px] text-gray-500 font-light mt-0.5">Processos Expressos</p>
-                    </div>
-                </div>
-
-                <!-- Bottom accent decoration -->
-                <div
-                    class="absolute -bottom-4 right-10 w-24 h-24 bg-[#eab308] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse z-0">
-                </div>
-            </div>
-
-            <!-- Bottom accent decoration -->
-            <div
-                class="absolute -bottom-4 right-10 w-24 h-24 bg-[#eab308] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">
-            </div>
-        </div>
-
+            <!-- Right side badges (Desktop only) removed per request -->
+            
         </div>
     </section>
 
@@ -453,7 +396,7 @@
         </div>
 
         <div class="text-center mb-8 relative z-20">
-            <p class="text-xs font-bold uppercase tracking-widest text-[#2c3e50]/40">Grandes operações que confiam na
+            <p class="text-xs font-bold uppercase tracking-widest text-[#0a0a0a]/40">Grandes operações que confiam na
                 STI</p>
         </div>
 
@@ -529,14 +472,14 @@
     </section>
 
     <!-- Sectors Section: Dark Premium -->
-    <section class="py-16 md:py-20 lg:py-24 bg-[#415161] relative overflow-hidden scroll-mt-24" id="setores">
+    <section class="py-16 md:py-20 lg:py-24 bg-[#111111] relative overflow-hidden scroll-mt-24" id="setores">
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight"
                     style="color: #ffffff;">
-                    Mitigação de Riscos Críticos <br> em <span style="color: #eab308;">Alto Desempenho</span>
+                    Mitigação de Riscos Críticos <br> em <span style="color: #dc2626;">Alto Desempenho</span>
                 </h2>
-                <div class="w-24 h-1 bg-[#eab308] mx-auto rounded-full mb-8"></div>
+                <div class="w-24 h-1 bg-[#dc2626] mx-auto rounded-full mb-8"></div>
                 <p class="font-light text-lg leading-relaxed" style="color: rgba(255,255,255,0.75);">
                     Soluções personalizadas adequadas às exigências do Corpo de Bombeiros,
                     específicas para as complexidades da sua infraestrutura.
@@ -547,7 +490,7 @@
                 <!-- Card 1 -->
                 <div class="p-8 glass-card-dark rounded-[2rem] group" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500"
-                        style="background: rgba(234,179,8,0.15); color: #eab308;">
+                        style="background: rgba(220,38,38,0.15); color: #dc2626;">
                         <i data-lucide="factory" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Plantas Industriais</h3>
@@ -558,7 +501,7 @@
                 <!-- Card 2 -->
                 <div class="p-8 glass-card-dark rounded-[2rem] group" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500"
-                        style="background: rgba(234,179,8,0.15); color: #eab308;">
+                        style="background: rgba(220,38,38,0.15); color: #dc2626;">
                         <i data-lucide="building-2" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Condomínios Residenciais e Comerciais
@@ -570,7 +513,7 @@
                 <!-- Card 3 -->
                 <div class="p-8 glass-card-dark rounded-[2rem] group" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500"
-                        style="background: rgba(234,179,8,0.15); color: #eab308;">
+                        style="background: rgba(220,38,38,0.15); color: #dc2626;">
                         <i data-lucide="tent" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Eventos de Pequeno, Médio e Grande Porte
@@ -582,7 +525,7 @@
                 <!-- Card 4 -->
                 <div class="p-8 glass-card-dark rounded-[2rem] group" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500"
-                        style="background: rgba(234,179,8,0.15); color: #eab308;">
+                        style="background: rgba(220,38,38,0.15); color: #dc2626;">
                         <i data-lucide="users-2" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Brigada e Treinamentos</h3>
@@ -599,9 +542,9 @@
         <div class="container mx-auto px-6 max-w-5xl relative z-10">
             <div class="mb-16 md:flex justify-between items-end border-b border-gray-200 pb-8" data-aos="fade-up">
                 <div>
-                    <span class="text-[#eab308] uppercase font-bold tracking-widest text-xs mb-3 block">Diretrizes
+                    <span class="text-[#dc2626] uppercase font-bold tracking-widest text-xs mb-3 block">Diretrizes
                         Práticas</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2c3e50] font-heading">Portfólio
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#0a0a0a] font-heading">Portfólio
                         de Soluções</h2>
                 </div>
                 <p class="text-gray-500 font-light mt-4 md:mt-0 text-sm max-w-xs md:text-right">
@@ -612,15 +555,15 @@
             <div class="grid lg:grid-cols-2 gap-x-16 gap-y-12">
                 <!-- Group 1: Engenharia e Laudos -->
                 <div data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-lg font-bold pb-4 text-[#2c3e50] flex items-center gap-3">
-                        <i data-lucide="file-signature" class="w-5 h-5 text-[#eab308]"></i>
+                    <h3 class="text-lg font-bold pb-4 text-[#0a0a0a] flex items-center gap-3">
+                        <i data-lucide="file-signature" class="w-5 h-5 text-[#dc2626]"></i>
                         Serviços
                     </h3>
 
                     <div class="mt-2 accordion-group">
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Emissão
                                     e Renovação de AVCB</span>
@@ -638,7 +581,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Engenharia
                                     de Incêndio (Projeto)</span>
@@ -656,7 +599,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Laudos
                                     Técnicos e p/ Alvará da Prefeitura</span>
@@ -677,7 +620,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Teste
                                     de Estanqueidade de Gás (GN e GLP)</span>
@@ -696,7 +639,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Diagnóstico
                                     e Vistoria Prévia</span>
@@ -717,15 +660,15 @@
 
                 <!-- Group 2: Supressão e Combate -->
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-lg font-bold pb-4 text-[#2c3e50] flex items-center gap-3">
-                        <i data-lucide="droplet" class="w-5 h-5 text-[#eab308]"></i>
+                    <h3 class="text-lg font-bold pb-4 text-[#0a0a0a] flex items-center gap-3">
+                        <i data-lucide="droplet" class="w-5 h-5 text-[#dc2626]"></i>
                         Sistemas de Extinção
                     </h3>
 
                     <div class="mt-2 accordion-group">
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Redes
                                     de Hidrantes e Chuveiros (Sprinklers)</span>
@@ -743,7 +686,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Gases
                                     Limpos (FM-200, Novec 1230, CO2)</span>
@@ -762,7 +705,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Sistema
                                     Saponificante de Cozinhas</span>
@@ -780,7 +723,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Rede
                                     de LGE (Líquido Gerador de Espuma)</span>
@@ -799,7 +742,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Portfólio
                                     de Extintores de Incêndio</span>
@@ -820,15 +763,15 @@
 
                 <!-- Group 3: Detecção e Alerta -->
                 <div data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-lg font-bold pb-4 text-[#2c3e50] flex items-center gap-3">
-                        <i data-lucide="bell-ring" class="w-5 h-5 text-[#eab308]"></i>
+                    <h3 class="text-lg font-bold pb-4 text-[#0a0a0a] flex items-center gap-3">
+                        <i data-lucide="bell-ring" class="w-5 h-5 text-[#dc2626]"></i>
                         Detecção Inteligente & Rotas
                     </h3>
 
                     <div class="mt-2 accordion-group">
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Sistemas
                                     de Alarme e SDAI Endereçado</span>
@@ -847,7 +790,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Iluminação
                                     de Emergência Normativa</span>
@@ -865,7 +808,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Sinalização
                                     Fotoluminescente ABNT</span>
@@ -887,15 +830,15 @@
 
                 <!-- Group 4: Brigada e Execução -->
                 <div data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="text-lg font-bold pb-4 text-[#2c3e50] flex items-center gap-3">
-                        <i data-lucide="users" class="w-5 h-5 text-[#eab308]"></i>
+                    <h3 class="text-lg font-bold pb-4 text-[#0a0a0a] flex items-center gap-3">
+                        <i data-lucide="users" class="w-5 h-5 text-[#dc2626]"></i>
                         Prevenção Humana & Obras
                     </h3>
 
                     <div class="mt-2 accordion-group">
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Instalação
                                     e Execução de Obras de Incêndio</span>
@@ -914,7 +857,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Treinamentos
                                     de Brigada de Incêndio (RT 14)</span>
@@ -932,7 +875,7 @@
                         </div>
                         <div class="accordion-item bg-transparent">
                             <button
-                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#eab308] transition-colors focus:outline-none">
+                                class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Locação
                                     e Outsorcing de Bombeiro Civil Profissional</span>
@@ -959,11 +902,11 @@
     <section class="py-16 md:py-20 lg:py-24 bg-white relative scroll-mt-24" id="portfolio">
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-[#eab308] uppercase font-bold tracking-widest text-xs mb-3 block">Galeria de
+                <span class="text-[#dc2626] uppercase font-bold tracking-widest text-xs mb-3 block">Galeria de
                     Obras</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-[#2c3e50] font-heading mb-6">Projetos
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-[#0a0a0a] font-heading mb-6">Projetos
                     Executados</h2>
-                <div class="w-24 h-1 bg-[#eab308] mx-auto rounded-full mb-6"></div>
+                <div class="w-24 h-1 bg-[#dc2626] mx-auto rounded-full mb-6"></div>
                 <p class="text-gray-500 font-light text-lg max-w-2xl mx-auto">
                     Confira os desafios complexos que a engenharia STI resolveu de forma rápida, segura e com
                     deferimento imediato pelas autoridades.
@@ -979,13 +922,13 @@
                         <img src="/jk.jpg" alt="Casa JK"
                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-[#1a202c] via-[#1a202c]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity">
+                            class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity">
                         </div>
                     </div>
                     <div
                         class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                         <span
-                            class="inline-block px-3 py-1 bg-[#eab308] text-[#2c3e50] text-[10px] font-bold uppercase tracking-wider rounded-full mb-3 shadow-md">Espaço
+                            class="inline-block px-3 py-1 bg-[#dc2626] text-[#0a0a0a] text-[10px] font-bold uppercase tracking-wider rounded-full mb-3 shadow-md">Espaço
                             Institucional</span>
                         <h3 class="text-xl font-bold mb-2" style="color: #ffffff;">Casa JK</h3>
                         <p class="text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
@@ -1001,7 +944,7 @@
                         <img src="/casa%20do%20baile.jpg" alt="Casa do Baile"
                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-[#1a202c] via-[#1a202c]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity">
+                            class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity">
                         </div>
                     </div>
                     <div
@@ -1023,7 +966,7 @@
                         <img src="/mis-cine-santa-tereza-foto-ricardo-laf-1700.webp" alt="Cine Santa Tereza"
                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-[#1a202c] via-[#1a202c]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity">
+                            class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity">
                         </div>
                     </div>
                     <div
@@ -1049,10 +992,10 @@
     </section>
 
     <!-- Reposicionamento Premium Diferenciais -->
-    <section class="py-16 md:py-20 lg:py-24 bg-[#2c3e50] relative overflow-hidden scroll-mt-24" id="diferenciais">
+    <section class="py-16 md:py-20 lg:py-24 bg-[#0a0a0a] relative overflow-hidden scroll-mt-24" id="diferenciais">
         <!-- Abstract Background Glows -->
         <div
-            class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#eab308] opacity-[0.03] rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none">
+            class="absolute top-0 right-0 w-[800px] h-[800px] bg-[#dc2626] opacity-[0.03] rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none">
         </div>
         <div
             class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500 opacity-[0.02] rounded-full blur-[100px] -translate-x-1/4 translate-y-1/4 pointer-events-none">
@@ -1062,13 +1005,13 @@
             <div class="text-center mb-20" data-aos="fade-up">
                 <span
                     class="inline-block px-4 py-1.5 rounded-full mb-6 text-[10px] font-bold uppercase tracking-[0.25em]"
-                    style="background: rgba(234,179,8,0.15); color: #eab308; border: 1px solid rgba(234,179,8,0.3);">
+                    style="background: rgba(220,38,38,0.15); color: #dc2626; border: 1px solid rgba(220,38,38,0.3);">
                     O Padrão STI
                 </span>
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.1]"
                     style="color: #ffffff;">
                     Segurança Regulatória<br>
-                    <span class="text-[#eab308]">Sem Entraves.</span>
+                    <span class="text-[#dc2626]">Sem Entraves.</span>
                 </h2>
                 <p class="font-light text-lg md:text-xl max-w-3xl mx-auto" style="color: rgba(255,255,255,0.75);">
                     Não vendemos apenas elaboração burocrática. Na STI, o projeto de incêndio é integrado com a melhor
@@ -1077,10 +1020,10 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 mb-24">
-                <div class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/[0.06] hover:border-[#eab308]/30 transition-all duration-500 group"
+                <div class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/[0.06] hover:border-[#dc2626]/30 transition-all duration-500 group"
                     data-aos="fade-up" data-aos-delay="100">
                     <div
-                        class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-[#eab308]/20 text-[#eab308] group-hover:scale-110 transition-transform">
+                        class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-[#dc2626]/20 text-[#dc2626] group-hover:scale-110 transition-transform">
                         <i data-lucide="file-check-2" class="w-7 h-7"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4" style="color: #ffffff;">Zero Surpresas na Obra</h3>
@@ -1090,7 +1033,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/[0.06] hover:border-[#eab308]/30 transition-all duration-500 group"
+                <div class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/[0.06] hover:border-[#dc2626]/30 transition-all duration-500 group"
                     data-aos="fade-up" data-aos-delay="200">
                     <div
                         class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-blue-500/20 text-blue-400 group-hover:scale-110 transition-transform">
@@ -1103,7 +1046,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/[0.06] hover:border-[#eab308]/30 transition-all duration-500 group"
+                <div class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/[0.06] hover:border-[#dc2626]/30 transition-all duration-500 group"
                     data-aos="fade-up" data-aos-delay="300">
                     <div
                         class="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-green-500/20 text-green-400 group-hover:scale-110 transition-transform">
@@ -1124,34 +1067,34 @@
                 <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-90">
                     <div class="flex items-center gap-3 group cursor-default">
                         <div
-                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-[#eab308] group-hover:bg-[#eab308] group-hover:text-[#2c3e50] transition-colors">
+                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-[#dc2626] group-hover:bg-[#dc2626] group-hover:text-[#0a0a0a] transition-colors">
                             <i data-lucide="flame" class="w-5 h-5"></i>
                         </div>
-                        <span class="font-black text-xl tracking-widest transition-colors group-hover:text-[#eab308]"
+                        <span class="font-black text-xl tracking-widest transition-colors group-hover:text-[#dc2626]"
                             style="color: #ffffff;">CBMMG</span>
                     </div>
                     <div class="flex items-center gap-3 group cursor-default">
                         <div
-                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-[#eab308] group-hover:bg-[#eab308] group-hover:text-[#2c3e50] transition-colors">
+                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-[#dc2626] group-hover:bg-[#dc2626] group-hover:text-[#0a0a0a] transition-colors">
                             <i data-lucide="siren" class="w-5 h-5"></i>
                         </div>
-                        <span class="font-black text-xl tracking-widest transition-colors group-hover:text-[#eab308]"
+                        <span class="font-black text-xl tracking-widest transition-colors group-hover:text-[#dc2626]"
                             style="color: #ffffff;">PB</span>
                     </div>
                     <div class="flex items-center gap-3 group cursor-default">
                         <div
-                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-[#eab308] group-hover:bg-[#eab308] group-hover:text-[#2c3e50] transition-colors">
+                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-[#dc2626] group-hover:bg-[#dc2626] group-hover:text-[#0a0a0a] transition-colors">
                             <i data-lucide="building" class="w-5 h-5"></i>
                         </div>
-                        <span class="font-black text-xl tracking-widest transition-colors group-hover:text-[#eab308]"
+                        <span class="font-black text-xl tracking-widest transition-colors group-hover:text-[#dc2626]"
                             style="color: #ffffff;">PBQP-H</span>
                     </div>
                     <div class="flex items-center gap-3 group cursor-default">
                         <div
-                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-[#eab308] group-hover:bg-[#eab308] group-hover:text-[#2c3e50] transition-colors">
+                            class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-[#dc2626] group-hover:bg-[#dc2626] group-hover:text-[#0a0a0a] transition-colors">
                             <i data-lucide="award" class="w-5 h-5"></i>
                         </div>
-                        <span class="font-black text-xl tracking-widest transition-colors group-hover:text-[#eab308]"
+                        <span class="font-black text-xl tracking-widest transition-colors group-hover:text-[#dc2626]"
                             style="color: #ffffff;">ISO 9001</span>
                     </div>
                 </div>
@@ -1164,7 +1107,7 @@
         id="formulario-contato">
         <!-- Ambient Background Glows -->
         <div
-            class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#eab308] rounded-full mix-blend-multiply filter blur-[100px] opacity-10 pointer-events-none">
+            class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#dc2626] rounded-full mix-blend-multiply filter blur-[100px] opacity-10 pointer-events-none">
         </div>
         <div
             class="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#415161] rounded-full mix-blend-multiply filter blur-[120px] opacity-5 pointer-events-none">
@@ -1173,11 +1116,11 @@
         <div class="container mx-auto px-6 max-w-6xl relative z-10" data-aos="fade-up">
             <div class="text-center mb-16">
                 <span
-                    class="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-[#2c3e50] border border-gray-200 text-xs font-bold uppercase tracking-widest rounded-full mb-6 shadow-sm">
-                    <i data-lucide="shield" class="w-3.5 h-3.5 text-[#eab308]"></i> Diagnóstico Exclusivo
+                    class="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-[#0a0a0a] border border-gray-200 text-xs font-bold uppercase tracking-widest rounded-full mb-6 shadow-sm">
+                    <i data-lucide="shield" class="w-3.5 h-3.5 text-[#dc2626]"></i> Diagnóstico Exclusivo
                 </span>
-                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#2c3e50] leading-tight mb-5">
-                    Eleve o Nível da Sua <br><span class="text-[#eab308]">Segurança Regulatória</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0a0a0a] leading-tight mb-5">
+                    Eleve o Nível da Sua <br><span class="text-[#dc2626]">Segurança Regulatória</span>
                 </h2>
                 <p class="text-gray-500 font-light text-lg max-w-2xl mx-auto">
                     Converse com nossos engenheiros especialistas para desenharmos uma estratégia contra incêndio à
@@ -1197,7 +1140,7 @@
                         class="absolute -bottom-24 -right-24 w-64 h-64 border-[30px] border-white/5 rounded-full pointer-events-none">
                     </div>
                     <div
-                        class="absolute top-12 -right-8 w-32 h-32 bg-[#eab308]/10 rounded-full blur-2xl pointer-events-none">
+                        class="absolute top-12 -right-8 w-32 h-32 bg-[#dc2626]/10 rounded-full blur-2xl pointer-events-none">
                     </div>
 
                     <div class="relative z-10">
@@ -1210,34 +1153,34 @@
                         <div class="space-y-8">
                             <div class="flex items-start gap-5 group">
                                 <div
-                                    class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#eab308] group-hover:text-[#415161] transition-colors duration-300">
+                                    class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#dc2626] group-hover:text-[#415161] transition-colors duration-300">
                                     <i data-lucide="phone" class="w-5 h-5"></i>
                                 </div>
                                 <div>
                                     <p class="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">Telefone /
                                         WhatsApp</p>
                                     <a href="#"
-                                        class="text-lg font-semibold hover:text-[#eab308] transition-colors">(31)
+                                        class="text-lg font-semibold hover:text-[#dc2626] transition-colors">(31)
                                         99999-9999</a>
                                 </div>
                             </div>
 
                             <div class="flex items-start gap-5 group">
                                 <div
-                                    class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#eab308] group-hover:text-[#415161] transition-colors duration-300">
+                                    class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#dc2626] group-hover:text-[#415161] transition-colors duration-300">
                                     <i data-lucide="mail" class="w-5 h-5"></i>
                                 </div>
                                 <div>
                                     <p class="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">E-mail
                                         Profissional</p>
                                     <a href="mailto:contato@stiengenharia.com"
-                                        class="text-lg font-semibold hover:text-[#eab308] transition-colors">contato@stiengenharia.com</a>
+                                        class="text-lg font-semibold hover:text-[#dc2626] transition-colors">contato@stiengenharia.com</a>
                                 </div>
                             </div>
 
                             <div class="flex items-start gap-5 group">
                                 <div
-                                    class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#eab308] group-hover:text-[#415161] transition-colors duration-300">
+                                    class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#dc2626] group-hover:text-[#415161] transition-colors duration-300">
                                     <i data-lucide="map-pin" class="w-5 h-5"></i>
                                 </div>
                                 <div>
@@ -1257,45 +1200,45 @@
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label for="nome"
-                                    class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">Nome
+                                    class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">Nome
                                     Completo</label>
                                 <input type="text" id="nome" name="nome" required placeholder="Ex: Carlos Albuquerque"
-                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
                             </div>
                             <div class="space-y-2">
                                 <label for="empresa"
-                                    class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">Empresa
+                                    class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">Empresa
                                     / Condomínio</label>
                                 <input type="text" id="empresa" name="empresa" placeholder="Nome da organização"
-                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
                             </div>
                         </div>
 
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label for="email"
-                                    class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">E-mail
+                                    class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">E-mail
                                     Profissional</label>
                                 <input type="email" id="email" name="email" required
                                     placeholder="contato@empresa.com.br"
-                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
                             </div>
                             <div class="space-y-2">
                                 <label for="telefone"
-                                    class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">Telefone
+                                    class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">Telefone
                                     (WhatsApp)</label>
                                 <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000"
-                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
                             </div>
                         </div>
 
                         <div class="space-y-2">
                             <label for="mensagem"
-                                class="block text-xs font-bold uppercase tracking-wider text-[#2c3e50] ml-1">Como
+                                class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">Como
                                 podemos ajudar?</label>
                             <textarea id="mensagem" name="mensagem" rows="3" required
                                 placeholder="Descreva brevemente sua necessidade..."
-                                class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#2c3e50] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:bg-white focus:border-[#eab308] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] resize-none"></textarea>
+                                class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] resize-none"></textarea>
                         </div>
 
                         <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -1304,7 +1247,7 @@
                                 <i data-lucide="lock" class="w-4 h-4 shrink-0"></i> Seus dados estão todos 100% seguros.
                             </p>
                             <button type="submit"
-                                class="w-full sm:w-auto bg-[#eab308] hover:bg-[#ca8a04] text-[#1a202c] font-extrabold px-10 py-4 rounded-xl transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(234,179,8,0.5)] hover:shadow-[0_12px_25px_-6px_rgba(234,179,8,0.6)] hover:-translate-y-1 flex justify-center items-center gap-3 group">
+                                class="w-full sm:w-auto bg-[#dc2626] hover:bg-[#ca8a04] text-[#000000] font-extrabold px-10 py-4 rounded-xl transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(220,38,38,0.5)] hover:shadow-[0_12px_25px_-6px_rgba(220,38,38,0.6)] hover:-translate-y-1 flex justify-center items-center gap-3 group">
                                 Enviar Solicitação
                                 <i data-lucide="arrow-right"
                                     class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -1317,7 +1260,7 @@
     </section>
 
     <!-- Footer - Premium Contrast Theme -->
-    <footer class="bg-[#2c3e50] pt-24 pb-12 border-t border-[#1a2530]" style="color: #ffffff;">
+    <footer class="bg-[#0a0a0a] pt-24 pb-12 border-t border-[#111111]" style="color: #ffffff;">
         <div class="container mx-auto px-6 max-w-7xl">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
                 <!-- Brand Info -->
@@ -1332,14 +1275,14 @@
                         <a href="#"
                             class="group w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300"
                             style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #ffffff;"
-                            onmouseover="this.style.background='#eab308'; this.style.borderColor='#eab308'; this.style.color='#2c3e50';"
+                            onmouseover="this.style.background='#dc2626'; this.style.borderColor='#dc2626'; this.style.color='#0a0a0a';"
                             onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.color='#ffffff';">
                             <i data-lucide="instagram" class="w-5 h-5"></i>
                         </a>
                         <a href="#"
                             class="group w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300"
                             style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #ffffff;"
-                            onmouseover="this.style.background='#eab308'; this.style.borderColor='#eab308'; this.style.color='#2c3e50';"
+                            onmouseover="this.style.background='#dc2626'; this.style.borderColor='#dc2626'; this.style.color='#0a0a0a';"
                             onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.color='#ffffff';">
                             <i data-lucide="linkedin" class="w-5 h-5"></i>
                         </a>
@@ -1353,17 +1296,17 @@
                     <ul class="space-y-4 font-light text-sm">
                         <li>
                             <a href="#setores" class="transition-colors duration-300"
-                                style="color: rgba(255,255,255,0.7);" onmouseover="this.style.color='#eab308';"
+                                style="color: rgba(255,255,255,0.7);" onmouseover="this.style.color='#dc2626';"
                                 onmouseout="this.style.color='rgba(255,255,255,0.7)';">Especialidades Técnicas</a>
                         </li>
                         <li>
                             <a href="#solucoes" class="transition-colors duration-300"
-                                style="color: rgba(255,255,255,0.7);" onmouseover="this.style.color='#eab308';"
+                                style="color: rgba(255,255,255,0.7);" onmouseover="this.style.color='#dc2626';"
                                 onmouseout="this.style.color='rgba(255,255,255,0.7)';">Portfólio de Sistemas</a>
                         </li>
                         <li>
                             <a href="#diferenciais" class="transition-colors duration-300"
-                                style="color: rgba(255,255,255,0.7);" onmouseover="this.style.color='#eab308';"
+                                style="color: rgba(255,255,255,0.7);" onmouseover="this.style.color='#dc2626';"
                                 onmouseout="this.style.color='rgba(255,255,255,0.7)';">Abordagem STI</a>
                         </li>
                     </ul>
@@ -1375,12 +1318,12 @@
                         Centrais</h4>
                     <ul class="space-y-5 font-light text-sm" style="color: rgba(255,255,255,0.7);">
                         <li class="flex items-start gap-4">
-                            <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5" style="color: #eab308;"></i>
+                            <i data-lucide="map-pin" class="w-5 h-5 shrink-0 mt-0.5" style="color: #dc2626;"></i>
                             <span class="leading-relaxed">Sede Executiva em Belo Horizonte, <br>Atendimento
                                 Nacional.</span>
                         </li>
                         <li class="flex items-center gap-4">
-                            <i data-lucide="mail" class="w-5 h-5 shrink-0" style="color: #eab308;"></i>
+                            <i data-lucide="mail" class="w-5 h-5 shrink-0" style="color: #dc2626;"></i>
                             <a href="mailto:contato@stiengenharia.com" class="transition-colors duration-300"
                                 onmouseover="this.style.color='#ffffff';"
                                 onmouseout="this.style.color='rgba(255,255,255,0.7)';">
@@ -1388,7 +1331,7 @@
                             </a>
                         </li>
                         <li class="flex items-center gap-4">
-                            <i data-lucide="phone" class="w-5 h-5 shrink-0" style="color: #eab308;"></i>
+                            <i data-lucide="phone" class="w-5 h-5 shrink-0" style="color: #dc2626;"></i>
                             <a href="tel:+5531900000000" class="transition-colors duration-300"
                                 onmouseover="this.style.color='#ffffff';"
                                 onmouseout="this.style.color='rgba(255,255,255,0.7)';">
@@ -1415,8 +1358,8 @@
     <!-- WhatsApp Solid Minimalist -->
     <!-- Notice WhatsApp icon stays green #25D366 because it's a social standard, not a brand asset -->
     <a href="https://wa.me/5531900000000" target="_blank"
-        class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:-translate-y-2 transition-transform duration-300 z-[90]">
-        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        class="fixed bottom-6 right-6 w-18 h-18 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:-translate-y-2 transition-transform duration-300 z-[90]">
+        <i data-lucide="message-circle" class="w-9 h-9"></i>
     </a>
 
     <!-- Scripts -->
@@ -1429,11 +1372,11 @@
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('py-1', 'shadow-md');
-                navbar.classList.remove('py-2.5', 'border-b', 'border-gray-100');
+                navbar.classList.add('py-0.5', 'shadow-md');
+                navbar.classList.remove('py-1.5', 'border-b', 'border-gray-100/50');
             } else {
-                navbar.classList.remove('py-1', 'shadow-md');
-                navbar.classList.add('py-2.5', 'border-b', 'border-gray-100');
+                navbar.classList.remove('py-0.5', 'shadow-md');
+                navbar.classList.add('py-1.5', 'border-b', 'border-gray-100/50');
             }
         });
 
@@ -1466,11 +1409,11 @@
             if (menuOpen) {
                 mobileMenu.classList.remove('hidden');
                 setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
-                mobileBtn.innerHTML = '<i data-lucide="x" class="w-7 h-7 text-[#2c3e50]"></i>';
+                mobileBtn.innerHTML = '<i data-lucide="x" class="w-7 h-7 text-[#0a0a0a]"></i>';
             } else {
                 mobileMenu.classList.add('opacity-0');
                 setTimeout(() => mobileMenu.classList.add('hidden'), 300);
-                mobileBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7 text-[#2c3e50]"></i>';
+                mobileBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7 text-[#0a0a0a]"></i>';
             }
             lucide.createIcons();
         });
@@ -1479,10 +1422,11 @@
             mobileMenu.classList.add('opacity-0');
             setTimeout(() => mobileMenu.classList.add('hidden'), 300);
             menuOpen = false;
-            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7 text-[#2c3e50]"></i>';
+            mobileBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7 text-[#0a0a0a]"></i>';
             lucide.createIcons();
         }));
     </script>
 </body>
 
 </html>
+
