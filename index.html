@@ -924,6 +924,21 @@
             const text = `Olá STI Engenharia, meu nome é ${nome}. ${mensagem}`;
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
         }
+
+        // Fix for iOS Safari WebKit Autoplay Policies
+        const enableVideos = () => {
+            document.querySelectorAll('video').forEach(v => {
+                if (v.paused) {
+                    v.play().catch(e => console.warn('Video autoplay trigger prevented:', e));
+                }
+            });
+            document.removeEventListener('touchstart', enableVideos);
+            document.removeEventListener('click', enableVideos);
+            document.removeEventListener('scroll', enableVideos);
+        };
+        document.addEventListener('touchstart', enableVideos, { passive: true });
+        document.addEventListener('click', enableVideos, { passive: true });
+        document.addEventListener('scroll', enableVideos, { passive: true });
     </script>
 </body>
 
