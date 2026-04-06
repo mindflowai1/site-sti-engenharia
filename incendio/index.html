@@ -1,4 +1,5 @@
-�<!DOCTYPE html>
+�
+<!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
 
 <head>
@@ -103,7 +104,7 @@
         }
 
         .accordion-item.is-open {
-            background-color: rgba(220,38,38, 0.02);
+            background-color: rgba(220, 38, 38, 0.02);
             /* Very subtle tint when open */
         }
 
@@ -127,13 +128,13 @@
             color: #000000;
             /* Text dark enough for contrast against yellow */
             transition: all 0.3s ease;
-            box-shadow: 0 4px 14px 0 rgba(220,38,38, 0.3);
+            box-shadow: 0 4px 14px 0 rgba(220, 38, 38, 0.3);
         }
 
         .btn-primary:hover {
             background-color: var(--accent-brand-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(220,38,38, 0.4);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
         }
 
         .btn-outline {
@@ -162,7 +163,7 @@
         .form-input:focus {
             outline: none;
             border-color: var(--accent-brand);
-            box-shadow: 0 0 0 3px rgba(220,38,38, 0.15);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
         }
 
         /* Premium Glassmorphism Cards */
@@ -180,7 +181,7 @@
         .glass-card:hover {
             background: rgba(255, 255, 255, 0.6);
             transform: translateY(-10px) scale(1.02);
-            border-color: rgba(220,38,38, 0.4);
+            border-color: rgba(220, 38, 38, 0.4);
             box-shadow:
                 0 25px 50px rgba(0, 0, 0, 0.08),
                 inset 0 0 0 1px rgba(255, 255, 255, 0.5);
@@ -207,7 +208,7 @@
 
         .glass-card-dark:hover {
             background: rgba(255, 255, 255, 0.14);
-            border-color: rgba(220,38,38, 0.5);
+            border-color: rgba(220, 38, 38, 0.5);
             transform: translateY(-8px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
         }
@@ -221,7 +222,7 @@
 
         .dark-feature-card:hover {
             background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(220,38,38, 0.3);
+            border-color: rgba(220, 38, 38, 0.3);
         }
 
         /* Infinite Scroll Animation */
@@ -249,29 +250,40 @@
 <body class="antialiased selection:bg-[#dc2626] selection:text-[#000000] relative overflow-x-hidden">
 
     <!-- Navbar -->
-    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-1.5 bg-white shadow-sm border-b border-gray-100/50">
+    <header id="navbar"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-1.5 bg-white shadow-sm border-b border-gray-100/50">
         <div class="container mx-auto px-5 lg:px-8 max-w-7xl flex items-center justify-between">
             <a href="/" class="flex items-center z-50 shrink-0">
                 <img src="/logo-sti.png" alt="STI Engenharia" class="w-32 md:w-36 h-auto object-contain transition-all"
                     id="nav-logo">
             </a>
 
-            <nav class="hidden md:flex items-center gap-10 font-heading font-black text-[12px] text-[#000000] tracking-[0.15em] uppercase">
+            <nav
+                class="hidden lg:flex items-center gap-6 xl:gap-10 font-heading font-black text-[12px] text-[#000000] tracking-[0.15em] uppercase">
                 <a href="#setores" class="hover:text-[#dc2626] transition-colors relative group py-1">
                     Especialidades
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
                 </a>
                 <a href="#solucoes" class="hover:text-[#dc2626] transition-colors relative group py-1">
                     Soluções
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
                 </a>
                 <a href="#portfolio" class="hover:text-[#dc2626] transition-colors relative group py-1">
                     Obras
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
                 </a>
                 <a href="#diferenciais" class="hover:text-[#dc2626] transition-colors relative group py-1">
                     Padrão STI
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
+                </a>
+                <a href="#certificacoes" class="hover:text-[#dc2626] transition-colors relative group py-1">
+                    Certificações
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#dc2626] transition-all group-hover:w-full duration-300"></span>
                 </a>
             </nav>
 
@@ -291,17 +303,19 @@
 
     <!-- Mobile Dropdown -->
     <div id="mobile-menu"
-        class="fixed inset-0 bg-[#f8f9fa] z-40 flex flex-col justify-center items-center gap-10 pt-20 hidden opacity-0 transition-opacity duration-300">
+        class="fixed inset-0 bg-[#f8f9fa] z-40 flex flex-col justify-center items-center gap-8 pt-20 hidden opacity-0 transition-opacity duration-300">
         <a href="#setores"
             class="text-2xl font-heading font-bold text-[#0a0a0a] hover:text-[#dc2626] mobile-link transition-colors">Especialidades</a>
         <a href="#solucoes"
             class="text-2xl font-heading font-bold text-[#0a0a0a] hover:text-[#dc2626] mobile-link transition-colors">Soluções</a>
         <a href="#portfolio"
             class="text-2xl font-heading font-bold text-[#0a0a0a] hover:text-[#dc2626] mobile-link transition-colors">Obras
-            Relaizadas</a>
+            Realizadas</a>
         <a href="#diferenciais"
             class="text-2xl font-heading font-bold text-[#0a0a0a] hover:text-[#dc2626] mobile-link transition-colors">Padrão
             STI</a>
+        <a href="#certificacoes"
+            class="text-2xl font-heading font-bold text-[#0a0a0a] hover:text-[#dc2626] mobile-link transition-colors">Certificações</a>
         <a href="#formulario-contato"
             class="btn-primary font-bold px-8 py-5 mt-4 rounded-full text-lg mobile-link shadow-lg w-3/4 text-center">
             Diagnóstico
@@ -310,7 +324,7 @@
 
     <!-- Hero Section: Full Screen Banner -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        
+
         <!-- Background Video with Dark Overlays -->
         <div class="absolute inset-0 z-0 overflow-hidden">
             <video autoplay loop muted playsinline class="w-full h-full object-cover object-center">
@@ -318,30 +332,34 @@
             </video>
             <!-- Gradient Overlay to ensure text readability -->
             <div class="absolute inset-0 bg-gradient-to-r from-[#000000]/95 via-[#000000]/80 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/30 to-transparent opacity-90"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/30 to-transparent opacity-90">
+            </div>
         </div>
 
         <!-- Main Content -->
         <div class="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10 grid lg:grid-cols-12 gap-12 items-center">
-            
+
             <div class="lg:col-span-7 flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
-                
+
                 <!-- Top Mini Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md shadow-sm text-white font-bold text-[10px] tracking-[0.2em] uppercase mb-6 w-fit">
-                    <span class="w-2 h-2 rounded-full bg-[#dc2626] animate-pulse shadow-[0_0_10px_rgba(220,38,38,0.8)]"></span>
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md shadow-sm text-white font-bold text-[10px] tracking-[0.2em] uppercase mb-6 w-fit">
+                    <span
+                        class="w-2 h-2 rounded-full bg-[#dc2626] animate-pulse shadow-[0_0_10px_rgba(220,38,38,0.8)]"></span>
                     Engenharia de Incêndio Avançada
                 </div>
 
                 <!-- Main Typography -->
-                <h1 class="text-4xl md:text-5xl lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-6 !text-white drop-shadow-xl">
-                    Segurança <br class="hidden md:block" /> Técnica. <br />
+                <h1
+                    class="text-4xl md:text-5xl lg:text-[4.5rem] font-black leading-[1.05] tracking-tight mb-6 !text-white drop-shadow-xl">
+                    Solução <br class="hidden md:block" /> Completa Contra <br />
                     <span class="text-[#dc2626] relative inline-block">
-                        Legislação
-                        <svg class="absolute -bottom-2 left-0 w-full h-3 text-[#dc2626] opacity-50" viewBox="0 0 100 20" preserveAspectRatio="none">
+                        Incêndio
+                        <svg class="absolute -bottom-2 left-0 w-full h-3 text-[#dc2626] opacity-50" viewBox="0 0 100 20"
+                            preserveAspectRatio="none">
                             <path d="M0 10 Q 50 20 100 10" stroke="currentColor" stroke-width="6" fill="transparent" />
                         </svg>
-                    </span> <br class="hidden md:block" />
-                    Garantida.
+                    </span>
                 </h1>
 
                 <!-- Subtitle -->
@@ -352,10 +370,12 @@
 
                 <!-- Call to Actions -->
                 <div class="flex flex-col sm:flex-row gap-5 mb-10">
-                    <a href="#formulario-contato" class="btn-primary px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs shadow-[0_10px_30px_rgba(220,38,38,0.3)] hover:scale-105 hover:shadow-[0_15px_40px_rgba(220,38,38,0.5)] transition-all duration-300">
+                    <a href="#formulario-contato"
+                        class="btn-primary px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs shadow-[0_10px_30px_rgba(220,38,38,0.3)] hover:scale-105 hover:shadow-[0_15px_40px_rgba(220,38,38,0.5)] transition-all duration-300">
                         Regularizar Agora <i data-lucide="shield-check" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://wa.me/5531900000000" target="_blank" class="px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs text-white bg-white/5 border border-white/20 backdrop-blur-md shadow-lg hover:bg-white/15 transition-all duration-300 hover:scale-105">
+                    <a href="https://wa.me/5531992525098" target="_blank"
+                        class="px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs text-white bg-white/5 border border-white/20 backdrop-blur-md shadow-lg hover:bg-white/15 transition-all duration-300 hover:scale-105">
                         <i data-lucide="phone" class="w-4 h-4"></i> Consultoria
                     </a>
                 </div>
@@ -364,24 +384,28 @@
                 <div class="flex items-center gap-8 pt-8 border-t border-white/20">
                     <div class="flex -space-x-3">
                         <div class="w-11 h-11 rounded-full border-2 border-[#000000] overflow-hidden shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop"
+                                class="w-full h-full object-cover">
                         </div>
                         <div class="w-11 h-11 rounded-full border-2 border-[#000000] overflow-hidden shadow-lg">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop"
+                                class="w-full h-full object-cover">
                         </div>
-                        <div class="w-11 h-11 rounded-full border-2 border-[#000000] bg-[#dc2626] flex items-center justify-center text-[#000000] font-black text-[10px] shadow-lg">
+                        <div
+                            class="w-11 h-11 rounded-full border-2 border-[#000000] bg-[#dc2626] flex items-center justify-center text-[#000000] font-black text-[10px] shadow-lg">
                             +500
                         </div>
                     </div>
                     <div>
-                        <p class="font-black text-white text-sm uppercase tracking-wider drop-shadow-md">AVCBs Emitidos</p>
+                        <p class="font-black text-white text-sm uppercase tracking-wider drop-shadow-md">AVCBs Emitidos
+                        </p>
                         <p class="text-gray-400 text-xs font-light">Aprovação técnica sem embargos.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Right side badges (Desktop only) removed per request -->
-            
+
         </div>
     </section>
 
@@ -473,6 +497,8 @@
 
     <!-- Sectors Section: Dark Premium -->
     <section class="py-16 md:py-20 lg:py-24 bg-[#111111] relative overflow-hidden scroll-mt-24" id="setores">
+        <!-- Fire Embers Canvas -->
+        <canvas id="fire-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-70"></canvas>
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight"
@@ -528,9 +554,9 @@
                         style="background: rgba(220,38,38,0.15); color: #dc2626;">
                         <i data-lucide="users-2" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Brigada e Treinamentos</h3>
+                    <h3 class="text-xl font-bold mb-3" style="color: #ffffff;">Brigada de Incêncio e Treinamentos</h3>
                     <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.7);">Treinamentos certificados
-                        de Brigada de Incêndio (RT 14), Primeiros Socorros e terceirização de Bombeiro Civil
+                        de Brigada de Incêndio, Primeiros Socorros e terceirização de Bombeiro Civil
                         Profissional.</p>
                 </div>
             </div>
@@ -860,7 +886,7 @@
                                 class="accordion-header w-full flex justify-between items-center py-4 text-[#333] hover:text-[#dc2626] transition-colors focus:outline-none">
                                 <span
                                     class="text-left font-semibold text-[15px] accordion-header-text transition-colors">Treinamentos
-                                    de Brigada de Incêndio (RT 14)</span>
+                                    de Brigada de Incêndio</span>
                                 <i data-lucide="plus"
                                     class="w-4 h-4 text-gray-400 icon-plus transition-transform shrink-0"></i>
                             </button>
@@ -980,6 +1006,49 @@
                             e segurança extrema para polo cinematográfico.</p>
                     </div>
                 </div>
+                <!-- Projeto 4 (Hidden) -->
+                <div class="hidden-project group relative rounded-[2rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-[800ms] ease-out cursor-pointer hidden opacity-0 translate-y-8">
+                    <div class="aspect-[4/3] w-full bg-gray-200 relative overflow-hidden">
+                        <img src="/museu%20da%20imagem%20e%20do%20som.jpg" alt="Museu da Imagem e do Som"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <span
+                            class="inline-block px-3 py-1 bg-amber-500 text-[#0a0a0a] text-[10px] font-bold uppercase tracking-wider rounded-full mb-3 shadow-md">Acervo Cultural</span>
+                        <h3 class="text-xl font-bold mb-2" style="color: #ffffff;">Museu da Imagem e do Som</h3>
+                        <p class="text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+                            style="color: rgba(255,255,255,0.7);">Adequação de projeto contra incêndio focada na preservação rigorosa do acervo e instalações.</p>
+                    </div>
+                </div>
+
+                <!-- Projeto 5 (Hidden) -->
+                <div class="hidden-project group relative rounded-[2rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-[800ms] ease-out cursor-pointer hidden opacity-0 translate-y-8">
+                    <div class="aspect-[4/3] w-full bg-gray-200 relative overflow-hidden">
+                        <img src="/museu%20da%20moda.webp" alt="Museu da Moda"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <span
+                            class="inline-block px-3 py-1 bg-purple-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-full mb-3 shadow-md">Patrimônio Histórico</span>
+                        <h3 class="text-xl font-bold mb-2" style="color: #ffffff;">Museu da Moda</h3>
+                        <p class="text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+                            style="color: rgba(255,255,255,0.7);">Soluções avançadas de segurança e detecção projetadas para respeitar as premissas arquitetônicas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center" id="ver-mais-projetos-container">
+                <button type="button" onclick="showMoreProjects()" class="text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-[#dc2626] transition-colors inline-flex items-center gap-2">
+                    <i data-lucide="plus" class="w-4 h-4"></i> Ver Mais Projetos
+                </button>
             </div>
 
             <div class="mt-16 text-center" data-aos="fade-up">
@@ -1059,9 +1128,13 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Certifications Area - New Addition -->
-            <div class="pt-12 border-t border-white/10" data-aos="fade-up" data-aos-delay="400">
+    <!-- Certificações -->
+    <section class="pb-16 md:pb-20 lg:pb-24 bg-[#0a0a0a] relative overflow-hidden scroll-mt-24" id="certificacoes">
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="pt-12 border-t border-white/10" data-aos="fade-up">
                 <p class="text-center text-[10px] font-black uppercase tracking-[0.3em] mb-10"
                     style="color: rgba(255,255,255,0.45);">Conformidade e Certificações Exigidas Garantidas</p>
                 <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-90">
@@ -1134,7 +1207,7 @@
 
                 <!-- Left Side: Contact Info -->
                 <div
-                    class="lg:w-2/5 bg-[#415161] text-white p-12 relative overflow-hidden flex flex-col justify-between">
+                    class="lg:w-2/5 bg-[#415161] text-white p-8 lg:p-12 relative overflow-hidden flex flex-col justify-between">
                     <!-- Geometric Accents -->
                     <div
                         class="absolute -bottom-24 -right-24 w-64 h-64 border-[30px] border-white/5 rounded-full pointer-events-none">
@@ -1159,9 +1232,8 @@
                                 <div>
                                     <p class="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">Telefone /
                                         WhatsApp</p>
-                                    <a href="#"
-                                        class="text-lg font-semibold hover:text-[#dc2626] transition-colors">(31)
-                                        99999-9999</a>
+                                    <a href="https://wa.me/5531992525098"
+                                        class="text-lg font-semibold hover:text-[#dc2626] transition-colors">(31) 99252-5098</a>
                                 </div>
                             </div>
 
@@ -1173,8 +1245,8 @@
                                 <div>
                                     <p class="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">E-mail
                                         Profissional</p>
-                                    <a href="mailto:contato@stiengenharia.com"
-                                        class="text-lg font-semibold hover:text-[#dc2626] transition-colors">contato@stiengenharia.com</a>
+                                    <a href="mailto:comercial@stiengenharia.com.br"
+                                        class="text-lg font-semibold hover:text-[#dc2626] transition-colors break-all">comercial@stiengenharia.com.br</a>
                                 </div>
                             </div>
 
@@ -1195,48 +1267,20 @@
                 </div>
 
                 <!-- Right Side: The Form -->
-                <div class="lg:w-3/5 p-12 bg-white relative">
-                    <form action="#" method="POST" class="space-y-6 relative z-10 h-full flex flex-col justify-center">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label for="nome"
-                                    class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">Nome
-                                    Completo</label>
-                                <input type="text" id="nome" name="nome" required placeholder="Ex: Carlos Albuquerque"
-                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
-                            </div>
-                            <div class="space-y-2">
-                                <label for="empresa"
-                                    class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">Empresa
-                                    / Condomínio</label>
-                                <input type="text" id="empresa" name="empresa" placeholder="Nome da organização"
-                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label for="email"
-                                    class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">E-mail
-                                    Profissional</label>
-                                <input type="email" id="email" name="email" required
-                                    placeholder="contato@empresa.com.br"
-                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
-                            </div>
-                            <div class="space-y-2">
-                                <label for="telefone"
-                                    class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">Telefone
-                                    (WhatsApp)</label>
-                                <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000"
-                                    class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
-                            </div>
+                <div class="lg:w-3/5 p-8 lg:p-12 bg-white relative">
+                    <form id="wpp-form-incendio" class="space-y-6 relative z-10 h-full flex flex-col justify-center">
+                        <div class="space-y-2">
+                            <label for="nome-incendio"
+                                class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">Nome</label>
+                            <input type="text" id="nome-incendio" required placeholder="Como podemos te chamar?"
+                                class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
                         </div>
 
                         <div class="space-y-2">
-                            <label for="mensagem"
+                            <label for="mensagem-incendio"
                                 class="block text-xs font-bold uppercase tracking-wider text-[#0a0a0a] ml-1">Como
                                 podemos ajudar?</label>
-                            <textarea id="mensagem" name="mensagem" rows="3" required
+                            <textarea id="mensagem-incendio" rows="4" required
                                 placeholder="Descreva brevemente sua necessidade..."
                                 class="w-full bg-[#f8f9fa] border border-transparent rounded-xl px-5 py-4 text-[#0a0a0a] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626]/50 focus:bg-white focus:border-[#dc2626] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] resize-none"></textarea>
                         </div>
@@ -1244,13 +1288,12 @@
                         <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-6">
                             <p
                                 class="text-xs text-gray-400 font-medium flex items-center gap-2 max-w-[200px] leading-relaxed">
-                                <i data-lucide="lock" class="w-4 h-4 shrink-0"></i> Seus dados estão todos 100% seguros.
+                                <i data-lucide="lock" class="w-4 h-4 shrink-0"></i> Redirecionamento 100% seguro.
                             </p>
-                            <button type="submit"
-                                class="w-full sm:w-auto bg-[#dc2626] hover:bg-[#ca8a04] text-[#000000] font-extrabold px-10 py-4 rounded-xl transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(220,38,38,0.5)] hover:shadow-[0_12px_25px_-6px_rgba(220,38,38,0.6)] hover:-translate-y-1 flex justify-center items-center gap-3 group">
-                                Enviar Solicitação
-                                <i data-lucide="arrow-right"
-                                    class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"></i>
+                            <button type="button" onclick="sendToWhatsappIncendio()"
+                                class="w-full sm:w-auto bg-[#444F5F] hover:bg-[#343e4b] text-[#ffffff] font-extrabold px-10 py-4 rounded-xl transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(68,79,95,0.5)] hover:shadow-[0_12px_25px_-6px_rgba(68,79,95,0.6)] hover:-translate-y-1 flex justify-center items-center gap-3 group">
+                                Abrir no WhatsApp
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="transition-transform group-hover:scale-110"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>
                             </button>
                         </div>
                     </form>
@@ -1324,18 +1367,18 @@
                         </li>
                         <li class="flex items-center gap-4">
                             <i data-lucide="mail" class="w-5 h-5 shrink-0" style="color: #dc2626;"></i>
-                            <a href="mailto:contato@stiengenharia.com" class="transition-colors duration-300"
+                            <a href="mailto:comercial@stiengenharia.com.br" class="transition-colors duration-300"
                                 onmouseover="this.style.color='#ffffff';"
                                 onmouseout="this.style.color='rgba(255,255,255,0.7)';">
-                                contato@stiengenharia.com
+                                comercial@stiengenharia.com.br
                             </a>
                         </li>
                         <li class="flex items-center gap-4">
                             <i data-lucide="phone" class="w-5 h-5 shrink-0" style="color: #dc2626;"></i>
-                            <a href="tel:+5531900000000" class="transition-colors duration-300"
+                            <a href="tel:+5531992525098" class="transition-colors duration-300"
                                 onmouseover="this.style.color='#ffffff';"
                                 onmouseout="this.style.color='rgba(255,255,255,0.7)';">
-                                +55 (31) 90000-0000
+                                +55 31 99252-5098
                             </a>
                         </li>
                     </ul>
@@ -1357,7 +1400,7 @@
 
     <!-- WhatsApp Solid Minimalist -->
     <!-- Notice WhatsApp icon stays green #25D366 because it's a social standard, not a brand asset -->
-    <a href="https://wa.me/5531900000000" target="_blank"
+    <a href="https://wa.me/5531992525098" target="_blank"
         class="fixed bottom-6 right-6 w-18 h-18 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:-translate-y-2 transition-transform duration-300 z-[90]">
         <i data-lucide="message-circle" class="w-9 h-9"></i>
     </a>
@@ -1425,8 +1468,108 @@
             mobileBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7 text-[#0a0a0a]"></i>';
             lucide.createIcons();
         }));
+
+        // Send Form to Whatsapp Function
+        function sendToWhatsappIncendio() {
+            const nome = document.getElementById('nome-incendio').value.trim();
+            const mensagem = document.getElementById('mensagem-incendio').value.trim();
+            if(!nome || !mensagem) {
+                alert("Por favor, preencha seu nome e como podemos ajudar para continuar.");
+                return;
+            }
+            const phone = "5531992525098";
+            const text = `Olá STI Engenharia, meu nome é ${nome}. ${mensagem}`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
+        }
+
+        // Show More Projects Function
+        function showMoreProjects() {
+            const hiddenProjects = document.querySelectorAll('.hidden-project');
+            hiddenProjects.forEach((proj, index) => {
+                proj.classList.remove('hidden');
+                // Force a reflow
+                void proj.offsetWidth;
+                // Add staggered animation
+                setTimeout(() => {
+                    proj.classList.remove('opacity-0', 'translate-y-8');
+                    proj.classList.add('opacity-100', 'translate-y-0');
+                }, index * 150);
+            });
+            document.getElementById('ver-mais-projetos-container').style.display = 'none';
+            if (window.AOS) setTimeout(() => AOS.refresh(), 1000);
+        }
+
+        // Fire Embers Particles Effect
+        function initFireEmbers() {
+            const canvas = document.getElementById('fire-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height;
+
+            function resize() {
+                const section = document.getElementById('setores');
+                if(!section) return;
+                width = section.offsetWidth;
+                height = section.offsetHeight;
+                canvas.width = width;
+                canvas.height = height;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const particles = [];
+            const particleCount = 80;
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(createParticle(true));
+            }
+
+            function createParticle(initial = false) {
+                return {
+                    x: Math.random() * width,
+                    y: initial ? Math.random() * height : height + Math.random() * 50,
+                    size: Math.random() * 3.5 + 1.5,
+                    speedY: Math.random() * 2.5 + 1.0,
+                    speedX: (Math.random() - 0.5) * 2.0,
+                    opacity: Math.random() * 0.7 + 0.3,
+                    glow: Math.random() * 20 + 10
+                };
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                const gradient = ctx.createLinearGradient(0, height, 0, height - 400);
+                gradient.addColorStop(0, 'rgba(220, 38, 38, 0.15)');
+                gradient.addColorStop(1, 'rgba(17, 17, 17, 0)');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, width, height);
+
+                particles.forEach(p => {
+                    p.y -= p.speedY;
+                    p.x += p.speedX;
+                    p.opacity -= 0.001;
+                    
+                    if (p.y < -50 || p.opacity <= 0) {
+                        const newP = createParticle(false);
+                        Object.assign(p, newP);
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, ${Math.floor(Math.random() * 100 + 80)}, 0, ${p.opacity})`;
+                    ctx.shadowBlur = p.glow;
+                    ctx.shadowColor = '#dc2626';
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+        
+        document.addEventListener('DOMContentLoaded', initFireEmbers);
     </script>
 </body>
 
 </html>
-
