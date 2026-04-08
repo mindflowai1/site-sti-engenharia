@@ -11,7 +11,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         incendio: resolve(__dirname, 'incendio/index.html'),
-        lp3: resolve(__dirname, 'lp3/index.html'),
+        empreendimentos: resolve(__dirname, 'empreendimentos/index.html'),
       },
     },
   },

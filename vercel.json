@@ -36,11 +36,11 @@
       "has": [
         {
           "type": "host",
-          "value": "lp3.dominio.com.br"
+          "value": "empreendimentos.dominio.com.br"
         }
       ],
       "source": "/(.*)",
-      "destination": "/lp3/index.html"
+      "destination": "/empreendimentos/index.html"
     },
     {
       "source": "/(.*)",
