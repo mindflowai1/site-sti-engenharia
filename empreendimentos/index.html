@@ -417,9 +417,9 @@
         <div class="absolute inset-0 flex items-center justify-center p-4 md:p-10 pointer-events-none">
             <div class="modal-content bg-white w-full max-w-6xl max-h-[90vh] rounded-[40px] overflow-hidden flex flex-col md:flex-row pointer-events-auto transform transition-all duration-500 scale-95 opacity-0" id="modalContainer">
                 
-                <!-- Galeria Lateral (Scrollable) -->
-                <div class="w-full md:w-3/5 bg-gray-100 relative overflow-hidden h-64 md:h-auto">
-                    <div id="modalGallery" class="h-full w-full flex flex-col gap-4 p-4 overflow-y-auto custom-scrollbar">
+                <!-- Galeria Lateral (Scrollable/Carousel Mobile) -->
+                <div class="w-full md:w-3/5 bg-gray-100 relative overflow-hidden h-72 md:h-auto">
+                    <div id="modalGallery" class="h-full w-full flex flex-row md:flex-col gap-4 p-4 overflow-x-auto md:overflow-y-auto snap-x snap-mandatory md:snap-none custom-scrollbar pb-6 md:pb-4">
                         <!-- Imagens injetadas via JS -->
                     </div>
                 </div>
@@ -601,7 +601,7 @@
             // Gallery
             const galleryContainer = document.getElementById('modalGallery');
             galleryContainer.innerHTML = data.gallery.map(img => 
-                `<img src="${img}" class="w-full rounded-2xl gallery-image aspect-video object-cover" alt="Foto Projeto">`
+                `<img src="${img}" class="w-[85vw] md:w-full shrink-0 snap-center rounded-2xl gallery-image aspect-video object-cover shadow-lg" alt="Foto Projeto">`
             ).join('');
 
             // Features
