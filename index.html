@@ -59,12 +59,26 @@
             </a>
 
             <nav
-                class="hidden md:flex items-center gap-8 font-heading font-medium text-sm text-slate-700 tracking-wide">
-                <a href="#diferenciais" class="hover:text-accent font-semibold transition-colors">Diferenciais</a>
-                <a href="#servicos" class="hover:text-accent font-semibold transition-colors">Serviços</a>
-                <a href="#treinamentos" class="hover:text-accent font-semibold transition-colors">Treinamentos</a>
-                <a href="#certificacoes" class="hover:text-accent font-semibold transition-colors">Certificações</a>
-                <a href="#faq" class="hover:text-accent font-semibold transition-colors">FAQ</a>
+                class="hidden md:flex items-start gap-4 lg:gap-6 font-heading font-medium text-sm text-slate-700 tracking-wide mt-1">
+                <a href="#diferenciais" class="hover:text-accent font-semibold transition-colors py-2">Diferenciais</a>
+                <a href="#servicos" class="hover:text-accent font-semibold transition-colors py-2 leading-[1.2]">Medicina do Trabalho<br>e Segurança</a>
+                
+                <!-- Dropdown Treinamentos -->
+                <div class="relative group py-2">
+                    <button class="flex items-center gap-1 hover:text-accent font-semibold transition-colors focus:outline-none">
+                        Treinamentos <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute left-0 top-full mt-0 w-64 bg-white rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top group-hover:translate-y-0 translate-y-2 z-50">
+                        <div class="py-2">
+                            <a href="#treinamentos" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-accent font-medium transition-colors">Máquinas Pesadas e Terraplanagem</a>
+                            <a href="#nrs" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-accent font-medium transition-colors">Normas Regulamentadoras (NRs)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#certificacoes" class="hover:text-accent font-semibold transition-colors py-2">Certificações</a>
+                <a href="#faq" class="hover:text-accent font-semibold transition-colors py-2">FAQ</a>
             </nav>
 
             <div class="hidden md:block">
@@ -86,9 +100,16 @@
             <a href="#diferenciais"
                 class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">Diferenciais</a>
             <a href="#servicos"
-                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">SERVIÇOS</a>
-            <a href="#treinamentos"
-                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">Treinamentos</a>
+                class="text-xl md:text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link text-center px-4 leading-tight">Medicina do Trabalho<br>e Segurança</a>
+            
+            <div class="flex flex-col items-center gap-4">
+                <span class="text-2xl font-heading font-bold text-slate-800">Treinamentos</span>
+                <div class="flex flex-col items-center gap-3">
+                    <a href="#treinamentos" class="text-lg font-medium text-slate-600 hover:text-accent mobile-link text-center">Máquinas Pesadas</a>
+                    <a href="#nrs" class="text-lg font-medium text-slate-600 hover:text-accent mobile-link text-center">Normas (NRs)</a>
+                </div>
+            </div>
+
             <a href="#certificacoes"
                 class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">Certificações</a>
             <a href="#faq" class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link">FAQ</a>
@@ -195,16 +216,16 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- PGR -->
+                <!-- Gestão de eSocial -->
                 <div class="bg-white p-8 border border-gray-100 rounded-xl group hover:border-accent/40 shadow-sm transition-all duration-300 text-center"
                     data-aos="fade-up" data-aos-delay="100">
                     <div
                         class="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center text-accent mb-6 mx-auto group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                        <i data-lucide="alert-triangle" class="w-7 h-7"></i>
+                        <i data-lucide="clipboard-list" class="w-7 h-7"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-slate-800 tracking-tight">PGR</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed font-light">Programa de Gerenciamento de Riscos
-                        para identificação e prevenção de acidentes/doenças no trabalho.</p>
+                    <h4 class="text-xl font-bold mb-3 text-slate-800 tracking-tight">Gestão ESocial</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">Envio de eventos S2210, S2220, S2221 e
+                        S2240 cumprindo obrigações legais.</p>
                 </div>
 
                 <!-- PCMSO -->
@@ -219,9 +240,21 @@
                         Ocupacional para monitoramento da saúde dos colaboradores.</p>
                 </div>
 
-                <!-- LTCAT -->
+                <!-- PGR -->
                 <div class="bg-white p-8 border border-gray-100 rounded-xl group hover:border-accent/40 shadow-sm transition-all duration-300 text-center"
                     data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center text-accent mb-6 mx-auto group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                        <i data-lucide="alert-triangle" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-slate-800 tracking-tight">PGR</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">Programa de Gerenciamento de Riscos
+                        para identificação e prevenção de acidentes/doenças no trabalho.</p>
+                </div>
+
+                <!-- LTCAT -->
+                <div class="bg-white p-8 border border-gray-100 rounded-xl group hover:border-accent/40 shadow-sm transition-all duration-300 text-center"
+                    data-aos="fade-up" data-aos-delay="250">
                     <div
                         class="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center text-accent mb-6 mx-auto group-hover:bg-accent group-hover:text-white transition-all duration-300">
                         <i data-lucide="file-plus" class="w-7 h-7"></i>
@@ -229,18 +262,6 @@
                     <h4 class="text-xl font-bold mb-3 text-slate-800 tracking-tight">LTCAT</h4>
                     <p class="text-slate-600 text-sm leading-relaxed font-light">Laudo Técnico de Condições Ambientais
                         do Trabalho em atendimento a legislação previdenciária.</p>
-                </div>
-
-                <!-- AET -->
-                <div class="bg-white p-8 border border-gray-100 rounded-xl group hover:border-accent/40 shadow-sm transition-all duration-300 text-center"
-                    data-aos="fade-up" data-aos-delay="250">
-                    <div
-                        class="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center text-accent mb-6 mx-auto group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                        <i data-lucide="search" class="w-7 h-7"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-3 text-slate-800 tracking-tight">AET</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed font-light">Análise Ergonômica do Trabalho para
-                        garantir o bem estar no ambiente profissional conforme a NR 17.</p>
                 </div>
 
                 <!-- Avaliações Ambientais -->
@@ -255,16 +276,15 @@
                         garantindo conformidade com a legislação vigente e a segurança dos colaboradores.</p>
                 </div>
 
-                <!-- Treinamento -->
+                <!-- Exames Médicos Completos -->
                 <div class="bg-white p-8 border border-gray-100 rounded-xl group hover:border-accent/40 shadow-sm transition-all duration-300 text-center"
                     data-aos="fade-up" data-aos-delay="350">
                     <div
                         class="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center text-accent mb-6 mx-auto group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                        <i data-lucide="presentation" class="w-7 h-7"></i>
+                        <i data-lucide="activity-square" class="w-7 h-7"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-slate-800 tracking-tight">Treinamento</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed font-light">Capacitação dos colaboradores para
-                        garantir prevenção e consequentemente atividades seguras.</p>
+                    <h4 class="text-xl font-bold mb-3 text-slate-800 tracking-tight">Exames Médicos Completos</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">Realização de exames ocupacionais (admissional, demissional, periódico, mudança de função) e complementares.</p>
                 </div>
             </div>
 
@@ -295,16 +315,16 @@
                         para identificação de atividades insalubres/periculosas.</p>
                 </div>
 
-                <!-- Gestão de eSocial -->
+                <!-- AET -->
                 <div
                     class="bg-white p-8 border border-gray-100 rounded-xl group hover:border-accent/40 shadow-sm transition-all duration-300 text-center">
                     <div
                         class="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center text-accent mb-6 mx-auto group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                        <i data-lucide="clipboard-list" class="w-7 h-7"></i>
+                        <i data-lucide="search" class="w-7 h-7"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3 text-slate-800 tracking-tight">Gestão de eSocial</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed font-light">Envio de eventos S2210, S2220, S2221 e
-                        S2240 cumprindo obrigações legais.</p>
+                    <h4 class="text-xl font-bold mb-3 text-slate-800 tracking-tight">AET</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">Análise Ergonômica do Trabalho para
+                        garantir o bem estar no ambiente profissional conforme a NR 17.</p>
                 </div>
             </div>
 
@@ -629,14 +649,16 @@
 
 
     <!-- Section: NRs -->
-    <section class="py-24 bg-gray-50 border-t border-gray-200 relative overflow-hidden" id="nrs">
+    <section class="py-24 bg-accent relative overflow-hidden" id="nrs">
+        <!-- Textura/Glow no fundo -->
+        <div class="absolute inset-0 bg-white/20 mix-blend-overlay pointer-events-none"></div>
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="mb-16 text-center max-w-3xl mx-auto" data-aos="fade-up">
-                <span class="text-accent uppercase font-bold tracking-[0.2em] text-xs mb-3 block">Certificação
+                <span class="text-brand-blue uppercase font-black tracking-[0.2em] text-xs mb-3 block opacity-90">Certificação
                     Obrigatória</span>
                 <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">Treinamentos de NR's
                 </h2>
-                <p class="text-slate-600 text-lg font-light leading-relaxed">
+                <p class="text-slate-800 text-lg font-medium leading-relaxed">
                     Capacitação técnica rigorosa em conformidade com as Normas Regulamentadoras.
                     Garantia de segurança jurídica e operacional para sua empresa.
                 </p>
@@ -644,7 +666,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- NR 05 -->
-                <div class="bg-white p-8 border border-gray-100 rounded-2xl group hover:border-accent shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                <div class="bg-white p-8 border border-white/60 rounded-2xl group hover:border-brand-blue/30 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
                     data-aos="fade-up">
                     <div class="flex items-center justify-between mb-6">
                         <div
@@ -673,7 +695,7 @@
                 </div>
 
                 <!-- NR 06 -->
-                <div class="bg-white p-8 border border-gray-100 rounded-2xl group hover:border-accent shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                <div class="bg-white p-8 border border-white/60 rounded-2xl group hover:border-brand-blue/30 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
                     data-aos="fade-up" data-aos-delay="50">
                     <div class="flex items-center justify-between mb-6">
                         <div
@@ -702,7 +724,7 @@
                 </div>
 
                 <!-- NR 10 -->
-                <div class="bg-white p-8 border border-gray-100 rounded-2xl group hover:border-accent shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                <div class="bg-white p-8 border border-white/60 rounded-2xl group hover:border-brand-blue/30 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
                     data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center justify-between mb-6">
                         <div
@@ -731,7 +753,7 @@
                 </div>
 
                 <!-- NR 11 -->
-                <div class="bg-white p-8 border border-gray-100 rounded-2xl group hover:border-accent shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                <div class="bg-white p-8 border border-white/60 rounded-2xl group hover:border-brand-blue/30 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
                     data-aos="fade-up" data-aos-delay="150">
                     <div class="flex items-center justify-between mb-6">
                         <div
@@ -760,7 +782,7 @@
                 </div>
 
                 <!-- NR 12 -->
-                <div class="bg-white p-8 border border-gray-100 rounded-2xl group hover:border-accent shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                <div class="bg-white p-8 border border-white/60 rounded-2xl group hover:border-brand-blue/30 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
                     data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center justify-between mb-6">
                         <div
@@ -789,7 +811,7 @@
                 </div>
 
                 <!-- NR 33 -->
-                <div class="bg-white p-8 border border-gray-100 rounded-2xl group hover:border-accent shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                <div class="bg-white p-8 border border-white/60 rounded-2xl group hover:border-brand-blue/30 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
                     data-aos="fade-up" data-aos-delay="250">
                     <div class="flex items-center justify-between mb-6">
                         <div
@@ -818,7 +840,7 @@
                 </div>
 
                 <!-- NR 35 -->
-                <div class="bg-white p-8 border border-gray-100 rounded-2xl group hover:border-accent shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+                <div class="bg-white p-8 border border-white/60 rounded-2xl group hover:border-brand-blue/30 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col h-full relative overflow-hidden"
                     data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center justify-between mb-6">
                         <div
