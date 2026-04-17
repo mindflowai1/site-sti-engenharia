@@ -55,6 +55,7 @@
             transform: scale(1.02);
             filter: brightness(1.05);
         }
+
         .whatsapp-float {
             position: fixed;
             bottom: 40px;
@@ -83,9 +84,17 @@
         }
 
         @keyframes pulse-whatsapp {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -96,6 +105,22 @@
                 height: 50px;
             }
         }
+
+        /* FAQ Accordion Styles */
+        .faq-item.active .faq-content {
+            max-height: 500px;
+            margin-top: 1rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active button {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(184, 145, 84, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 
@@ -105,273 +130,490 @@
     <!-- Navbar -->
     <header id="navbar"
         class="fixed w-full z-50 transition-all duration-300 py-3 md:py-4 border-b border-gray-100 bg-white shadow-sm">
-        <div class="container mx-auto px-5 lg:px-6 max-w-7xl flex items-center justify-between">
-            <a href="/" class="flex items-center z-50 shrink-0 mt-1 -ml-2 md:ml-0">
-                <img src="/logo-sti.png" alt="STI Engenharia"
-                    class="w-40 md:w-52 lg:w-64 max-h-12 md:max-h-16 lg:max-h-20 h-auto object-contain object-left transform origin-left scale-[1.5] md:scale-125 transition-transform"
-                    id="nav-logo">
-            </a>
-
-            <nav
-                class="hidden md:flex items-center gap-8 font-heading font-medium text-sm text-slate-700 tracking-wide">
-                <a href="#metodos"
-                    class="hover:text-accent font-semibold transition-colors uppercase tracking-[0.1em]">Expertise</a>
-                <a href="#solucoes"
-                    class="hover:text-accent font-semibold transition-colors uppercase tracking-[0.1em]">Estratégia</a>
-                <a href="#portfolio"
-                    class="hover:text-accent font-semibold transition-colors uppercase tracking-[0.1em]">Portfólio</a>
-            </nav>
-
-            <div class="hidden md:block">
-                <a href="/#contato"
-                    class="bg-accent hover:bg-accent-hover text-brand-blue font-bold px-6 py-2.5 rounded text-sm transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2">
-                    Solicitar Orçamento
+        <div class="container mx-auto px-5 lg:px-6 max-w-7xl flex items-center">
+            <!-- Logo Column (Left) -->
+            <div class="w-1/3 md:w-1/4 flex justify-start">
+                <a href="/" class="flex items-center shrink-0 mt-1 -ml-2 md:ml-0 relative z-10">
+                    <img src="/logo-sti.png" alt="STI Engenharia"
+                        class="w-40 md:w-52 lg:w-64 max-h-12 md:max-h-16 lg:max-h-20 h-auto object-contain object-left transform origin-left scale-[1.5] md:scale-125 transition-transform"
+                        id="nav-logo">
                 </a>
             </div>
 
-            <!-- Mobile Menu Btn -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-800 z-50 focus:outline-none p-2 shrink-0">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
+            <!-- Nav Column (Center) -->
+            <nav
+                class="hidden md:flex flex-1 justify-center items-start pt-1 gap-6 lg:gap-8 font-heading font-medium text-sm text-slate-700 tracking-wide relative z-20">
+                <a href="#metodos"
+                    class="hover:text-accent font-semibold transition-colors uppercase tracking-[0.1em]">EXPERTISE</a>
+                <a href="#diferenciais"
+                    class="hover:text-accent font-semibold transition-colors uppercase tracking-[0.1em]">Diferenciais</a>
+                <a href="#solucoes"
+                    class="hover:text-accent font-semibold transition-colors uppercase tracking-[0.1em] whitespace-nowrap">Serviços
+                    Públicos</a>
+                <div class="relative group h-full flex items-center">
+                    <button
+                        class="hover:text-accent font-semibold transition-colors uppercase tracking-[0.1em] flex items-center gap-1 group-hover:text-accent">
+                        Portfólio <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                    <!-- Dropdown Content -->
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-full pt-4 hidden group-hover:block transition-all duration-300">
+                        <div class="w-48 bg-white rounded-2xl shadow-xl border border-gray-100 py-3 overflow-hidden">
+                            <a href="#portfolio"
+                                class="block px-6 py-3 text-[10px] font-bold text-slate-700 hover:text-accent hover:bg-gray-50 transition-colors uppercase tracking-widest border-b border-gray-50">Obras
+                                Executadas</a>
+                            <a href="#acabamentos"
+                                class="block px-6 py-3 text-[10px] font-bold text-slate-700 hover:text-accent hover:bg-gray-50 transition-colors uppercase tracking-widest">Acabamentos</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#certificacoes"
+                    class="hover:text-accent font-semibold transition-colors uppercase tracking-[0.1em]">Certificações</a>
+                <a href="#faq"
+                    class="hover:text-accent font-semibold transition-colors uppercase tracking-[0.1em]">FAQ</a>
+            </nav>
+
+            <!-- Action Column (Right) -->
+            <div class="w-1/3 md:w-1/4 flex justify-end">
+                <!-- Mobile Menu Btn -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-800 z-50 focus:outline-none p-2 shrink-0">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
         </div>
 
-        <!-- Mobile Dropdown -->
         <div id="mobile-menu"
             class="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center gap-8 pt-20 hidden opacity-0 transition-opacity duration-300">
             <a href="#metodos"
-                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">Expertise</a>
+                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">EXPERTISE</a>
+            <a href="#diferenciais"
+                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">Diferenciais</a>
             <a href="#solucoes"
-                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">Estratégia</a>
-            <a href="#portfolio"
-                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">PORTFÓLIO</a>
-            <a href="/#contato" class="bg-accent text-brand-blue font-bold px-8 py-4 rounded text-lg mobile-link">
-                Solicitar Orçamento
-            </a>
+                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">Serviços
+                Públicos</a>
+            <div class="flex flex-col items-center gap-4">
+                <span class="text-xs font-black text-accent uppercase tracking-[0.3em] mb-1">Portfólio</span>
+                <a href="#portfolio"
+                    class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">Obras
+                    Executadas</a>
+                <a href="#acabamentos"
+                    class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">Acabamentos</a>
+            </div>
+            <a href="#certificacoes"
+                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">CERTIFICAÇÕES</a>
+            <a href="#faq"
+                class="text-2xl font-heading font-bold text-slate-800 hover:text-accent mobile-link uppercase tracking-widest">FAQ</a>
+
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[90svh] flex items-center justify-center pt-24 overflow-hidden">
+    <section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
         <!-- Background Overlay -->
         <div class="absolute inset-0 z-0 bg-brand-blue">
-            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-70">
-                <source src="/IMG_3211.MP4" type="video/mp4">
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="/Flow_202604171353.mp4" type="video/mp4">
             </video>
-            <!-- Overlay Gradients para Legibilidade Balanceada -->
-            <div class="absolute inset-0 bg-black/20"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/20 to-transparent"></div>
+            <!-- Enhanced Dual Gradient for Left-Aligned Text Readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-blue via-transparent to-transparent"></div>
         </div>
 
-        <div class="container mx-auto px-6 max-w-7xl relative z-10 py-20 flex flex-col items-center text-center">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-8 backdrop-blur-sm" data-aos="fade-down">
+        <div class="container mx-auto px-6 max-w-7xl relative z-10 py-20 flex flex-col items-start text-left">
+            <span
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-8 backdrop-blur-sm"
+                data-aos="fade-down">
                 <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
                 Inovação & Solidez
             </span>
-            
-            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-black leading-[1.05] tracking-tight mb-8 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] text-white" data-aos="fade-up" data-aos-delay="100">
-                Construindo <span class="text-accent">Sonhos.</span> <br>
-                <span class="text-white/90">Transformando Vidas.</span>
+
+            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-black leading-[1.05] tracking-tight mb-8 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] text-white uppercase"
+                data-aos="fade-up" data-aos-delay="100">
+                Construindo <br> <span class="text-accent">Sonhos.</span> <br>
+                <span class="text-white/90">Transformando <br> Vidas.</span>
             </h1>
 
-            <p class="text-lg md:text-2xl text-white/95 max-w-3xl font-heading font-medium leading-relaxed mb-12 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" data-aos="fade-up" data-aos-delay="200">
-                Engenharia de alta performance além do concreto. Criamos espaços que inspiram confiança e viabilizamos o futuro através de métodos técnicos rigorosos.
+            <p class="text-lg md:text-2xl text-white/95 max-w-3xl font-heading font-medium leading-relaxed mb-12 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
+                data-aos="fade-up" data-aos-delay="200">
+                Engenharia de alta performance além do concreto. Criamos espaços que inspiram confiança e viabilizamos o
+                futuro através de métodos técnicos rigorosos.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-5" data-aos="fade-up" data-aos-delay="300">
-                <a href="#portfolio" class="bg-accent hover:bg-accent-hover text-brand-blue font-bold px-10 py-5 rounded transition-all transform hover:-translate-y-1 shadow-lg shadow-accent/20">
+                <a href="#portfolio"
+                    class="bg-accent hover:bg-accent-hover text-brand-blue font-extrabold px-10 py-5 rounded transition-all transform hover:-translate-y-1 shadow-lg shadow-accent/20 uppercase tracking-widest text-sm">
                     Explorar Empreendimentos
                 </a>
-                <a href="/#contato" class="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium px-10 py-5 rounded backdrop-blur-sm transition-all text-center">
+                <a href="/#contato"
+                    class="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-bold px-10 py-5 rounded backdrop-blur-sm transition-all text-center uppercase tracking-widest text-sm">
                     Falar com Engenharia
                 </a>
             </div>
-        </div>
-    </section>
 
-    <!-- Section: Tipos de Construção -->
-    <section class="py-24 bg-gray-50 border-y border-gray-100" id="metodos">
-        <div class="container mx-auto px-6 max-w-7xl">
-            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
-                <span class="text-accent uppercase font-bold tracking-[0.2em] text-[10px] mb-3 block">Nossa
-                    Expertise</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-slate-900 leading-tight">
-                    MÉTODOS <span class="text-accent">CONSTRUTIVOS.</span>
-                </h2>
-                <p class="text-slate-600 text-lg font-light leading-relaxed">
-                    Dominamos diversas tecnologias para entregar a solução ideal para cada projeto, equilibrando custo,
-                    prazo e sustentabilidade.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Alvenaria Convencional -->
-                <div class="bg-white rounded-2xl border border-gray-100 group hover:border-accent/40 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 overflow-hidden"
-                    data-aos="fade-up">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1590332881930-b3e1f57f5c53?q=80&w=600"
-                            alt="Alvenaria Convencional"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
-                            <i data-lucide="layers" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-brand-blue">Alvenaria Convencional</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed font-light">Técnica clássica com vigas e
-                            pilares, oferecendo total liberdade para modificações futuras no layout.</p>
-                    </div>
+            <!-- Certificações Hero (Desktop Only) -->
+            <div class="hidden lg:flex items-center gap-10 mt-16 pt-10 border-t border-white/10 w-full"
+                data-aos="fade-up" data-aos-delay="400">
+                <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity">
+                    <i data-lucide="award" class="text-accent w-6 h-6"></i>
+                    <span class="text-white text-xs font-black tracking-widest uppercase">ISO 9001</span>
                 </div>
-
-                <!-- Alvenaria Estrutural -->
-                <div class="bg-white rounded-2xl border border-gray-100 group hover:border-accent/40 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 overflow-hidden"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=600"
-                            alt="Alvenaria Estrutural"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
-                            <i data-lucide="layout-grid" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-brand-blue">Alvenaria Estrutural</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed font-light">Agilidade e economia onde as
-                            próprias paredes suportam a carga, eliminando a necessidade de pilares independentes.</p>
-                    </div>
+                <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity">
+                    <i data-lucide="building" class="text-accent w-6 h-6"></i>
+                    <span class="text-white text-xs font-black tracking-widest uppercase">PBQP-H Nível A</span>
                 </div>
-
-                <!-- Construção em EPS -->
-                <div class="bg-white rounded-2xl border border-gray-100 group hover:border-accent/40 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 overflow-hidden"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600"
-                            alt="Construção EPS"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
-                            <i data-lucide="thermometer-snowflake" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-brand-blue">Construção em EPS</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed font-light">Alta tecnologia térmica e acústica.
-                            Uso de poliestireno expandido para obras leves, rápidas e sustentáveis.</p>
-                    </div>
+                <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity">
+                    <i data-lucide="check-circle-2" class="text-accent w-6 h-6"></i>
+                    <span class="text-white text-xs font-black tracking-widest uppercase">CREA-MG</span>
                 </div>
-
-                <!-- Construção em Módulo -->
-                <div class="bg-white rounded-2xl border border-gray-100 group hover:border-accent/40 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 overflow-hidden"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=600"
-                            alt="Construção Modular"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500">
-                            <i data-lucide="container" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4 text-brand-blue">Construção em Módulo</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed font-light">Versatilidade móvel e
-                            industrializada. Estruturas modulares que garantem rapidez extrema e reaproveitamento.</p>
-                    </div>
+                <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity">
+                    <i data-lucide="shield-check" class="text-accent w-6 h-6"></i>
+                    <span class="text-white text-xs font-black tracking-widest uppercase">Qualidade Total</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section: Soluções Estratégicas -->
-    <section class="py-24 bg-brand-blue overflow-hidden relative" id="solucoes">
-        <div
-            class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none">
-        </div>
+    <!-- Section: Diferenciais -->
+    <section class="py-24 bg-white relative border-t border-gray-100" id="diferenciais">
         <div class="container mx-auto px-6 max-w-7xl">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div data-aos="fade-right">
-                    <span class="text-accent uppercase font-bold tracking-[0.2em] text-[10px] mb-3 block">Modelos de
-                        Negócio</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-8 text-white leading-tight">
-                        SOLUÇÕES <span class="text-accent">ESTRATÉGICAS.</span>
+                    <span class="text-accent uppercase font-bold tracking-[0.2em] text-[10px] mb-3 block">Por que
+                        escolher a STI</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight text-brand-blue leading-tight">
+                        DIFERENCIAIS EM <br><span class="text-accent">ENGENHARIA.</span>
                     </h2>
 
-                    <div class="space-y-10">
-                        <!-- PPP -->
-                        <div class="flex gap-6">
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-5 group">
                             <div
-                                class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0 mt-1 border border-accent/20">
-                                <i data-lucide="landmark" class="w-6 h-6"></i>
+                                class="bg-gray-50 w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-gray-100 group-hover:border-accent group-hover:bg-accent group-hover:text-brand-blue transition-all duration-300">
+                                <i data-lucide="hard-hat" class="w-6 h-6 text-accent group-hover:text-brand-blue"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-white mb-3">Parceria Público Privada (PPP)</h4>
-                                <p class="text-slate-400 font-light leading-relaxed">Sinergia entre governo e iniciativa
-                                    privada para viabilizar infraestrutura de alto impacto social. Gestão técnica
-                                    eficiente para projetos de longo prazo e escala urbana.</p>
+                                <h4 class="text-xl font-bold mb-1 text-brand-blue">Visão Técnica de Campo</h4>
+                                <p class="text-slate-500 font-light leading-relaxed text-sm">Nossa engenharia vai além
+                                    do projeto. Atuamos com acompanhamento rigoroso e domínio das normas para garantir
+                                    que cada etapa da obra seja executada com precisão absoluta.</p>
                             </div>
                         </div>
-
-                        <!-- Estrutura Metalica -->
-                        <div class="flex gap-6">
+                        <div class="flex items-start gap-5 group">
                             <div
-                                class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0 mt-1 border border-accent/20">
-                                <i data-lucide="component" class="w-6 h-6"></i>
+                                class="bg-gray-50 w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-gray-100 group-hover:border-accent group-hover:bg-accent group-hover:text-brand-blue transition-all duration-300">
+                                <i data-lucide="shield-check"
+                                    class="w-6 h-6 text-accent group-hover:text-brand-blue"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-white mb-3">Estrutura Metálica de Precisão</h4>
-                                <p class="text-slate-400 font-light leading-relaxed">Engenharia de precisão para vãos
-                                    livres imponentes e montagem ultrarrápida. Ideal para galpões, prédios comerciais e
-                                    arquiteturas autorais de alto padrão.</p>
+                                <h4 class="text-xl font-bold mb-1 text-brand-blue">Segurança & Conformidade</h4>
+                                <p class="text-slate-500 font-light leading-relaxed text-sm">Garantimos o cumprimento de
+                                    todas as normas técnicas e de segurança, protegendo seu investimento e garantindo a
+                                    solidez jurídica de cada empreendimento.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5 group">
+                            <div
+                                class="bg-gray-50 w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-gray-100 group-hover:border-accent group-hover:bg-accent group-hover:text-brand-blue transition-all duration-300">
+                                <i data-lucide="trending-up"
+                                    class="w-6 h-6 text-accent group-hover:text-brand-blue"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1 text-brand-blue">Alta Performance Construtiva</h4>
+                                <p class="text-slate-500 font-light leading-relaxed text-sm">Utilizamos métodos modernos
+                                    para otimizar prazos e custos, sem abrir mão da qualidade premium que define o
+                                    padrão STI Engenharia.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="relative" data-aos="fade-left">
-                    <div class="relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-3xl">
-                        <img src="/estrutura%20metalica.jpg"
-                            alt="Estrutura Metálica STI" class="w-full h-full object-cover">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-brand-blue/80 via-transparent to-transparent">
-                        </div>
+                    <div class="aspect-square rounded-[40px] overflow-hidden border border-gray-100 shadow-2xl">
+                        <img src="/scott-blake-x-ghf9LjrVg-unsplash.jpg" alt="Diferenciais STI Engenharia"
+                            class="w-full h-full object-cover">
                     </div>
-                    <!-- Card Flutuante -->
-                    <div class="absolute -bottom-6 -left-6 bg-accent p-8 rounded-2xl shadow-2xl max-w-64 hidden md:block"
+                    <!-- Stats Card -->
+                    <div class="absolute -bottom-6 -right-6 bg-brand-blue p-8 rounded-3xl shadow-2xl hidden md:block border border-white/5"
                         data-aos="zoom-in" data-aos-delay="400">
-                        <i data-lucide="check-circle" class="w-10 h-10 text-brand-blue mb-4"></i>
-                        <p class="text-brand-blue font-bold text-lg leading-tight">Garantia de Entrega e Qualidade
-                            Técnica Certificada.</p>
+                        <div class="text-accent text-3xl font-black mb-1">10+ Anos</div>
+                        <p class="text-white/70 text-xs font-bold uppercase tracking-widest">Excelência em Minas Gerais
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Grid -->
-    <section class="py-24 bg-white" id="portfolio">
-        <div class="container mx-auto px-6 max-w-7xl">
+    <!-- Section: Tipos de Construção (Dark Theme) -->
+    <section class="py-24 bg-brand-blue relative overflow-hidden" id="metodos">
+        <div
+            class="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="text-accent uppercase font-bold tracking-[0.2em] text-[10px] mb-3 block">Nossa
+                    Expertise</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-white leading-tight">
+                    NOSSA <span class="text-accent">EXPERTISE.</span>
+                </h2>
+                <p class="text-slate-300 text-lg font-light leading-relaxed">
+                    Dominamos diversas tecnologias para entregar a solução ideal para cada projeto, equilibrando custo,
+                    prazo e sustentabilidade.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- 1. Estrutura Convencional -->
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 group hover:border-accent/40 hover:bg-white/10 transition-all duration-500 overflow-hidden"
+                    data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="/imagens tipos de construcao/estrutura convencional.jfif" alt="Estrutura Convencional"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-brand-blue transition-all duration-500 shadow-sm">
+                            <i data-lucide="building-2" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Estrutura Convencional
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">Sistema clássico de vigas e pilares
+                            que oferece máxima flexibilidade arquitetônica e liberdade para futuras modificações.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Alvenaria Estrutural -->
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 group hover:border-accent/40 hover:bg-white/10 transition-all duration-500 overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="/imagens tipos de construcao/alvenaria estrutural.jfif" alt="Alvenaria Estrutural"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-brand-blue transition-all duration-500 shadow-sm">
+                            <i data-lucide="layers" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Alvenaria Estrutural</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">Método onde as paredes são a
+                            própria estrutura, garantindo agilidade executiva e economia significativa de materiais.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Construção em EPS -->
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 group hover:border-accent/40 hover:bg-white/10 transition-all duration-500 overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="/imagens tipos de construcao/eps.jpg" alt="Construção em EPS"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+
+                    </div>
+                    <div class="p-8">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-brand-blue transition-all duration-500 shadow-sm">
+                            <i data-lucide="snowflake" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Construção em EPS</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">Tecnologia com altíssimo isolamento
+                            térmico e acústico. Obras extremamente leves, rápidas e eficientes através do poliestireno.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. Construção em Módulo -->
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 group hover:border-accent/40 hover:bg-white/10 transition-all duration-500 overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="/imagens tipos de construcao/construcao modular.jfif" alt="Construção Modular"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-brand-blue transition-all duration-500 shadow-sm">
+                            <i data-lucide="package" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Construção em Módulo</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">Rapidez extrema com construção
+                            industrializada. Estruturas modulares off-site prontas para montagem rápida e limpa.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Cascatas Artificiais -->
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 group hover:border-accent/40 hover:bg-white/10 transition-all duration-500 overflow-hidden"
+                    data-aos="fade-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="/imagens tipos de construcao/cascata.jpg" alt="Cascatas Artificiais"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-brand-blue transition-all duration-500 shadow-sm">
+                            <i data-lucide="droplets" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Cascatas Artificiais</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">Criação de ambientes naturais e
+                            ornamentais, unindo hidráulica de precisão e estética orgânica para lazer e paisagismo.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Casa em Madeira -->
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 group hover:border-accent/40 hover:bg-white/10 transition-all duration-500 overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="/imagens tipos de construcao/madeira.jpg" alt="Casa em Madeira"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-brand-blue transition-all duration-500 shadow-sm">
+                            <i data-lucide="tree-pine" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Casa em Madeira</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">Arquitetura sustentável com alto
+                            isolamento térmico. O calor e o conforto rústico integrados à tecnologia de ponta.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Estrutura Metálica -->
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 group hover:border-accent/40 hover:bg-white/10 transition-all duration-500 overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="/imagens tipos de construcao/estrutura metalica.jpg" alt="Estrutura Metálica"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-brand-blue transition-all duration-500 shadow-sm">
+                            <i data-lucide="anvil" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-white uppercase tracking-tight">Estrutura Metálica</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed font-light">Precisão industrial e rapidez na
+                            montagem. Ideal para grandes vãos livres e projetos com estética moderna e arrojada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Serviços Públicos (Light Theme) -->
+    <section class="py-24 bg-white overflow-hidden relative" id="solucoes">
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <span class="text-accent uppercase font-bold tracking-[0.2em] text-[10px] mb-3 block">Infraestrutura
+                        e Gestão</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-8 text-brand-blue leading-tight">
+                        SERVIÇOS <span class="text-accent">PÚBLICOS.</span>
+                    </h2>
+
+                    <div class="space-y-10">
+                        <!-- Cemig -->
+                        <div class="flex gap-6">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0 mt-1 border border-accent/20">
+                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-blue mb-3">Infraestrutura Energética (Cemig)
+                                </h4>
+                                <p class="text-slate-600 font-light leading-relaxed">Expertise em montagens elétricas,
+                                    expansão de redes e infraestrutura para subestações. Atuamos em conformidade total
+                                    com os padrões rigorosos da <span
+                                        class="text-brand-blue font-semibold tracking-wide">Cemig</span>, garantindo
+                                    eficiência e segurança operacional.</p>
+                            </div>
+                        </div>
+
+                        <!-- Copasa -->
+                        <div class="flex gap-6">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0 mt-1 border border-accent/20">
+                                <i data-lucide="droplets" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-blue mb-3">Saneamento e Redes (Copasa)</h4>
+                                <p class="text-slate-600 font-light leading-relaxed">Soluções integradas para redes
+                                    coletoras de esgoto, adutoras e engenharia hidráulica. Execução técnica pautada nas
+                                    normas da <span class="text-brand-blue font-semibold tracking-wide">Copasa</span>,
+                                    viabilizando recursos hídricos e saneamento básico de alta escala.</p>
+                            </div>
+                        </div>
+
+                        <!-- Prefeituras -->
+                        <div class="flex gap-6">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0 mt-1 border border-accent/20">
+                                <i data-lucide="map" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-blue mb-3">Gestão de Infraestrutura Municipal
+                                </h4>
+                                <p class="text-slate-600 font-light leading-relaxed">Parceria ativa com <span
+                                        class="text-brand-blue font-semibold tracking-wide">Prefeituras</span> no
+                                    desenvolvimento urbano, englobando pavimentação técnica, drenagem pluvial e
+                                    construção de equipamentos públicos como escolas e centros de saúde.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagem Grid Schema -->
+                <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                    <div class="space-y-4">
+                        <div class="aspect-square rounded-2xl overflow-hidden border border-gray-100 shadow-2xl">
+                            <img src="/obras publicas/energia.png"
+                                alt="Infraestrutura Energética"
+                                class="w-full h-full object-cover hover:scale-105 transition-all duration-700">
+                        </div>
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-gray-100 shadow-2xl">
+                            <img src="/obras publicas/edificacao publica.webp"
+                                alt="Edificação Pública"
+                                class="w-full h-full object-cover hover:scale-105 transition-all duration-700">
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-gray-100 shadow-2xl">
+                            <img src="/obras publicas/copasa.jpg"
+                                alt="Saneamento e Redes"
+                                class="w-full h-full object-cover hover:scale-105 transition-all duration-700">
+                        </div>
+                        <div class="aspect-square rounded-2xl overflow-hidden border border-gray-100 shadow-2xl">
+                            <img src="/obras publicas/urbanismo.jpg"
+                                alt="Desenvolvimento Urbano"
+                                class="w-full h-full object-cover hover:scale-105 transition-all duration-700">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid (Dark Theme) -->
+    <section class="py-24 bg-brand-blue relative" id="portfolio">
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16" data-aos="fade-up">
                 <div class="max-w-2xl">
                     <span class="text-accent uppercase font-bold tracking-[0.2em] text-[10px] mb-3 block">Galeria de
                         Resultados</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 leading-tight">
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white leading-tight">
                         PORTFÓLIO DE <span class="text-accent">OBRAS.</span>
                     </h2>
-                    <p class="text-slate-600 text-lg font-light leading-relaxed">
+                    <p class="text-slate-400 text-lg font-light leading-relaxed">
                         Explore nosso histórico de excelência. Selecione um empreendimento para ver detalhes técnicos e
                         imagens reais.
                     </p>
                 </div>
             </div>
 
-            <!-- Barra de Busca Moderna (Glassmorphism Light) -->
+            <!-- Barra de Busca Moderna (Dark Glass) -->
             <div class="w-full max-w-3xl mb-16 relative group" data-aos="fade-up">
                 <div
-                    class="relative flex items-center bg-gray-50 border border-gray-100 rounded-[20px] shadow-sm overflow-hidden focus-within:border-accent/40 focus-within:shadow-xl transition-all duration-300">
+                    class="relative flex items-center bg-white/5 border border-white/10 rounded-[20px] shadow-sm overflow-hidden focus-within:border-accent/40 focus-within:shadow-xl transition-all duration-300">
                     <i data-lucide="search" class="absolute left-6 text-slate-400 w-5 h-5"></i>
                     <input type="text" id="projectSearch" placeholder="Pesquisar por localização, tipo ou nome..."
-                        class="w-full pl-16 pr-8 py-5 bg-transparent text-slate-800 placeholder:text-slate-400 outline-none text-base font-light tracking-wide">
+                        class="w-full pl-16 pr-8 py-5 bg-transparent text-white placeholder:text-slate-500 outline-none text-base font-light tracking-wide">
                 </div>
             </div>
 
@@ -556,6 +798,246 @@
                     class="bg-brand-blue hover:bg-slate-800 text-white font-bold px-12 py-5 rounded-2xl inline-flex items-center gap-3 transition-all transform hover:-translate-y-1 shadow-xl">
                     Falar com Consultor <i data-lucide="whatsapp" class="w-6 h-6"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Padrão de Acabamento (Bento Grid) -->
+    <section id="acabamentos" class="py-32 bg-[#FAFAFA] relative overflow-hidden" data-aos="fade-up">
+        <!-- Floating Elements -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 max-w-7xl relative z-10">
+            <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-20 gap-8">
+                <div class="max-w-3xl">
+                    <span class="text-accent uppercase font-black tracking-[0.4em] text-[10px] mb-4 block">Estética e
+                        Rigor Técnico</span>
+                    <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-brand-blue leading-[1.1]">
+                        A ASSINATURA DO <br><span class="text-accent underline decoration-1 underline-offset-8">ALTO
+                            PADRÃO.</span>
+                    </h2>
+                </div>
+                <div class="lg:w-1/3">
+                    <p
+                        class="text-slate-500 font-light leading-relaxed border-l-2 border-accent/30 pl-8 italic text-lg">
+                        "Onde a precisão da engenharia encontra a alma do design. Cada material é escolhido com afeto
+                        para durar gerações."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modern Asymmetric Bento Grid (5 Images) -->
+            <div class="grid grid-cols-12 gap-6 lg:gap-10">
+
+                <!-- 01. O Coração (Destaque Principal) -->
+                <div class="col-span-12 lg:col-span-8 relative group overflow-hidden rounded-[48px] shadow-2xl h-[600px]"
+                    data-aos="zoom-out-right">
+                    <img src="/imagens acabamentos/WhatsApp Image 2026-04-17 at 15.23.01.jpeg"
+                        alt="Acabamento de Alto Padrão STI"
+                        class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110">
+                    <div
+                        class="absolute inset-x-8 bottom-8 bg-brand-blue/90 backdrop-blur-xl p-10 rounded-[32px] border border-white/10 opacity-0 group-hover:opacity-100 translate-y-10 group-hover:translate-y-0 transition-all duration-700">
+                        <span class="text-accent text-xs font-bold uppercase tracking-widest mb-2 block">Sofisticação</span>
+                        <h4 class="text-white font-extrabold text-3xl">LIVING INTEGRADO</h4>
+                        <p class="text-white/60 text-sm mt-3 font-light leading-relaxed">Conexão fluida entre ambientes com materiais nobres e iluminação planejada.</p>
+                    </div>
+                </div>
+
+                <!-- 02. O Detalhe (Vertical) -->
+                <div class="col-span-12 lg:col-span-4 relative group overflow-hidden rounded-[48px] shadow-xl h-[600px]"
+                    data-aos="zoom-out-left" data-aos-delay="100">
+                    <img src="/imagens acabamentos/WhatsApp Image 2026-04-17 at 15.23.16.jpeg"
+                        alt="Detalhes Gourmets"
+                        class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-blue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-10">
+                        <span class="text-accent text-[10px] font-black uppercase tracking-widest mb-1">Cozinha</span>
+                        <h4 class="text-white font-bold text-2xl">DESIGN MINIMALISTA</h4>
+                    </div>
+                </div>
+
+                <!-- 03. A Precisão (Horizontal 1) -->
+                <div class="col-span-12 lg:col-span-4 relative group overflow-hidden rounded-[48px] shadow-xl h-[400px]"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="/imagens acabamentos/WhatsApp Image 2026-04-17 at 15.24.28.jpeg"
+                        alt="Banheiros e Metais"
+                        class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-brand-blue/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <div
+                            class="text-center p-8 bg-white/90 rounded-[24px] scale-90 group-hover:scale-100 transition-transform duration-500 shadow-xl">
+                            <h4 class="text-brand-blue font-bold text-xl uppercase tracking-tighter">Banheiros</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04. A Solidez (Horizontal 2) -->
+                <div class="col-span-12 lg:col-span-4 relative group overflow-hidden rounded-[48px] shadow-2xl h-[400px]"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="/imagens acabamentos/WhatsApp Image 2026-04-17 at 15.24.51.jpeg"
+                        alt="Áreas de lazer"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110">
+                    <div
+                        class="absolute inset-x-6 bottom-6 bg-white/95 p-6 rounded-[24px] shadow-xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        <h4 class="text-brand-blue font-bold text-lg uppercase tracking-widest">Áreas Gourmet</h4>
+                    </div>
+                </div>
+
+                <!-- 05. A Perfeição (Horizontal 3) -->
+                <div class="col-span-12 lg:col-span-4 relative group overflow-hidden rounded-[48px] shadow-2xl h-[400px]"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <img src="/imagens acabamentos/WhatsApp Image 2026-04-17 at 15.25.04.jpeg"
+                        alt="Fachada e Detalhes"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Certificações -->
+    <section id="certificacoes" class="py-24 bg-gray-50 relative border-t border-gray-100" data-aos="fade-up">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16">
+                <span class="text-accent uppercase font-bold tracking-[0.2em] text-[10px] mb-3 block">Qualidade
+                    Atestada</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-brand-blue">CONFORMIDADE & <span
+                        class="text-accent">CERTIFICAÇÕES.</span></h2>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20">
+                <div class="flex items-center gap-4 group grayscale hover:grayscale-0 transition-all duration-500">
+                    <div
+                        class="w-16 h-16 rounded-full border border-gray-200 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-brand-blue group-hover:border-accent transition-all">
+                        <i data-lucide="award" class="w-7 h-7"></i>
+                    </div>
+                    <span class="text-brand-blue font-black text-2xl tracking-tighter uppercase">ISO 9001</span>
+                </div>
+                <div class="flex items-center gap-4 group grayscale hover:grayscale-0 transition-all duration-500">
+                    <div
+                        class="w-16 h-16 rounded-full border border-gray-200 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-brand-blue group-hover:border-accent transition-all">
+                        <i data-lucide="building" class="w-7 h-7"></i>
+                    </div>
+                    <span class="text-brand-blue font-black text-2xl tracking-tighter uppercase">PBQP-H</span>
+                </div>
+                <div class="flex items-center gap-4 group grayscale hover:grayscale-0 transition-all duration-500">
+                    <div
+                        class="w-16 h-16 rounded-full border border-gray-200 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-brand-blue group-hover:border-accent transition-all">
+                        <i data-lucide="check-circle-2" class="w-7 h-7"></i>
+                    </div>
+                    <span class="text-brand-blue font-black text-2xl tracking-tighter uppercase">CREA-MG</span>
+                </div>
+                <div class="flex items-center gap-4 group grayscale hover:grayscale-0 transition-all duration-500">
+                    <div
+                        class="w-16 h-16 rounded-full border border-gray-200 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-brand-blue group-hover:border-accent transition-all">
+                        <i data-lucide="flame" class="w-7 h-7"></i>
+                    </div>
+                    <span class="text-brand-blue font-black text-2xl tracking-tighter uppercase">Qualidade Total</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: FAQ (Dark Theme) -->
+    <section id="faq" class="py-24 bg-brand-blue relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-accent uppercase font-bold tracking-[0.2em] text-[10px] mb-3 block">Dúvidas
+                    Frequentes</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6">FAQ & <span
+                        class="text-accent">RESPOSTAS.</span></h2>
+                <p class="text-slate-300 font-light max-w-2xl mx-auto">Esclarecemos os principais pontos sobre nossos
+                    processos, atuação e parcerias institucionais.</p>
+            </div>
+
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item group">
+                    <button
+                        class="w-full flex items-center justify-between p-6 md:p-8 bg-white/5 hover:bg-white/10 rounded-3xl border border-white/10 hover:border-accent/30 transition-all duration-300 text-left focus:outline-none">
+                        <span class="text-lg md:text-xl font-bold text-white tracking-tight pr-8">Quais são os métodos
+                            construtivos utilizados pela STI?</span>
+                        <div
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-brand-blue transition-all shrink-0">
+                            <i data-lucide="plus" class="w-5 h-5 faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                        <div class="p-8 pt-2 text-slate-400 font-light leading-relaxed">
+                            Atuamos com um portfólio técnico diversificado que inclui Estrutura Convencional, Alvenaria
+                            Estrutural, Construção em EPS, Sistemas Modulares e Estrutura Metálica. A escolha do método
+                            é feita de forma estratégica, visando otimizar performance técnica e custo-benefício para
+                            cada projeto.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item group">
+                    <button
+                        class="w-full flex items-center justify-between p-6 md:p-8 bg-white/5 hover:bg-white/10 rounded-3xl border border-white/10 hover:border-accent/30 transition-all duration-300 text-left focus:outline-none">
+                        <span class="text-lg md:text-xl font-bold text-white tracking-tight pr-8">A STI realiza obras em
+                            outras cidades além de Belo Horizonte?</span>
+                        <div
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-brand-blue transition-all shrink-0">
+                            <i data-lucide="plus" class="w-5 h-5 faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                        <div class="p-8 pt-2 text-slate-400 font-light leading-relaxed">
+                            Sim. Possuímos logística e expertise para atendimento em diversas regiões de Minas Gerais.
+                            Temos forte atuação em toda a Região Metropolitana de Belo Horizonte, Vale do Aço e região
+                            central do estado, mantendo o mesmo padrão de excelência independentemente da localização.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item group">
+                    <button
+                        class="w-full flex items-center justify-between p-6 md:p-8 bg-white/5 hover:bg-white/10 rounded-3xl border border-white/10 hover:border-accent/30 transition-all duration-300 text-left focus:outline-none">
+                        <span class="text-lg md:text-xl font-bold text-white tracking-tight pr-8">Como é garantida a
+                            qualidade técnica e normativa das obras?</span>
+                        <div
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-brand-blue transition-all shrink-0">
+                            <i data-lucide="plus" class="w-5 h-5 faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                        <div class="p-8 pt-2 text-slate-400 font-light leading-relaxed">
+                            Nossa conformidade é atestada pelas certificações <span class="font-semibold">ISO
+                                9001</span> (Gestão da Qualidade) e <span class="font-semibold">PBQP-H Nível A</span>
+                            (Habitat). Além disso, todos os projetos seguem rigorosamente as normas da ABNT e recebem
+                            acompanhamento técnico contínuo de nossa equipe de engenharia.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item group">
+                    <button
+                        class="w-full flex items-center justify-between p-6 md:p-8 bg-white/5 hover:bg-white/10 rounded-3xl border border-white/10 hover:border-accent/30 transition-all duration-300 text-left focus:outline-none">
+                        <span class="text-lg md:text-xl font-bold text-white tracking-tight pr-8">Como funcionam as
+                            parcerias com Cemig, Copasa e Prefeituras?</span>
+                        <div
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-brand-blue transition-all shrink-0">
+                            <i data-lucide="plus" class="w-5 h-5 faq-icon"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                        <div class="p-8 pt-2 text-slate-400 font-light leading-relaxed">
+                            Atuamos como parceiros técnicos em regimes de licitação e convênios, executando obras de
+                            infraestrutura energética, saneamento e urbanismo. Dominamos os manuais de normas técnicas
+                            destas instituições, o que garante celeridade na aprovação de projetos e entrega final.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -816,6 +1298,32 @@
             });
         });
 
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const content = item.querySelector('.faq-content');
+                const isOpen = item.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-content').style.maxHeight = '0';
+                    }
+                });
+
+                // Toggle current item
+                if (isOpen) {
+                    item.classList.remove('active');
+                    content.style.maxHeight = '0';
+                } else {
+                    item.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+
         lucide.createIcons();
         AOS.init({
             duration: 1000,
@@ -826,7 +1334,9 @@
     <!-- Botão WhatsApp Flutuante -->
     <a href="https://wa.me/5531992525098" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
         <svg viewBox="0 0 24 24" class="w-10 h-10 fill-current" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
     </a>
 </body>
 
