@@ -174,7 +174,11 @@
             </nav>
 
             <!-- Action Column (Right) -->
-            <div class="flex-1 flex justify-end">
+            <div class="flex-1 flex justify-end items-center gap-4">
+                <a href="https://wa.me/5531992525098" target="_blank"
+                    class="hidden md:flex items-center justify-center gap-2 bg-accent hover:bg-yellow-400 text-brand-blue font-bold px-7 py-3 rounded text-sm transition-all duration-300 transform hover:-translate-y-1 shadow-[0_4px_14px_rgba(234,179,8,0.3)] whitespace-nowrap border border-transparent hover:border-yellow-300">
+                    Solicitar Orçamento
+                </a>
                 <!-- Mobile Menu Btn -->
                 <button id="mobile-menu-btn" class="md:hidden text-slate-800 z-50 focus:outline-none p-2 shrink-0">
                     <i data-lucide="menu" class="w-8 h-8"></i>
@@ -243,7 +247,7 @@
                     class="bg-accent hover:bg-accent-hover text-brand-blue font-extrabold px-10 py-5 rounded transition-all transform hover:-translate-y-1 shadow-lg shadow-accent/20 uppercase tracking-widest text-sm">
                     Explorar Empreendimentos
                 </a>
-                <a href="/#contato"
+                <a href="https://wa.me/5531992525098" target="_blank"
                     class="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-bold px-10 py-5 rounded backdrop-blur-sm transition-all text-center uppercase tracking-widest text-sm">
                     Falar com Engenharia
                 </a>
@@ -788,7 +792,7 @@
                     projetos?</h4>
                 <p class="text-slate-600 mb-10 max-w-xl mx-auto font-light">Solicite agora as plantas, memorial
                     descritivo e condições especiais para nossos empreendimentos.</p>
-                <a href="/#contato"
+                <a href="https://wa.me/5531992525098" target="_blank"
                     class="bg-brand-blue hover:bg-slate-800 text-white font-bold px-12 py-5 rounded-2xl inline-flex items-center gap-3 transition-all transform hover:-translate-y-1 shadow-xl">
                     Falar com Consultor <i data-lucide="whatsapp" class="w-6 h-6"></i>
                 </a>
@@ -1095,7 +1099,7 @@
                     </div>
 
                     <div class="mt-12">
-                        <a href="/#contato"
+                        <a href="https://wa.me/5531992525098" target="_blank"
                             class="w-full bg-brand-blue text-white font-bold py-5 rounded-2xl inline-flex items-center justify-center gap-3 hover:bg-slate-800 transition-all shadow-xl">
                             Solicitar Informações <i data-lucide="message-square" class="w-5 h-5"></i>
                         </a>
@@ -1103,6 +1107,14 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Lightbox (Zoom de Imagem) -->
+    <div id="imageLightbox" onclick="closeLightbox()" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm opacity-0 transition-opacity duration-300 cursor-zoom-out">
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-[120]">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightboxImage" src="" alt="Zoom" onclick="event.stopPropagation()" class="max-w-full max-h-full rounded-lg shadow-2xl transform scale-95 transition-transform duration-300 cursor-default">
     </div>
 
     <!-- Scripts -->
@@ -1239,7 +1251,10 @@
 
             const galleryContainer = document.getElementById('modalGallery');
             galleryContainer.innerHTML = data.gallery.map(img =>
-                `<img src="${img}" class="w-full shrink-0 snap-center rounded-2xl gallery-image aspect-video object-cover shadow-lg" alt="Foto Projeto">`
+                `<img src="${img}" 
+                    onclick="openLightbox('${img}')"
+                    class="w-full shrink-0 snap-center rounded-2xl gallery-image aspect-video object-cover shadow-lg cursor-zoom-in hover:opacity-90 transition-opacity" 
+                    alt="Foto Projeto">`
             ).join('');
 
             const featureContainer = document.getElementById('modalFeatures');
@@ -1267,6 +1282,28 @@
                 modal.classList.add('hidden');
                 document.body.style.overflow = 'auto';
             }, 500);
+        }
+
+        // Lightbox Logic
+        function openLightbox(src) {
+            const lightbox = document.getElementById('imageLightbox');
+            const img = document.getElementById('lightboxImage');
+            img.src = src;
+            lightbox.classList.remove('hidden');
+            setTimeout(() => {
+                lightbox.classList.replace('opacity-0', 'opacity-100');
+                img.classList.replace('scale-95', 'scale-100');
+            }, 10);
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('imageLightbox');
+            const img = document.getElementById('lightboxImage');
+            lightbox.classList.replace('opacity-100', 'opacity-0');
+            img.classList.replace('scale-100', 'scale-95');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+            }, 300);
         }
 
         const searchInput = document.getElementById('projectSearch');
