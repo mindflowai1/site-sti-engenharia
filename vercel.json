@@ -41,6 +41,10 @@
         }
       ],
       "destination": "/empreendimentos/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/home/:path*"
     }
   ]
 }
