@@ -23,28 +23,24 @@
   ],
   "rewrites": [
     {
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "incendio.stieng.com.br"
         }
       ],
-      "source": "/",
-      "destination": "/incendio/"
+      "destination": "/incendio/:path*"
     },
     {
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "empreendimentos.stieng.com.br"
         }
       ],
-      "source": "/",
-      "destination": "/empreendimentos/"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
+      "destination": "/empreendimentos/:path*"
     }
   ]
 }
