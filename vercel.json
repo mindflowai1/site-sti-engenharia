@@ -29,8 +29,8 @@
           "value": "incendio.stieng.com.br"
         }
       ],
-      "source": "/(.*)",
-      "destination": "/incendio/index.html"
+      "source": "/",
+      "destination": "/incendio/"
     },
     {
       "has": [
@@ -39,12 +39,12 @@
           "value": "empreendimentos.stieng.com.br"
         }
       ],
-      "source": "/(.*)",
-      "destination": "/empreendimentos/index.html"
+      "source": "/",
+      "destination": "/empreendimentos/"
     },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ]
 }
