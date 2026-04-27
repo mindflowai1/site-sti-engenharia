@@ -26,7 +26,7 @@
       "has": [
         {
           "type": "host",
-          "value": "incendio.dominio.com.br"
+          "value": "incendio.stieng.com.br"
         }
       ],
       "source": "/(.*)",
@@ -36,7 +36,7 @@
       "has": [
         {
           "type": "host",
-          "value": "empreendimentos.dominio.com.br"
+          "value": "empreendimentos.stieng.com.br"
         }
       ],
       "source": "/(.*)",
