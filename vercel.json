@@ -30,7 +30,7 @@
           "value": "incendio.stieng.com.br"
         }
       ],
-      "destination": "/incendio/index.html"
+      "destination": "/incendio"
     },
     {
       "source": "/",
@@ -40,11 +40,11 @@
           "value": "empreendimentos.stieng.com.br"
         }
       ],
-      "destination": "/empreendimentos/index.html"
+      "destination": "/empreendimentos"
     },
     {
       "source": "/",
-      "destination": "/home/index.html"
+      "destination": "/home"
     }
   ]
 }
