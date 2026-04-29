@@ -185,7 +185,7 @@
                         class="bg-accent hover:bg-accent-hover text-brand-blue font-bold px-8 py-4 rounded-md text-center transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 shadow-[0_4px_20px_rgba(234,179,8,0.3)]">
                         Solicitar Cotação <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://wa.me/5531992525098" target="_blank"
+                    <a href="https://wa.me/5531992525098?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20STI%20Engenharia%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank"
                         class="border border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-md text-center transition-all flex items-center justify-center gap-3 backdrop-blur-sm">
                         <i data-lucide="phone" class="w-5 h-5 text-accent"></i> Falar com Especialista
                     </a>
@@ -1253,7 +1253,7 @@
                         </svg>
                     </a>
                     <!-- WhatsApp (Custom SVG Official Logo) -->
-                    <a href="https://wa.me/5531992525098"
+                    <a href="https://wa.me/5531992525098?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20STI%20Engenharia%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
                         class="glass-dark w-12 h-12 rounded flex items-center justify-center hover:bg-accent hover:text-brand-blue transition-colors text-white border border-white/10 group">
                         <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -1277,7 +1277,7 @@
     </footer>
 
     <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/5531992525098" target="_blank"
+    <a href="https://wa.me/5531992525098?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20STI%20Engenharia%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank"
         class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:scale-110 transition-transform duration-300 z-[90] group">
         <i data-lucide="message-circle" class="w-7 h-7"></i>
         <!-- Ping Effect -->
@@ -1370,7 +1370,8 @@
                 return;
             }
             const phone = "5531992525098";
-            const text = `Olá STI Engenharia, meu nome é ${nome}. ${mensagem}`;
+            const trackingMessage = "Olá! Vim pelo site da STI Engenharia e gostaria de solicitar um orçamento. ";
+            const text = `${trackingMessage}Meu nome é ${nome}. ${mensagem}`;
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
         }
 

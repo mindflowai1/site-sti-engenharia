@@ -386,7 +386,7 @@
                         class="btn-primary px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs shadow-[0_10px_30px_rgba(220,38,38,0.3)] hover:scale-105 hover:shadow-[0_15px_40px_rgba(220,38,38,0.5)] transition-all duration-300">
                         Regularizar Agora <i data-lucide="shield-check" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://wa.me/5531992525098" target="_blank"
+                    <a href="https://wa.me/5531992525098?text=Ol%C3%A1!%20Estava%20navegando%20na%20p%C3%A1gina%20de%20Engenharia%20de%20Inc%C3%AAndio%20da%20STI%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas." target="_blank"
                         class="px-10 py-4 rounded-full text-center flex items-center justify-center gap-3 font-bold uppercase tracking-wider text-xs text-white bg-white/5 border border-white/20 backdrop-blur-md shadow-lg hover:bg-white/15 transition-all duration-300 hover:scale-105">
                         <i data-lucide="phone" class="w-4 h-4"></i> Consultoria
                     </a>
@@ -1251,7 +1251,7 @@
                                 <div>
                                     <p class="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">Telefone /
                                         WhatsApp</p>
-                                    <a href="https://wa.me/5531992525098"
+                                    <a href="https://wa.me/5531992525098?text=Ol%C3%A1!%20Estava%20navegando%20na%20p%C3%A1gina%20de%20Engenharia%20de%20Inc%C3%AAndio%20da%20STI%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas."
                                         class="text-lg font-semibold hover:text-[#dc2626] transition-colors">(31)
                                         99252-5098</a>
                                 </div>
@@ -1425,7 +1425,7 @@
 
     <!-- WhatsApp Solid Minimalist -->
     <!-- Notice WhatsApp icon stays green #25D366 because it's a social standard, not a brand asset -->
-    <a href="https://wa.me/5531992525098" target="_blank"
+    <a href="https://wa.me/5531992525098?text=Ol%C3%A1!%20Estava%20navegando%20na%20p%C3%A1gina%20de%20Engenharia%20de%20Inc%C3%AAndio%20da%20STI%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas." target="_blank"
         class="fixed bottom-6 right-6 w-18 h-18 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:-translate-y-2 transition-transform duration-300 z-[90]">
         <i data-lucide="message-circle" class="w-9 h-9"></i>
     </a>
@@ -1503,7 +1503,8 @@
                 return;
             }
             const phone = "5531992525098";
-            const text = `Olá STI Engenharia, meu nome é ${nome}. ${mensagem}`;
+            const trackingMessage = "Olá! Estava navegando na página de Engenharia de Incêndio da STI e gostaria de tirar algumas dúvidas. ";
+            const text = `${trackingMessage}Meu nome é ${nome}. ${mensagem}`;
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
         }
 
